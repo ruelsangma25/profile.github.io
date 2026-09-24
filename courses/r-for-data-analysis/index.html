@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta http-equiv="Accept-CH" content="DPR, Viewport-Width, Width">
+<link rel="icon" href=/fav.png type="image/gif">
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Alata&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+>
+<link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Alata&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      media="print" onload="this.media='all'" />
+<noscript>
+  <link
+          href="https://fonts.googleapis.com/css2?family=Alata&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+          rel="stylesheet">
+</noscript>
+
+
+<link rel="stylesheet" href="/css/font.css" media="all">
+
+
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-XHMN5CZBNV"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-XHMN5CZBNV');
+        }
+      </script>
+<meta property="og:url" content="https://mdahsanulhimel.github.io/courses/r-for-data-analysis/">
+  <meta property="og:site_name" content="Ahsan">
+  <meta property="og:title" content="R for Data Analysis: From Zero to Intermediate">
+  <meta property="og:description" content="Full syllabus for a six week live cohort covering the tidyverse, ggplot2, and reproducible reporting in R. No prior programming experience required.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="courses">
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="R for Data Analysis: From Zero to Intermediate">
+  <meta name="twitter:description" content="Full syllabus for a six week live cohort covering the tidyverse, ggplot2, and reproducible reporting in R. No prior programming experience required.">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"><link rel="stylesheet" href="/css/header.css" media="all">
+<link rel="stylesheet" href="/css/footer.css" media="all">
+
+
+<link rel="stylesheet" href="/css/theme.css" media="all">
+
+
+<script defer src="/fontawesome-6/all-6.4.2.js"></script>
+
+
+<style>
+    :root {
+        --text-color: #1e293b;
+        --text-secondary-color: #475569;
+        --text-link-color: #2563eb;
+        --background-color: #ffffff;
+        --secondary-background-color: #f1f5f9;
+        --primary-color: #2563eb;
+        --secondary-color: #f8fafc;
+
+         
+        --text-color-dark: #f8fafc;
+        --text-secondary-color-dark: #94a3b8;
+        --text-link-color-dark: #60a5fa;
+        --background-color-dark: #0f172a;
+        --secondary-background-color-dark: #1e293b;
+        --primary-color-dark: #3b82f6;
+        --secondary-color-dark: #1e293b;
+    }
+    body {
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        text-align: left;
+    }
+
+    html {
+        background-color: var(--background-color) !important;
+    }
+
+    body::-webkit-scrollbar {
+        height: 0px;
+        width: 8px;
+        background-color: var(--background-color);
+    }
+
+    ::-webkit-scrollbar-track {
+        border-radius: 1rem;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        border-radius: 1rem;
+        background: #b0b0b0;
+        outline: 1px solid var(--background-color);
+    }
+
+    #search-content::-webkit-scrollbar {
+        width: .5em;
+        height: .1em;
+        background-color: var(--background-color);
+    }
+</style>
+
+
+<link rel="stylesheet" href="/css/syntax.css" media="all">
+
+
+
+
+<style>
+     
+    header#profileHeader{
+      position: sticky;        
+      top: 0;
+      z-index: 9999;
+      background-color: var(--secondary-color);
+      box-shadow: 0 4px 6px rgba(0,0,0,.08);
+    }
+     
+    #profileHeader,
+    #profileHeader.showHeaderOnTop{
+      transform: none !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+    }
+  </style>
+  
+
+
+
+
+<meta name="description" content="Full syllabus for a six week live cohort covering the tidyverse, ggplot2, and reproducible reporting in R. No prior programming experience required.">
+
+
+  
+  
+    <link rel="stylesheet" href="/style.css">
+  
+
+  <title>R for Data Analysis: From Zero to Intermediate | Ahsan
+  </title>
+</head>
+
+<body class="light">
+  
+<script>
+(function () {
+  
+  var def = "light";
+  var saved = null;
+  try { saved = localStorage.getItem('pref-theme'); } catch (e) {}
+
+  var dark;
+  if (saved === 'dark')        { dark = true;  }
+  else if (saved === 'light')  { dark = false; }
+  else if (def === 'dark')     { dark = true;  }
+  else if (def === 'light')    { dark = false; }
+  else {
+    dark = !!(window.matchMedia &&
+              window.matchMedia('(prefers-color-scheme: dark)').matches);
+  }
+
+  document.body.classList.toggle('dark', dark);
+})();
+</script>
+
+  
+<header id="profileHeader">
+    <nav class="pt-3 navbar navbar-expand-lg animate">
+        <div class="container-fluid mx-xs-2 mx-sm-5 mx-md-5 mx-lg-5">
+            
+            <a class="navbar-brand primary-font text-wrap" href="/">
+                
+                <img src="/fav.png" width="30" height="30"
+                    class="d-inline-block align-top">
+                Ahsan
+                
+            </a>
+
+            
+                <div>
+                    <input id="search" autocomplete="off" class="form-control mr-sm-2 d-none d-md-block" placeholder='Search this site...'
+                        aria-label="Search" oninput="searchOnChange(event)">
+                </div>
+            
+
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+                aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <svg aria-hidden="true" height="24" viewBox="0 0 16 16" version="1.1" width="24" data-view-component="true">
+                    <path fill-rule="evenodd" d="M1 2.75A.75.75 0 011.75 2h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 2.75zm0 5A.75.75 0 011.75 7h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 7.75zM1.75 12a.75.75 0 100 1.5h12.5a.75.75 0 100-1.5H1.75z"></path>
+                </svg>
+            </button>
+
+            
+            <div class="collapse navbar-collapse text-wrap primary-font" id="navbarContent">
+                <ul class="navbar-nav ms-auto text-center">
+                    
+                        <li class="nav-item navbar-text d-block d-md-none">
+                            <div class="nav-link">
+                                <input id="search" autocomplete="off" class="form-control mr-sm-2" placeholder='Search this site...' aria-label="Search" oninput="searchOnChange(event)">
+                            </div>
+                        </li>
+                    
+
+                    
+                    
+                        <li class="nav-item navbar-text">
+                            <a class="nav-link" href="/#experience" title="Experience">
+                                
+                                    <i class="fas fa-briefcase"></i>  
+                                
+                                Experience
+                            </a>
+                        </li>
+                    
+                        <li class="nav-item navbar-text">
+                            <a class="nav-link" href="/#education" title="Education">
+                                
+                                    <i class="fas fa-graduation-cap"></i>  
+                                
+                                Education
+                            </a>
+                        </li>
+                    
+                        <li class="nav-item navbar-text">
+                            <a class="nav-link" href="/#publications" title="Research">
+                                
+                                    <i class="fas fa-flask"></i>  
+                                
+                                Research
+                            </a>
+                        </li>
+                    
+                        <li class="nav-item navbar-text">
+                            <a class="nav-link" href="/post" title="My Posts">
+                                
+                                    <i class="fas fa-rss"></i>  
+                                
+                                Posts
+                            </a>
+                        </li>
+                    
+                        <li class="nav-item navbar-text">
+                            <a class="nav-link" href="/#contact" title="Contact">
+                                
+                                    <i class="fas fa-address-card"></i>  
+                                
+                                Contact
+                            </a>
+                        </li>
+                    
+                        <li class="nav-item navbar-text">
+                            <a class="nav-link" href="/#courses" title="Courses">
+                                
+                                    <i class="fas fa-chalkboard-teacher"></i>  
+                                
+                                Courses
+                            </a>
+                        </li>
+                    
+                        <li class="nav-item navbar-text">
+                            <a class="nav-link" href="/#youtube" title="Youtube">
+                                
+                                    <i class="fas fa-chalkboard-teacher"></i>  
+                                
+                                Youtube
+                            </a>
+                        </li>
+                    
+
+                    
+                    <li class="nav-item navbar-text">
+                        
+                        <div class="text-center">
+                            <button id="theme-toggle">
+                                <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                                </svg>
+                                <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="5"></circle>
+                                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                                </svg>
+                            </button>
+                        </div>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<div id="content">
+
+
+
+
+
+
+<section class="container py-5 course-page">
+  <div class="row justify-content-center">
+    <div class="col-lg-9">
+
+      <p class="mb-3">
+        <a href="/courses/" class="small text-decoration-none">Back to all courses</a>
+      </p>
+
+      <h1 class="mb-2">R for Data Analysis: From Zero to Intermediate</h1>
+      <p class="lead text-muted mb-4">Hands-on wrangling, visualization, and reporting in R</p>
+
+      
+      <div class="d-flex flex-wrap gap-2 mb-4">
+        <span class="course-chip mode">Live cohort</span>
+        <span class="course-chip">Beginner to Intermediate</span>
+        <span class="course-chip">6 weeks</span>
+        <span class="course-chip">4 to 6 hours per week</span>
+        <span class="course-chip">Starts 13 Oct 2026</span>
+        <span class="course-chip price">1200 Taka</span>
+      </div>
+
+      
+      
+        <a href="/enroll/r-for-data-analysis/" class="btn btn-primary mb-5">Apply</a>
+      
+
+      
+      
+      <div class="card p-4 mb-5">
+        <h2 class="h5 mb-3">By the end of this course you will be able to</h2>
+        <ul class="course-outcomes mb-0">
+          <li>Import data from CSV, Excel and SPSS files and get it into a tidy, analysis-ready shape.</li><li>Wrangle, filter, group and summarise datasets fluently with <strong>dplyr</strong>.</li><li>Build clear, publication-quality charts with <strong>ggplot2</strong> and know which chart to reach for.</li><li>Write reproducible analyses in R Markdown or Quarto that rerun end to end without manual steps.</li><li>Use RStudio Projects and Git so your work is organised and recoverable.</li><li>Take a raw dataset through to a finished report on your own.</li>
+        </ul>
+      </div>
+      
+
+      
+      
+      <div class="row g-4 mb-5">
+        
+        <div class="col-md-6">
+          <h2 class="h6 text-uppercase text-muted mb-2">Prerequisites</h2>
+          <ul class="course-plain mb-0">
+            <li>No prior programming experience needed.</li><li>Comfort with basic spreadsheet work (sorting, filtering, simple formulas).</li><li>A laptop able to run R and RStudio.</li>
+          </ul>
+        </div>
+        
+        
+        <div class="col-md-6">
+          <h2 class="h6 text-uppercase text-muted mb-2">Tools you will use</h2>
+          <ul class="course-plain mb-0">
+            <li>R and RStudio (both free)</li><li>tidyverse: dplyr, tidyr, readr, ggplot2, stringr, forcats</li><li>R Markdown or Quarto</li><li>Git and GitHub</li>
+          </ul>
+        </div>
+        
+      </div>
+      
+
+      
+      
+      <h2 class="h4 mb-3">Week by week</h2>
+      <div class="course-modules mb-5">
+        
+        <article class="course-module">
+          <div class="course-module-head">
+            <span class="course-module-label">Week 1</span>
+            <h3 class="h6 mb-0">Getting comfortable in R</h3>
+          </div>
+          
+          <ul class="course-plain mt-2 mb-0">
+            <li>Installing R and RStudio; touring the four panes.</li><li>Why RStudio Projects matter, and why <code>setwd()</code> does not.</li><li>Vectors, data frames, and the main data types.</li><li>Calling functions, reading the help pages, and decoding error messages.</li><li>Installing and loading packages.</li>
+          </ul>
+          
+          
+          <p class="course-deliverable mb-0"><strong>Deliverable:</strong> A working project folder with a script that loads a dataset and prints its structure.</p>
+          
+        </article>
+        
+        <article class="course-module">
+          <div class="course-module-head">
+            <span class="course-module-label">Week 2</span>
+            <h3 class="h6 mb-0">Data wrangling with dplyr</h3>
+          </div>
+          
+          <ul class="course-plain mt-2 mb-0">
+            <li>The pipe, and why it makes code readable.</li><li>The core verbs: <code>filter()</code>, <code>select()</code>, <code>arrange()</code>, <code>mutate()</code>, <code>summarise()</code>.</li><li>Grouped operations with <code>group_by()</code>.</li><li>Combining datasets: <code>left_join()</code> and friends.</li><li>Common beginner traps: factors, <code>NA</code> propagation, silent recycling.</li>
+          </ul>
+          
+          
+          <p class="course-deliverable mb-0"><strong>Deliverable:</strong> A summary table answering three questions about a supplied dataset.</p>
+          
+        </article>
+        
+        <article class="course-module">
+          <div class="course-module-head">
+            <span class="course-module-label">Week 3</span>
+            <h3 class="h6 mb-0">Importing and tidying real data</h3>
+          </div>
+          
+          <ul class="course-plain mt-2 mb-0">
+            <li>Reading CSV, Excel and SPSS files with readr, readxl and haven.</li><li>What tidy data means, and reshaping with <code>pivot_longer()</code> and <code>pivot_wider()</code>.</li><li>Handling missing values deliberately rather than by accident.</li><li>Working with text (stringr), categories (forcats) and dates (lubridate).</li><li>Building a small cleaning script you can rerun on new data.</li>
+          </ul>
+          
+          
+          <p class="course-deliverable mb-0"><strong>Deliverable:</strong> A cleaning script that turns a messy raw file into a tidy dataset.</p>
+          
+        </article>
+        
+        <article class="course-module">
+          <div class="course-module-head">
+            <span class="course-module-label">Week 4</span>
+            <h3 class="h6 mb-0">Visualization with ggplot2</h3>
+          </div>
+          
+          <ul class="course-plain mt-2 mb-0">
+            <li>The grammar of graphics: data, aesthetics, geoms.</li><li>Scatter, bar, line, box and histogram, and when each is the right choice.</li><li>Scales, colour, facets and annotation.</li><li>Themes and making a chart presentation-ready.</li><li>Saving charts at the right size and resolution with <code>ggsave()</code>.</li>
+          </ul>
+          
+          
+          <p class="course-deliverable mb-0"><strong>Deliverable:</strong> Three finished charts with captions, exported as image files.</p>
+          
+        </article>
+        
+        <article class="course-module">
+          <div class="course-module-head">
+            <span class="course-module-label">Week 5</span>
+            <h3 class="h6 mb-0">Reproducible reporting</h3>
+          </div>
+          
+          <ul class="course-plain mt-2 mb-0">
+            <li>R Markdown and Quarto: code, output and prose in one document.</li><li>Chunk options, caching, and controlling what the reader sees.</li><li>Rendering to HTML, Word and PDF.</li><li>Parameterised reports: one template, many outputs.</li><li>Git and GitHub basics: commit, push, and recovering earlier versions.</li>
+          </ul>
+          
+          
+          <p class="course-deliverable mb-0"><strong>Deliverable:</strong> A rendered report, tracked in a Git repository.</p>
+          
+        </article>
+        
+        <article class="course-module">
+          <div class="course-module-head">
+            <span class="course-module-label">Week 6</span>
+            <h3 class="h6 mb-0">Capstone project</h3>
+          </div>
+          
+          <ul class="course-plain mt-2 mb-0">
+            <li>Writing your own functions to stop repeating yourself.</li><li>Iterating over groups and files.</li><li>Structuring an analysis others can follow.</li><li>Exploratory analysis on a dataset of your choosing.</li><li>Presenting findings and taking questions.</li>
+          </ul>
+          
+          
+          <p class="course-deliverable mb-0"><strong>Deliverable:</strong> An end to end analysis: raw data in, rendered report out, presented to the cohort.</p>
+          
+        </article>
+        
+      </div>
+      
+
+      
+      
+      <h2 class="h4 mb-3">Assessment</h2>
+      <ul class="course-plain mb-5">
+        <li>Weekly deliverable with written feedback.</li><li>A final capstone project, presented in the last session.</li><li>Certificate of completion for participants who submit the capstone.</li>
+      </ul>
+      
+
+      
+      
+      <div class="course-body mb-5"><h2 id="how-the-cohort-runs">How the cohort runs</h2>
+<p>Sessions are live, with recordings available afterwards. Each week pairs a
+working session with a short practice task, and every task gets individual
+written feedback before the next session.</p>
+<h2 id="questions">Questions</h2>
+<p>If you are unsure whether the level is right for you, get in touch before
+enrolling and describe what you have done in R so far.</p>
+</div>
+      
+
+      
+      <div class="card p-4 text-center">
+        
+          <h2 class="h5 mb-3">Ready to join?</h2>
+          <div>
+            <a href="/enroll/r-for-data-analysis/" class="btn btn-primary">Apply</a>
+            <a href="mailto:ahsanulislam10&#43;website@gmail.com" class="btn btn-outline-secondary ms-2">Ask a question</a>
+          </div>
+        
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  .course-page h1 { font-weight: 600; }
+
+  .course-chip {
+    display: inline-block;
+    font-size: .8rem;
+    font-weight: 500;
+    padding: .3rem .7rem;
+    border-radius: 999px;
+    color: var(--text-secondary-color);
+    background-color: rgba(0,0,0,.02);
+    border: 1px solid rgba(0,0,0,.08);
+  }
+  .dark .course-chip {
+    background-color: rgba(255,255,255,.03);
+    border-color: rgba(255,255,255,.10);
+  }
+  .course-chip.mode {
+    color: var(--primary-color);
+    background-color: rgba(37,99,235,.05);
+    border-color: rgba(37,99,235,.18);
+  }
+  .course-chip.price { font-weight: 600; color: var(--text-color); }
+
+  .course-outcomes, .course-plain { padding-left: 1.15rem; }
+  .course-outcomes li, .course-plain li { margin-bottom: .35rem; }
+  .course-plain li { color: var(--text-secondary-color); }
+
+  .course-modules {
+    border: 1px solid rgba(0,0,0,.08);
+    border-radius: 1rem;
+    overflow: hidden;
+  }
+  .dark .course-modules { border-color: rgba(255,255,255,.10); }
+
+  .course-module { padding: 1.15rem 1.35rem; }
+  .course-module + .course-module { border-top: 1px solid rgba(0,0,0,.06); }
+  .dark .course-module + .course-module { border-top-color: rgba(255,255,255,.08); }
+
+  .course-module-head { display: flex; align-items: baseline; gap: .75rem; flex-wrap: wrap; }
+  .course-module-label {
+    font-size: .7rem;
+    font-weight: 600;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    color: var(--primary-color);
+    white-space: nowrap;
+  }
+  .course-deliverable {
+    margin-top: .6rem;
+    font-size: .875rem;
+    color: var(--text-secondary-color);
+  }
+
+  .course-body h2 { font-size: 1.25rem; margin-top: 1.5rem; }
+  .course-body h3 { font-size: 1.05rem; margin-top: 1.25rem; }
+
+  @media print {
+    header, footer, .btn, .alert { display: none !important; }
+    .course-modules { break-inside: auto; }
+    .course-module { break-inside: avoid; }
+  }
+</style>
+
+  </div><footer>
+      
+  
+   
+   
+  <div class="container py-3" id="recent-posts">
+      
+      
+      
+      
+      <div class="h3 text-center text-secondary py-3">
+          Recent Posts
+      </div>
+      
+      
+      <div class="row justify-content-center">
+          
+          <div class="col-lg-4 col-md-6 pt-2">
+              <div class="card h-100 shadow-sm border-0">
+                  
+                  
+                  <div class="card-body bg-transparent p-3">
+                      <a href="/post/design-your-environment/" class="primary-font text-decoration-none">
+                          <h5 class="card-title" title="Design Your Environment, Design Your Life">Design Your Environment, Design Your Life</h5>
+                      </a>
+                      <div class="card-text secondary-font">
+                          <p class="mb-0"><p>We love to blame our lack of discipline for our stagnation. &ldquo;I’m just lazy,&rdquo; we say, as we sit on a couch staring at a phone that is 2 inches from …</p></p>
+                      </div>
+                  </div>
+                  <div class="mt-auto card-footer bg-white border-0 d-flex justify-content-between align-items-center">
+                      <span class="text-muted small">May 26, 2026</span>
+                      <a href="/post/design-your-environment/" class="btn btn-outline-info btn-sm">Read</a>
+                  </div>
+              </div>
+          </div>
+          
+          <div class="col-lg-4 col-md-6 pt-2">
+              <div class="card h-100 shadow-sm border-0">
+                  
+                  
+                  <div class="card-body bg-transparent p-3">
+                      <a href="/post/ft-research-rank-journals/" class="primary-font text-decoration-none">
+                          <h5 class="card-title" title="50 Journals used in the FT Research Rank">50 Journals used in the FT Research Rank</h5>
+                      </a>
+                      <div class="card-text secondary-font">
+                          <p class="mb-0"><p>The <strong>FT50</strong> list is a compilation of 50 prestigious academic and practitioner journals used by the <em>Financial Times</em> to calculate the <strong>Research Rank</strong> for various MBA …</p></p>
+                      </div>
+                  </div>
+                  <div class="mt-auto card-footer bg-white border-0 d-flex justify-content-between align-items-center">
+                      <span class="text-muted small">Apr 27, 2026</span>
+                      <a href="/post/ft-research-rank-journals/" class="btn btn-outline-info btn-sm">Read</a>
+                  </div>
+              </div>
+          </div>
+          
+          <div class="col-lg-4 col-md-6 pt-2">
+              <div class="card h-100 shadow-sm border-0">
+                  
+                  
+                  <div class="card-body bg-transparent p-3">
+                      <a href="/post/statistical-civil-war-of-estimation/" class="primary-font text-decoration-none">
+                          <h5 class="card-title" title="The Statistical Civil War of Estimation: Frequentists, Bayesians, and the Quest for Truth">The Statistical Civil War of Estimation: Frequentists, Bayesians, and the Quest for Truth</h5>
+                      </a>
+                      <div class="card-text secondary-font">
+                          <p class="mb-0"><p>Today, estimation techniques sit quietly at the center of nearly every data-driven decision, from machine learning models predicting consumer choices to …</p></p>
+                      </div>
+                  </div>
+                  <div class="mt-auto card-footer bg-white border-0 d-flex justify-content-between align-items-center">
+                      <span class="text-muted small">Dec 3, 2025</span>
+                      <a href="/post/statistical-civil-war-of-estimation/" class="btn btn-outline-info btn-sm">Read</a>
+                  </div>
+              </div>
+          </div>
+          
+      </div>
+        
+        <div class="text-center mt-5">
+            <a href="/post" 
+                class="btn btn-lg btn-outline-info px-5 py-3 rounded-pill shadow-sm animate-click">
+                🚀 View All Posts
+            </a>
+        </div>
+  
+  </div>
+  
+
+
+<style>
+ 
+.animate-click {
+    transition: all 0.25s ease;
+}
+.animate-click:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15);
+}
+</style><div class="text-center pt-2">
+    
+    <span class="px-1">
+        <a href="https://github.com/mdahsanulhimel" aria-label="github">
+            <svg xmlns="http://www.w3.org/2000/svg" width="2.7em" height="2.7em" viewBox="0 0 1792 1792">
+                <path id="footer-socialNetworks-github-svg-path"
+                    d="M522 1352q-8 9-20-3-13-11-4-19 8-9 20 3 12 11 4 19zm-42-61q9 12 0 19-8 6-17-7t0-18q9-7 17 6zm-61-60q-5 7-13 2-10-5-7-12 3-5 13-2 10 5 7 12zm31 34q-6 7-16-3-9-11-2-16 6-6 16 3 9 11 2 16zm129 112q-4 12-19 6-17-4-13-15t19-7q16 5 13 16zm63 5q0 11-16 11-17 2-17-11 0-11 16-11 17-2 17 11zm58-10q2 10-14 14t-18-8 14-15q16-2 18 9zm964-956v960q0 119-84.5 203.5t-203.5 84.5h-224q-16 0-24.5-1t-19.5-5-16-14.5-5-27.5v-239q0-97-52-142 57-6 102.5-18t94-39 81-66.5 53-105 20.5-150.5q0-121-79-206 37-91-8-204-28-9-81 11t-92 44l-38 24q-93-26-192-26t-192 26q-16-11-42.5-27t-83.5-38.5-86-13.5q-44 113-7 204-79 85-79 206 0 85 20.5 150t52.5 105 80.5 67 94 39 102.5 18q-40 36-49 103-21 10-45 15t-57 5-65.5-21.5-55.5-62.5q-19-32-48.5-52t-49.5-24l-20-3q-21 0-29 4.5t-5 11.5 9 14 13 12l7 5q22 10 43.5 38t31.5 51l10 23q13 38 44 61.5t67 30 69.5 7 55.5-3.5l23-4q0 38 .5 103t.5 68q0 22-11 33.5t-22 13-33 1.5h-224q-119 0-203.5-84.5t-84.5-203.5v-960q0-119 84.5-203.5t203.5-84.5h960q119 0 203.5 84.5t84.5 203.5z" />
+
+                <metadata>
+                    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                        xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+                        <rdf:Description about="https://iconscout.com/legal#licenses"
+                            dc:title="Github, Online, Project, Hosting, Square"
+                            dc:description="Github, Online, Project, Hosting, Square" dc:publisher="Iconscout"
+                            dc:date="2016-12-14" dc:format="image/svg+xml" dc:language="en">
+                            <dc:creator>
+                                <rdf:Bag>
+                                    <rdf:li>Font Awesome</rdf:li>
+                                </rdf:Bag>
+                            </dc:creator>
+                        </rdf:Description>
+                    </rdf:RDF>
+                </metadata>
+            </svg>
+        </a>
+    </span>
+    
+
+    
+
+    
+
+    
+
+    
+</div><div class="container py-4">
+    <div class="row justify-content-center">
+        <div class="col-md-4 text-center">
+            
+                <div class="pb-2">
+                    <a href="https://mdahsanulhimel.github.io/" title="Ahsan">
+                        <img alt="Footer logo" src="/fav.png"
+                            height="40px" width="40px">
+                    </a>
+                </div>
+            
+            &copy; 2026  All rights reserved
+            <div class="text-secondary">
+                Made with
+                <span class="text-danger">
+                    &#10084;
+                </span>
+                and
+                <a href="https://github.com/gurusabarish/hugo-profile" target="_blank"
+                    title="Designed and developed by gurusabarish">
+                    Hugo Profile
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+</footer><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+<script>
+    var themeToggle = document.getElementById("theme-toggle");
+    if (themeToggle) {
+        themeToggle.addEventListener("click", () => {
+            var dark = !document.body.classList.contains('dark');
+            document.body.classList.toggle('dark', dark);
+            try {
+                localStorage.setItem("pref-theme", dark ? 'dark' : 'light');
+            } catch (e) {   }
+        });
+    }
+
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+    })
+
+</script>
+
+
+    <script src="/js/search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+  <section id="search-content" class="py-2">
+    <div class="container" id="search-results"></div>
+  </section>
+</body>
+
+</html>

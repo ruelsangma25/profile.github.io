@@ -14,7 +14,7 @@ contentCopyright: yes
 description: "Nothing is better resource than a book. So, in this post, I've shared some books that have been extremely helpful to me in my quest to learn multivariate analysis."
 summary: "Nothing is better resource than a book. So, in this post, I've shared some books that have been extremely helpful to me in my quest ..."
 images:
-- https://MdAhsanulHimel.github.io/2022/06/19/books-multivariate-analysis/books-multivariate-analysis.png
+- books-multivariate-analysis.png
 ---
 
 ```{r, include=FALSE}

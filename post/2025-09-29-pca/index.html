@@ -29,7 +29,7 @@
 
 
 
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-XHMN5CZBNV"></script>
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-DNBSPWH7TR"></script>
       <script>
         var doNotTrack = false;
         if ( false ) {
@@ -40,10 +40,10 @@
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
-          gtag('config', 'G-XHMN5CZBNV');
+          gtag('config', 'G-DNBSPWH7TR');
         }
       </script>
-<meta property="og:url" content="https://ahsan.netlify.app/post/2025-09-29-pca/">
+<meta property="og:url" content="https://mdahsanul.netlify.app/post/2025-09-29-pca/">
   <meta property="og:site_name" content="Ahsan">
   <meta property="og:title" content="Principal Component Analysis - Theory and Application with R">
   <meta property="og:description" content="PCA is a technique to transform the original set of variables into a smaller set of linear combination of variables so that most of the statistical information is preserved by those linear combinations. Before diving into the PCA, there are a few things one should be aware of...">
@@ -77,22 +77,22 @@
 
 <style>
     :root {
-        --text-color: #343a40;
-        --text-secondary-color: #6c757d;
-        --text-link-color: #007bff;
-        --background-color: #fff;
-        --secondary-background-color: #64ffda1a;
-        --primary-color: #007bff;
-        --secondary-color: #f8f9fa;
+        --text-color: #1e293b;
+        --text-secondary-color: #475569;
+        --text-link-color: #2563eb;
+        --background-color: #ffffff;
+        --secondary-background-color: #f1f5f9;
+        --primary-color: #2563eb;
+        --secondary-color: #f8fafc;
 
          
-        --text-color-dark: #e4e6eb;
-        --text-secondary-color-dark: #b0b3b8;
-        --text-link-color-dark: #ffffff;
-        --background-color-dark: #18191a;
-        --secondary-background-color-dark: #212529;
-        --primary-color-dark: #ffffff;
-        --secondary-color-dark: #212529;
+        --text-color-dark: #f8fafc;
+        --text-secondary-color-dark: #94a3b8;
+        --text-link-color-dark: #3b82f6;
+        --background-color-dark: #0f172a;
+        --secondary-background-color-dark: #1e293b;
+        --primary-color-dark: #3b82f6;
+        --secondary-color-dark: #1e293b;
     }
     body {
         font-size: 1rem;
@@ -159,6 +159,8 @@
 
 
   
+  
+    <link rel="stylesheet" href="/style.css">
   
 
   <title>
@@ -256,6 +258,15 @@ Principal Component Analysis - Theory and Application with R | Ahsan
                         </li>
                     
                         <li class="nav-item navbar-text">
+                            <a class="nav-link" href="/#courses" title="Courses">
+                                
+                                    <i class="fas fa-chalkboard-teacher"></i>  
+                                
+                                Courses
+                            </a>
+                        </li>
+                    
+                        <li class="nav-item navbar-text">
                             <a class="nav-link" href="/#youtube" title="Youtube">
                                 
                                     <i class="fas fa-chalkboard-teacher"></i>  
@@ -349,14 +360,33 @@ Principal Component Analysis - Theory and Application with R | Ahsan
           
 
           <article class="page-content p-2">
-            <!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+            <script src="https://mdahsanul.netlify.app/post/2025-09-29-pca/index_files/kePrint/kePrint.js"></script>
+<link href="https://mdahsanul.netlify.app/post/2025-09-29-pca/index_files/lightable/lightable.css" rel="stylesheet" />
+<script src="https://mdahsanul.netlify.app/post/2025-09-29-pca/index_files/kePrint/kePrint.js"></script>
+<link href="https://mdahsanul.netlify.app/post/2025-09-29-pca/index_files/lightable/lightable.css" rel="stylesheet" />
+<script src="https://mdahsanul.netlify.app/post/2025-09-29-pca/index_files/kePrint/kePrint.js"></script>
+<link href="https://mdahsanul.netlify.app/post/2025-09-29-pca/index_files/lightable/lightable.css" rel="stylesheet" />
+<script src="https://mdahsanul.netlify.app/post/2025-09-29-pca/index_files/kePrint/kePrint.js"></script>
+<link href="https://mdahsanul.netlify.app/post/2025-09-29-pca/index_files/lightable/lightable.css" rel="stylesheet" />
+<script src="https://mdahsanul.netlify.app/post/2025-09-29-pca/index_files/kePrint/kePrint.js"></script>
+<link href="https://mdahsanul.netlify.app/post/2025-09-29-pca/index_files/lightable/lightable.css" rel="stylesheet" />
+<script src="https://mdahsanul.netlify.app/post/2025-09-29-pca/index_files/kePrint/kePrint.js"></script>
+<link href="https://mdahsanul.netlify.app/post/2025-09-29-pca/index_files/lightable/lightable.css" rel="stylesheet" />
+<link href="https://mdahsanul.netlify.app/post/2025-09-29-pca/index_files/htmltools-fill/fill.css" rel="stylesheet" />
+<script src="https://mdahsanul.netlify.app/post/2025-09-29-pca/index_files/htmlwidgets/htmlwidgets.js"></script>
+<script src="https://mdahsanul.netlify.app/post/2025-09-29-pca/index_files/plotly-binding/plotly.js"></script>
+<script src="https://mdahsanul.netlify.app/post/2025-09-29-pca/index_files/typedarray/typedarray.min.js"></script>
+<script src="https://mdahsanul.netlify.app/post/2025-09-29-pca/index_files/jquery/jquery.min.js"></script>
+<link href="https://mdahsanul.netlify.app/post/2025-09-29-pca/index_files/crosstalk/css/crosstalk.min.css" rel="stylesheet" />
+<script src="https://mdahsanul.netlify.app/post/2025-09-29-pca/index_files/crosstalk/js/crosstalk.min.js"></script>
+<link href="https://mdahsanul.netlify.app/post/2025-09-29-pca/index_files/plotly-htmlwidgets-css/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="https://mdahsanul.netlify.app/post/2025-09-29-pca/index_files/plotly-main/plotly-latest.min.js"></script>
 <hr>
 <h2 id="introduction">Introduction</h2>
 <p>Karl Pearson invented PCA in 1901, defining it as “On lines and planes of closest fit to systems of points in space.”](<a href="https://www.tandfonline.com/doi/abs/10.1080/14786440109462720">https://www.tandfonline.com/doi/abs/10.1080/14786440109462720</a>) Harold Hotelling later developed and named it independently in the <a href="https://content.apa.org/record/1934-00645-001">1930s</a>.</p>
-<p>Principal component analysis (PCA) is a technique to transform the original set of variables into a smaller set of linear combination of variables so that most of the statistical information (variance) in the original data is preserved by those linear combinations. It accomplishes this by generating new uncorrelated variables that gradually maximize variance. Finding such new variables, known as principal components (PCs), is essentially the same as solving an eigenvalue/eigenvector problem.<!-- raw HTML omitted --><sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup><!-- raw HTML omitted --></p>
+<p>Principal component analysis (PCA) is a technique to transform the original set of variables into a smaller set of linear combination of variables so that most of the statistical information (variance) in the original data is preserved by those linear combinations. It accomplishes this by generating new uncorrelated variables that gradually maximize variance. Finding such new variables, known as principal components (PCs), is essentially the same as solving an eigenvalue/eigenvector problem.<cite><sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></cite></p>
 <p>An eigen vector is a direction of the transformation of the original dataset for which no information in the data is lost and an eigenvalue shows the amount of variance that is explained in the data in that direction. So the eigen vector corresponding to the highest eigenvalue is the first principal component.</p>
-<p>Geometrically to say, PCA is a type of linear transformation of a given dataset \X\ that contains values for a given number of variables (or say coordinates) for a given number of spaces. This linear transformation fits this dataset to a new coordinate system in such a way that the first coordinate (component) has the most variation, and each subsequent coordinate is orthogonal to the first and has less variance.<!-- raw HTML omitted --><sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup><!-- raw HTML omitted -->,<!-- raw HTML omitted --><sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>&lt;\cite&gt;</p>
+<p>Geometrically to say, PCA is a type of linear transformation of a given dataset <code>\(X\)</code> that contains values for a given number of variables (or say coordinates) for a given number of spaces. This linear transformation fits this dataset to a new coordinate system in such a way that the first coordinate (component) has the most variation, and each subsequent coordinate is orthogonal to the first and has less variance.<cite><sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></cite>,<cite><sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>&lt;\cite&gt;</p>
 <hr>
 <h2 id="underlying-theory">Underlying Theory</h2>
 <p><img src="image/pca1.gif" alt=""></p>
@@ -381,64 +411,60 @@ Principal Component Analysis - Theory and Application with R | Ahsan
 </li>
 </ol>
 <h3 id="theory">Theory</h3>
-<p>Let, p be the number of variables, n be the number of observations, \ X \ be a \p n\ matrix of a dataset, mean vector \{X}\ be a zero vector and the variance-covariance matrix \\ be a real <a href="https://nhigham.com/2020/07/21/what-is-a-symmetric-positive-definite-matrix/">positive definite matrix</a> or at least <a href="https://www.cse.iitk.ac.in/users/rmittal/prev_course/s14/notes/lec11.pdf">positive semi-definite</a> of rank \r p\.</p>
-<p>Let,\ _i  i=1,2,…,p \ be the eigen values of \\ where, \_1 &gt; _2 &gt; _3 &gt; … &gt; _p\ and their corresponding eigenvectors are \_1, _2, _3, …, _p\.</p>
-<p>where, \D\ is a diagonal matrix where the diagonal elements are the eigenvalues -
-$$
-D =\begin{bmatrix}
-\lambda_1 &amp; 0 &amp; &hellip; &amp; 0\newline
-0 &amp; \lambda_2 &amp; &hellip; &amp; 0\newline
-. &amp; . &amp; &hellip; &amp; .\newline
-0 &amp; 0 &amp; &hellip; &amp; \lambda_p
+<p>Let, p be the number of variables, n be the number of observations, $ X $ be a <code>\(p \times n\)</code> matrix of a dataset, mean vector <code>\(\bar{X}\)</code> be a zero vector and the variance-covariance matrix <code>\(\Sigma\)</code> be a real <a href="https://nhigham.com/2020/07/21/what-is-a-symmetric-positive-definite-matrix/">positive definite matrix</a> or at least <a href="https://www.cse.iitk.ac.in/users/rmittal/prev_course/s14/notes/lec11.pdf">positive semi-definite</a> of rank <code>\(r \le p\)</code>.</p>
+<p>Let,$ _i  i=1,2,…,p $ be the eigen values of <code>\(\Sigma\)</code> where, <code>\(\lambda_1 &gt; \lambda_2 &gt; \lambda_3 &gt; ... &gt; \lambda_p\)</code> and their corresponding eigenvectors are <code>\(\gamma_1, \gamma_2, \gamma_3, ..., \gamma_p\)</code>.</p>
+<p>where, <code>\(D\)</code> is a diagonal matrix where the diagonal elements are the eigenvalues -</p>
+<pre tabindex="0"><code class="language-math" data-lang="math">D =\begin{bmatrix} 
+\lambda_1 &amp; 0 &amp; ... &amp; 0\newline 
+0 &amp; \lambda_2 &amp; ... &amp; 0\newline 
+. &amp; . &amp; ... &amp; .\newline 
+0 &amp; 0 &amp; ... &amp; \lambda_p
 \end{bmatrix}_{p\ \times\ p}
-$$</p>
-<p>and the matrix of eigen vectors,
-$$
-\Gamma =\begin{bmatrix} \gamma_1,\ \gamma_2,\ &hellip;\ ,\gamma_p\ \end{bmatrix}_{p\ \times\ p}
-$$</p>
-<p>The matrix \\ diagonalizes \\ such that, \D = ’ \ or, \=D’\</p>
-<p><em>Since \\ is an orthogonal matrix, then \‘=’= I\.<!-- raw HTML omitted --><sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup><!-- raw HTML omitted --></em></p>
-<p>We consider an orthogonal transformation (that will preserve all the information) of \X\ into \Y\ by -<br>
-\Y=’X\</p>
+</code></pre><p>and the matrix of eigen vectors,</p>
+<pre tabindex="0"><code class="language-math" data-lang="math">\Gamma =\begin{bmatrix} \gamma_1,\ \gamma_2,\ ...\ ,\gamma_p\\ \end{bmatrix}_{p\ \times\ p}
+</code></pre><p>The matrix <code>\(\Gamma\)</code> diagonalizes <code>\(\Sigma\)</code> such that, <code>\(D = \Gamma' \Sigma \Gamma\)</code> or, <code>\(\Sigma=\Gamma D\Gamma'\)</code></p>
+<p><em>Since <code>\(\Gamma\)</code> is an orthogonal matrix, then <code>\(\Gamma\Gamma'=\Gamma'\Gamma =  I\)</code>.<cite><sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup></cite></em></p>
+<p>We consider an orthogonal transformation (that will preserve all the information) of <code>\(X\)</code> into <code>\(Y\)</code> by -<br>
+<code>\(Y=\Gamma'X\)</code></p>
 <p>or,<br>
-\
+$
 =’
-\</p>
-<p>Here, \Y_1\, \Y_2\, …, \Y_p\ are the p components of \Y\ and are called the Principal Components.</p>
-<p>For example if \X=[x_1   x_2]\ is a two variable data set and the first eigen vactor is \[a    b]’\.</p>
-<p>Then the first principal component will be - \P_1=x_1a+x_2 b\</p>
-<p>Similarly if the second eigen vector is \[c   d]’\ then the second principal component will be - \P_2=x_1c+x_2 d\</p>
+$</p>
+<p>Here, <code>\(Y_1\)</code>, <code>\(Y_2\)</code>, …, <code>\(Y_p\)</code> are the p components of <code>\(Y\)</code> and are called the Principal Components.</p>
+<p>For example if <code>\(X=[x_1\ \ \ x_2]\)</code> is a two variable data set and the first eigen vactor is <code>\([a\ \ \  b]'\)</code>.</p>
+<p>Then the first principal component will be - <code>\(P_1=x_1\times a+x_2 \times b\)</code></p>
+<p>Similarly if the second eigen vector is <code>\([c\ \ \ d]'\)</code> then the second principal component will be - <code>\(P_2=x_1\times c+x_2 \times d\)</code></p>
 <hr>
 <h4 id="preserving-variance">Preserving Variance</h4>
 <p><strong>How does the technique preserve the total variation after the transformation?</strong></p>
-<p>Since \\ is the variance-covariance matrix of \X\, we can measure the following things:</p>
+<p>Since <code>\(\Sigma\)</code> is the variance-covariance matrix of <code>\(X\)</code>, we can measure the following things:</p>
 <ol>
-<li>Overall measure of the variability of \X\ as \trace()\ or,</li>
-<li>Generalized variance of \X\ as \||\</li>
+<li>Overall measure of the variability of <code>\(X\)</code> as <code>\(trace(\Sigma)\)</code> or,</li>
+<li>Generalized variance of <code>\(X\)</code> as <code>\(|\Sigma|\)</code></li>
 </ol>
-<p>Now, \trace()\<br>
-\=trace(D‘)\<br>
-\=trace(’D)\ <a href="https://en.wikipedia.org/wiki/Trace_(linear_algebra)#Cyclic_property">[Cyclic property]</a><br>
-\=trace(D)\ [Since, \\ is an orthogonal matrix]<br>
-\=_{i=1}^{p}_i\</p>
-<p>Again, \||\<br>
-\=|D‘|\<br>
-\=||| D||’|\<br>
-\=|D|\
-\=_{i=1}^{p}_i\</p>
-<p>Now we have the transformation, \Y=’X\</p>
-<p>Here, \E[Y] = E[’X]=‘E[X]=0\<br>
-and \V(Y)=E[YY’]=E[’XX’]=’E[XX’]=’ =D\</p>
-<p>Thus, for \Y\, overall measure of variability is \trace(D)=_{i=1}<!-- raw HTML omitted -->{p}<em>i\<br>
-or, generalized variance is \|D|=</em>{i=1}<!-- raw HTML omitted -->{p}_i\</p>
-<p>Which shows that the total variation of \X\ remains unchanged in \Y\.</p>
+<p>Now, <code>\(trace(\Sigma)\)</code><br>
+<code>\(=trace(\Gamma D\Gamma')\)</code><br>
+<code>\(=trace(\Gamma'\Gamma D)\)</code> <a href="https://en.wikipedia.org/wiki/Trace_(linear_algebra)#Cyclic_property">[Cyclic property]</a><br>
+<code>\(=trace(D)\)</code> [Since, <code>\(\Gamma\)</code> is an orthogonal matrix]<br>
+<code>\(=\sum_{i=1}^{p}\lambda_i\)</code></p>
+<p>Again, <code>\(|\Sigma|\)</code><br>
+<code>\(=|\Sigma D\Sigma'|\)</code><br>
+<code>\(=|\Sigma|\times| D|\times|\Sigma'|\)</code><br>
+<code>\(=|D|\)</code>
+<code>\(=\prod_{i=1}^{p}\lambda_i\)</code></p>
+<p>Now we have the transformation, <code>\(Y=\Gamma'X\)</code></p>
+<p>Here, <code>\(E[Y] = E[\Gamma'X]=\Gamma'E[X]=0\)</code><br>
+and <code>\(V(Y)=E[YY']=E[\Gamma'XX'\Gamma]=\Gamma'E[XX']\Gamma=\Gamma' \Sigma \Gamma=D\)</code></p>
+<p>Thus, for <code>\(Y\)</code>, overall measure of variability is <code>\(trace(D)=\sum_{i=1}^{p}\lambda_i\)</code><br>
+or, generalized variance is <code>\(|D|=\prod_{i=1}^{p}\lambda_i\)</code></p>
+<p>Which shows that the total variation of <code>\(X\)</code> remains unchanged in <code>\(Y\)</code>.</p>
 <hr>
 <h4 id="measuring-accounted-variance-by-pcs">Measuring Accounted Variance by PCs</h4>
 <p><strong>How to know the percentage of variation that is explained by a principal component?</strong></p>
-<p>Since \\ is a positive definite matrix, the strict positivity of \_i\ is guaranteed.</p>
-<p>Now, \Y_1\ is the first principal component corresponding to first eigenvalue \_1\, and similarly \Y_i\ is the i-th principal component corresponding to i-th eigenvalue \_i\.</p>
-<p>The percentage of variation of the original data \X\ explained by the i-th principal component is calculated using \\</p>
-<p>At the beginning of the theory development since \_i\s were taken such as \_1 &gt; _2 &gt; _3 &gt; &gt; _p\, the first principal component explains the largest amount of variation.</p>
+<p>Since <code>\(\Sigma\)</code> is a positive definite matrix, the strict positivity of <code>\(\lambda_i\)</code> is guaranteed.</p>
+<p>Now, <code>\(Y_1\)</code> is the first principal component corresponding to first eigenvalue <code>\(\lambda_1\)</code>, and similarly <code>\(Y_i\)</code> is the i-th principal component corresponding to i-th eigenvalue <code>\(\lambda_i\)</code>.</p>
+<p>The percentage of variation of the original data <code>\(X\)</code> explained by the i-th principal component is calculated using <code>\(\frac{\lambda_i}{\sum_{i=1}^{p}\lambda_i}\times 100\)</code></p>
+<p>At the beginning of the theory development since <code>\(\lambda_i\)</code>s were taken such as <code>\(\lambda_1 &gt; \lambda_2 &gt; \lambda_3 &gt; \dots &gt; \lambda_p\)</code>, the first principal component explains the largest amount of variation.</p>
 <hr>
 <h3 id="practical-demonstration">Practical Demonstration</h3>
 <h3 id="dataset">Dataset</h3>
@@ -475,8 +501,8 @@ or, generalized variance is \|D|=</em>{i=1}<!-- raw HTML omitted -->{p}_i\</p>
 </span></span><span style="display:flex;"><span>  <span style="color:#000">labs</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">title</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;Correlations Matrix: Principal Component Transformed&#34;</span><span style="color:#000;font-weight:bold">)</span>
 </span></span><span style="display:flex;"><span><span style="color:#000">ggpubr</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#000">ggarrange</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">a</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">b</span><span style="color:#000;font-weight:bold">,</span> 
 </span></span><span style="display:flex;"><span>          <span style="color:#000">ncol</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">nrow</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">)</span>
-</span></span></code></pre></div><!-- raw HTML omitted -->
-<p>The idea is that if many variables correlate with one another, they will all contribute strongly to the same principal component.<!-- raw HTML omitted --><sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup><!-- raw HTML omitted --></p>
+</span></span></code></pre></div><img src="https://mdahsanul.netlify.app/post/2025-09-29-pca/index_files/figure-html/unnamed-chunk-3-1.png" alt="" width="960" />
+<p>The idea is that if many variables correlate with one another, they will all contribute strongly to the same principal component.<cite><sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup></cite></p>
 <h3 id="manual-calculation">Manual Calculation</h3>
 <p>The principal components can be found using things -</p>
 <ol>
@@ -485,11 +511,9 @@ or, generalized variance is \|D|=</em>{i=1}<!-- raw HTML omitted -->{p}_i\</p>
 </ol>
 <p>If the data is not standardized, it is suggested to use the correlation matrix in principal component analysis. Because the variance of variable is affected by the scale of measurement.</p>
 <p>But if the data is standardized, both of variance-covariance matrix and correlation matrix gives the same principal components. So, it is recommended to use standardize the data before performing principal component analysis.</p>
-<p>Standardization is done using the following formula -
-$$
-Z = \frac{X-\mu}{\sigma}
-$$</p>
-<p>Calculating mean vector -</p>
+<p>Standardization is done using the following formula -</p>
+<pre tabindex="0"><code class="language-math" data-lang="math">Z = \frac{X-\mu}{\sigma}
+</code></pre><p>Calculating mean vector -</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#000">mn</span> <span style="color:#ce5c00;font-weight:bold">&lt;-</span> <span style="color:#000">colMeans</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">df_unstd</span><span style="color:#000;font-weight:bold">)</span>   <span style="color:#8f5902;font-style:italic"># Mean vector</span>
 </span></span><span style="display:flex;"><span><span style="color:#000">mn</span>
 </span></span></code></pre></div><pre><code>#       x1       x2       x3       x4       x5       x6       x7 
@@ -524,14 +548,152 @@ $$</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#000">eigcorr</span> <span style="color:#ce5c00;font-weight:bold">&lt;-</span> <span style="color:#000">eigen</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">cor</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">df_std</span><span style="color:#000;font-weight:bold">))</span>      <span style="color:#8f5902;font-style:italic"># using correlation matrix on standardized data</span>
 </span></span><span style="display:flex;"><span><span style="color:#000">output</span> <span style="color:#ce5c00;font-weight:bold">&lt;-</span> <span style="color:#000">cbind</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">eigenvalue</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">round</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">eigcorr</span><span style="color:#ce5c00;font-weight:bold">$</span><span style="color:#000">values</span><span style="color:#000;font-weight:bold">,</span><span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">),</span>
 </span></span><span style="display:flex;"><span>      <span style="color:#000">cumul_percentage</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">round</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">cumsum</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">eigcorr</span><span style="color:#ce5c00;font-weight:bold">$</span><span style="color:#000">values</span><span style="color:#ce5c00;font-weight:bold">/</span><span style="color:#000">sum</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">eigcorr</span><span style="color:#ce5c00;font-weight:bold">$</span><span style="color:#000">values</span><span style="color:#000;font-weight:bold">))</span><span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#0000cf;font-weight:bold">100</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">))</span>
-</span></span></code></pre></div><!-- raw HTML omitted -->
+</span></span></code></pre></div><table class="table table-striped table-hover" style="font-size: 12px; width: auto !important; ">
+<thead>
+<tr>
+<th style="text-align:right;">
+<p>Eigen Values</p>
+</th>
+<th style="text-align:right;">
+<p>Cumulative Percentage</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+<p>4.50</p>
+</td>
+<td style="text-align:right;">
+<p>64.32</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<p>1.77</p>
+</td>
+<td style="text-align:right;">
+<p>89.66</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<p>0.28</p>
+</td>
+<td style="text-align:right;">
+<p>93.71</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<p>0.19</p>
+</td>
+<td style="text-align:right;">
+<p>96.47</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<p>0.15</p>
+</td>
+<td style="text-align:right;">
+<p>98.56</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<p>0.07</p>
+</td>
+<td style="text-align:right;">
+<p>99.50</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<p>0.03</p>
+</td>
+<td style="text-align:right;">
+<p>100.00</p>
+</td>
+</tr>
+</tbody>
+</table>
 <p>It is seen that the first principal component can explain 64.32% of the total variation in the data. The second principal component explains 25.35% variance. Similarly the third PC explains 4.04% variance.</p>
 <p>Thus the first two principal components together explain 89.66% of the total variance.</p>
 <p>Using correlation matrix of <strong>unstandardized</strong> data to calculate eigenvalues -</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#000">eigcorr</span> <span style="color:#ce5c00;font-weight:bold">&lt;-</span> <span style="color:#000">eigen</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">cor</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">df_unstd</span><span style="color:#000;font-weight:bold">))</span>      <span style="color:#8f5902;font-style:italic"># using correlation matrix on unstandardized data</span>
 </span></span><span style="display:flex;"><span><span style="color:#000">output</span> <span style="color:#ce5c00;font-weight:bold">&lt;-</span> <span style="color:#000">cbind</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">eigenvalue</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">round</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">eigcorr</span><span style="color:#ce5c00;font-weight:bold">$</span><span style="color:#000">values</span><span style="color:#000;font-weight:bold">,</span><span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">),</span>
 </span></span><span style="display:flex;"><span>                <span style="color:#000">cumul_percentage</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">round</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">cumsum</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">eigcorr</span><span style="color:#ce5c00;font-weight:bold">$</span><span style="color:#000">values</span><span style="color:#ce5c00;font-weight:bold">/</span><span style="color:#000">sum</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">eigcorr</span><span style="color:#ce5c00;font-weight:bold">$</span><span style="color:#000">values</span><span style="color:#000;font-weight:bold">))</span><span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#0000cf;font-weight:bold">100</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">))</span>
-</span></span></code></pre></div><!-- raw HTML omitted -->
+</span></span></code></pre></div><table class="table table-striped table-hover" style="font-size: 12px; width: auto !important; ">
+<thead>
+<tr>
+<th style="text-align:right;">
+<p>Eigen Values</p>
+</th>
+<th style="text-align:right;">
+<p>Cumulative Percentage</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+<p>4.50</p>
+</td>
+<td style="text-align:right;">
+<p>64.32</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<p>1.77</p>
+</td>
+<td style="text-align:right;">
+<p>89.66</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<p>0.28</p>
+</td>
+<td style="text-align:right;">
+<p>93.71</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<p>0.19</p>
+</td>
+<td style="text-align:right;">
+<p>96.47</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<p>0.15</p>
+</td>
+<td style="text-align:right;">
+<p>98.56</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<p>0.07</p>
+</td>
+<td style="text-align:right;">
+<p>99.50</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<p>0.03</p>
+</td>
+<td style="text-align:right;">
+<p>100.00</p>
+</td>
+</tr>
+</tbody>
+</table>
 <p>So, it is verified that the principal components are not affected by the scales if the correlation matrix is used.</p>
 <p>The eigen vectors -</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#000">round</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">eigcorr</span><span style="color:#ce5c00;font-weight:bold">$</span><span style="color:#000">vectors</span><span style="color:#000;font-weight:bold">,</span><span style="color:#0000cf;font-weight:bold">3</span><span style="color:#000;font-weight:bold">)</span>
@@ -554,20 +716,1014 @@ $$</p>
 </span></span><span style="display:flex;"><span>             <span style="color:#000;font-weight:bold">),</span>
 </span></span><span style="display:flex;"><span>             <span style="color:#000">bootstrap_options</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">c</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;striped&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;hover&#34;</span><span style="color:#000;font-weight:bold">),</span>
 </span></span><span style="display:flex;"><span>             <span style="color:#000">full_width</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#3465a4">T</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">font_size</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">12</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">position</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;left&#34;</span><span style="color:#000;font-weight:bold">))</span>
-</span></span></code></pre></div><!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+</span></span></code></pre></div><div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:300px; ">
+<table class="table table-striped table-hover" style="font-size: 12px; ">
+<thead>
+<tr>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+<p>PC1</p>
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+<p>PC2</p>
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+<p>PC3</p>
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+<p>PC4</p>
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+<p>PC5</p>
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+<p>PC6</p>
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+<p>PC7</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+<p>-1.66</p>
+</td>
+<td style="text-align:right;">
+<p>-1.61</p>
+</td>
+<td style="text-align:right;">
+<p>-0.45</p>
+</td>
+<td style="text-align:right;">
+<p>0.40</p>
+</td>
+<td style="text-align:right;">
+<p>0.32</p>
+</td>
+<td style="text-align:right;">
+<p>0.34</p>
+</td>
+<td style="text-align:right;">
+<p>-0.13</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<p>-0.56</p>
+</td>
+<td style="text-align:right;">
+<p>-1.88</p>
+</td>
+<td style="text-align:right;">
+<p>-0.55</p>
+</td>
+<td style="text-align:right;">
+<p>0.30</p>
+</td>
+<td style="text-align:right;">
+<p>0.09</p>
+</td>
+<td style="text-align:right;">
+<p>0.35</p>
+</td>
+<td style="text-align:right;">
+<p>-0.19</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<p>-2.67</p>
+</td>
+<td style="text-align:right;">
+<p>-1.31</p>
+</td>
+<td style="text-align:right;">
+<p>0.05</p>
+</td>
+<td style="text-align:right;">
+<p>0.68</p>
+</td>
+<td style="text-align:right;">
+<p>0.22</p>
+</td>
+<td style="text-align:right;">
+<p>0.31</p>
+</td>
+<td style="text-align:right;">
+<p>0.05</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<p>0.22</p>
+</td>
+<td style="text-align:right;">
+<p>-2.57</p>
+</td>
+<td style="text-align:right;">
+<p>-0.97</p>
+</td>
+<td style="text-align:right;">
+<p>-0.02</p>
+</td>
+<td style="text-align:right;">
+<p>0.14</p>
+</td>
+<td style="text-align:right;">
+<p>0.30</p>
+</td>
+<td style="text-align:right;">
+<p>0.14</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<p>1.80</p>
+</td>
+<td style="text-align:right;">
+<p>-2.71</p>
+</td>
+<td style="text-align:right;">
+<p>-0.56</p>
+</td>
+<td style="text-align:right;">
+<p>-0.45</p>
+</td>
+<td style="text-align:right;">
+<p>-0.14</p>
+</td>
+<td style="text-align:right;">
+<p>-0.01</p>
+</td>
+<td style="text-align:right;">
+<p>-0.40</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<p>0.53</p>
+</td>
+<td style="text-align:right;">
+<p>-1.85</p>
+</td>
+<td style="text-align:right;">
+<p>0.51</p>
+</td>
+<td style="text-align:right;">
+<p>-0.28</p>
+</td>
+<td style="text-align:right;">
+<p>-0.18</p>
+</td>
+<td style="text-align:right;">
+<p>0.06</p>
+</td>
+<td style="text-align:right;">
+<p>0.06</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<p>-2.49</p>
+</td>
+<td style="text-align:right;">
+<p>-0.64</p>
+</td>
+<td style="text-align:right;">
+<p>0.09</p>
+</td>
+<td style="text-align:right;">
+<p>0.06</p>
+</td>
+<td style="text-align:right;">
+<p>0.16</p>
+</td>
+<td style="text-align:right;">
+<p>-0.38</p>
+</td>
+<td style="text-align:right;">
+<p>0.28</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<p>-1.24</p>
+</td>
+<td style="text-align:right;">
+<p>-1.94</p>
+</td>
+<td style="text-align:right;">
+<p>-0.18</p>
+</td>
+<td style="text-align:right;">
+<p>-0.14</p>
+</td>
+<td style="text-align:right;">
+<p>-0.40</p>
+</td>
+<td style="text-align:right;">
+<p>-0.54</p>
+</td>
+<td style="text-align:right;">
+<p>0.00</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<p>-0.36</p>
+</td>
+<td style="text-align:right;">
+<p>-1.49</p>
+</td>
+<td style="text-align:right;">
+<p>0.42</p>
+</td>
+<td style="text-align:right;">
+<p>0.27</p>
+</td>
+<td style="text-align:right;">
+<p>0.27</p>
+</td>
+<td style="text-align:right;">
+<p>-0.28</p>
+</td>
+<td style="text-align:right;">
+<p>-0.12</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<p>-1.32</p>
+</td>
+<td style="text-align:right;">
+<p>-1.82</p>
+</td>
+<td style="text-align:right;">
+<p>1.18</p>
+</td>
+<td style="text-align:right;">
+<p>-0.24</p>
+</td>
+<td style="text-align:right;">
+<p>-0.29</p>
+</td>
+<td style="text-align:right;">
+<p>-0.08</p>
+</td>
+<td style="text-align:right;">
+<p>0.10</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<p>-1.21</p>
+</td>
+<td style="text-align:right;">
+<p>-1.38</p>
+</td>
+<td style="text-align:right;">
+<p>0.26</p>
+</td>
+<td style="text-align:right;">
+<p>-0.14</p>
+</td>
+<td style="text-align:right;">
+<p>-0.03</p>
+</td>
+<td style="text-align:right;">
+<p>-0.21</p>
+</td>
+<td style="text-align:right;">
+<p>0.31</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<p>-2.88</p>
+</td>
+<td style="text-align:right;">
+<p>-0.99</p>
+</td>
+<td style="text-align:right;">
+<p>0.90</p>
+</td>
+<td style="text-align:right;">
+<p>0.20</p>
+</td>
+<td style="text-align:right;">
+<p>0.20</p>
+</td>
+<td style="text-align:right;">
+<p>-0.10</p>
+</td>
+<td style="text-align:right;">
+<p>-0.02</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<p>-2.28</p>
+</td>
+<td style="text-align:right;">
+<p>1.26</p>
+</td>
+<td style="text-align:right;">
+<p>0.51</p>
+</td>
+<td style="text-align:right;">
+<p>0.07</p>
+</td>
+<td style="text-align:right;">
+<p>0.09</p>
+</td>
+<td style="text-align:right;">
+<p>0.48</p>
+</td>
+<td style="text-align:right;">
+<p>-0.17</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<p>-2.16</p>
+</td>
+<td style="text-align:right;">
+<p>1.30</p>
+</td>
+<td style="text-align:right;">
+<p>0.45</p>
+</td>
+<td style="text-align:right;">
+<p>0.68</p>
+</td>
+<td style="text-align:right;">
+<p>-0.51</p>
+</td>
+<td style="text-align:right;">
+<p>0.27</p>
+</td>
+<td style="text-align:right;">
+<p>-0.01</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<p>-1.41</p>
+</td>
+<td style="text-align:right;">
+<p>1.23</p>
+</td>
+<td style="text-align:right;">
+<p>0.50</p>
+</td>
+<td style="text-align:right;">
+<p>0.09</p>
+</td>
+<td style="text-align:right;">
+<p>-0.60</p>
+</td>
+<td style="text-align:right;">
+<p>0.02</p>
+</td>
+<td style="text-align:right;">
+<p>-0.33</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<p>-0.87</p>
+</td>
+<td style="text-align:right;">
+<p>0.73</p>
+</td>
+<td style="text-align:right;">
+<p>-0.53</p>
+</td>
+<td style="text-align:right;">
+<p>0.00</p>
+</td>
+<td style="text-align:right;">
+<p>-0.72</p>
+</td>
+<td style="text-align:right;">
+<p>0.43</p>
+</td>
+<td style="text-align:right;">
+<p>0.48</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<p>-1.30</p>
+</td>
+<td style="text-align:right;">
+<p>0.90</p>
+</td>
+<td style="text-align:right;">
+<p>0.11</p>
+</td>
+<td style="text-align:right;">
+<p>-0.44</p>
+</td>
+<td style="text-align:right;">
+<p>0.63</p>
+</td>
+<td style="text-align:right;">
+<p>-0.11</p>
+</td>
+<td style="text-align:right;">
+<p>0.01</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<p>-0.97</p>
+</td>
+<td style="text-align:right;">
+<p>0.68</p>
+</td>
+<td style="text-align:right;">
+<p>-0.61</p>
+</td>
+<td style="text-align:right;">
+<p>0.11</p>
+</td>
+<td style="text-align:right;">
+<p>-0.05</p>
+</td>
+<td style="text-align:right;">
+<p>-0.44</p>
+</td>
+<td style="text-align:right;">
+<p>-0.29</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<p>-0.09</p>
+</td>
+<td style="text-align:right;">
+<p>0.30</p>
+</td>
+<td style="text-align:right;">
+<p>-0.67</p>
+</td>
+<td style="text-align:right;">
+<p>-1.31</p>
+</td>
+<td style="text-align:right;">
+<p>-0.02</p>
+</td>
+<td style="text-align:right;">
+<p>0.15</p>
+</td>
+<td style="text-align:right;">
+<p>0.20</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<p>-1.84</p>
+</td>
+<td style="text-align:right;">
+<p>1.42</p>
+</td>
+<td style="text-align:right;">
+<p>-1.31</p>
+</td>
+<td style="text-align:right;">
+<p>0.96</p>
+</td>
+<td style="text-align:right;">
+<p>-0.37</p>
+</td>
+<td style="text-align:right;">
+<p>-0.46</p>
+</td>
+<td style="text-align:right;">
+<p>0.17</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<p>-2.75</p>
+</td>
+<td style="text-align:right;">
+<p>1.89</p>
+</td>
+<td style="text-align:right;">
+<p>-0.45</p>
+</td>
+<td style="text-align:right;">
+<p>-0.30</p>
+</td>
+<td style="text-align:right;">
+<p>-0.31</p>
+</td>
+<td style="text-align:right;">
+<p>0.23</p>
+</td>
+<td style="text-align:right;">
+<p>-0.20</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<p>0.87</p>
+</td>
+<td style="text-align:right;">
+<p>0.70</p>
+</td>
+<td style="text-align:right;">
+<p>-0.38</p>
+</td>
+<td style="text-align:right;">
+<p>-0.93</p>
+</td>
+<td style="text-align:right;">
+<p>-0.02</p>
+</td>
+<td style="text-align:right;">
+<p>0.20</p>
+</td>
+<td style="text-align:right;">
+<p>-0.03</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<p>-3.44</p>
+</td>
+<td style="text-align:right;">
+<p>2.32</p>
+</td>
+<td style="text-align:right;">
+<p>-0.09</p>
+</td>
+<td style="text-align:right;">
+<p>-0.19</p>
+</td>
+<td style="text-align:right;">
+<p>0.74</p>
+</td>
+<td style="text-align:right;">
+<p>-0.19</p>
+</td>
+<td style="text-align:right;">
+<p>-0.09</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<p>-1.87</p>
+</td>
+<td style="text-align:right;">
+<p>0.71</p>
+</td>
+<td style="text-align:right;">
+<p>-0.09</p>
+</td>
+<td style="text-align:right;">
+<p>-0.80</p>
+</td>
+<td style="text-align:right;">
+<p>0.14</p>
+</td>
+<td style="text-align:right;">
+<p>-0.18</p>
+</td>
+<td style="text-align:right;">
+<p>-0.02</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<p>2.97</p>
+</td>
+<td style="text-align:right;">
+<p>0.26</p>
+</td>
+<td style="text-align:right;">
+<p>-0.22</p>
+</td>
+<td style="text-align:right;">
+<p>0.06</p>
+</td>
+<td style="text-align:right;">
+<p>-0.11</p>
+</td>
+<td style="text-align:right;">
+<p>0.03</p>
+</td>
+<td style="text-align:right;">
+<p>-0.08</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<p>2.77</p>
+</td>
+<td style="text-align:right;">
+<p>0.70</p>
+</td>
+<td style="text-align:right;">
+<p>0.18</p>
+</td>
+<td style="text-align:right;">
+<p>0.09</p>
+</td>
+<td style="text-align:right;">
+<p>-0.60</p>
+</td>
+<td style="text-align:right;">
+<p>0.02</p>
+</td>
+<td style="text-align:right;">
+<p>-0.02</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<p>2.23</p>
+</td>
+<td style="text-align:right;">
+<p>0.77</p>
+</td>
+<td style="text-align:right;">
+<p>0.06</p>
+</td>
+<td style="text-align:right;">
+<p>0.15</p>
+</td>
+<td style="text-align:right;">
+<p>-0.37</p>
+</td>
+<td style="text-align:right;">
+<p>-0.18</p>
+</td>
+<td style="text-align:right;">
+<p>0.10</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<p>1.64</p>
+</td>
+<td style="text-align:right;">
+<p>0.27</p>
+</td>
+<td style="text-align:right;">
+<p>0.89</p>
+</td>
+<td style="text-align:right;">
+<p>-0.25</p>
+</td>
+<td style="text-align:right;">
+<p>-0.56</p>
+</td>
+<td style="text-align:right;">
+<p>-0.02</p>
+</td>
+<td style="text-align:right;">
+<p>-0.08</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<p>1.12</p>
+</td>
+<td style="text-align:right;">
+<p>1.05</p>
+</td>
+<td style="text-align:right;">
+<p>0.38</p>
+</td>
+<td style="text-align:right;">
+<p>-0.01</p>
+</td>
+<td style="text-align:right;">
+<p>0.82</p>
+</td>
+<td style="text-align:right;">
+<p>0.07</p>
+</td>
+<td style="text-align:right;">
+<p>0.21</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<p>3.97</p>
+</td>
+<td style="text-align:right;">
+<p>-0.13</p>
+</td>
+<td style="text-align:right;">
+<p>-0.30</p>
+</td>
+<td style="text-align:right;">
+<p>0.37</p>
+</td>
+<td style="text-align:right;">
+<p>0.31</p>
+</td>
+<td style="text-align:right;">
+<p>-0.10</p>
+</td>
+<td style="text-align:right;">
+<p>-0.24</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<p>3.21</p>
+</td>
+<td style="text-align:right;">
+<p>0.67</p>
+</td>
+<td style="text-align:right;">
+<p>0.17</p>
+</td>
+<td style="text-align:right;">
+<p>-0.03</p>
+</td>
+<td style="text-align:right;">
+<p>-0.06</p>
+</td>
+<td style="text-align:right;">
+<p>-0.25</p>
+</td>
+<td style="text-align:right;">
+<p>0.06</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<p>1.69</p>
+</td>
+<td style="text-align:right;">
+<p>0.86</p>
+</td>
+<td style="text-align:right;">
+<p>0.42</p>
+</td>
+<td style="text-align:right;">
+<p>-0.10</p>
+</td>
+<td style="text-align:right;">
+<p>-0.17</p>
+</td>
+<td style="text-align:right;">
+<p>0.05</p>
+</td>
+<td style="text-align:right;">
+<p>-0.05</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<p>2.21</p>
+</td>
+<td style="text-align:right;">
+<p>0.85</p>
+</td>
+<td style="text-align:right;">
+<p>0.35</p>
+</td>
+<td style="text-align:right;">
+<p>0.24</p>
+</td>
+<td style="text-align:right;">
+<p>0.56</p>
+</td>
+<td style="text-align:right;">
+<p>0.22</p>
+</td>
+<td style="text-align:right;">
+<p>0.01</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<p>2.03</p>
+</td>
+<td style="text-align:right;">
+<p>1.03</p>
+</td>
+<td style="text-align:right;">
+<p>-0.21</p>
+</td>
+<td style="text-align:right;">
+<p>0.09</p>
+</td>
+<td style="text-align:right;">
+<p>0.32</p>
+</td>
+<td style="text-align:right;">
+<p>-0.17</p>
+</td>
+<td style="text-align:right;">
+<p>-0.02</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<p>3.39</p>
+</td>
+<td style="text-align:right;">
+<p>-0.18</p>
+</td>
+<td style="text-align:right;">
+<p>0.16</p>
+</td>
+<td style="text-align:right;">
+<p>0.31</p>
+</td>
+<td style="text-align:right;">
+<p>0.34</p>
+</td>
+<td style="text-align:right;">
+<p>0.04</p>
+</td>
+<td style="text-align:right;">
+<p>0.26</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<p>2.71</p>
+</td>
+<td style="text-align:right;">
+<p>0.61</p>
+</td>
+<td style="text-align:right;">
+<p>-0.03</p>
+</td>
+<td style="text-align:right;">
+<p>0.47</p>
+</td>
+<td style="text-align:right;">
+<p>0.15</p>
+</td>
+<td style="text-align:right;">
+<p>0.14</p>
+</td>
+<td style="text-align:right;">
+<p>0.07</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
 <h4 id="using-variance-covariance-matrix">Using Variance-Covariance Matrix</h4>
 <p>Using variance-covariance matrix of <strong>standardized</strong> data to calculate eigenvalues -</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#000">eigcov</span> <span style="color:#ce5c00;font-weight:bold">&lt;-</span> <span style="color:#000">eigen</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">cov</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">df_std</span><span style="color:#000;font-weight:bold">))</span>    <span style="color:#8f5902;font-style:italic"># using variance-covariance matrix on standardized data</span>
 </span></span><span style="display:flex;"><span><span style="color:#000">output</span> <span style="color:#ce5c00;font-weight:bold">&lt;-</span> <span style="color:#000">cbind</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">eigenvalue</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">round</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">eigcov</span><span style="color:#ce5c00;font-weight:bold">$</span><span style="color:#000">values</span><span style="color:#000;font-weight:bold">,</span><span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">),</span>
 </span></span><span style="display:flex;"><span>                <span style="color:#000">cumul_percentage</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">round</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">cumsum</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">eigcov</span><span style="color:#ce5c00;font-weight:bold">$</span><span style="color:#000">values</span><span style="color:#ce5c00;font-weight:bold">/</span><span style="color:#000">sum</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">eigcov</span><span style="color:#ce5c00;font-weight:bold">$</span><span style="color:#000">values</span><span style="color:#000;font-weight:bold">))</span><span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#0000cf;font-weight:bold">100</span><span style="color:#000;font-weight:bold">,</span><span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">))</span>
-</span></span></code></pre></div><!-- raw HTML omitted -->
+</span></span></code></pre></div><table class="table table-striped table-hover" style="font-size: 12px; width: auto !important; ">
+<thead>
+<tr>
+<th style="text-align:right;">
+<p>Eigen Values</p>
+</th>
+<th style="text-align:right;">
+<p>Cumulative Percentage</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+<p>4.50</p>
+</td>
+<td style="text-align:right;">
+<p>64.32</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<p>1.77</p>
+</td>
+<td style="text-align:right;">
+<p>89.66</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<p>0.28</p>
+</td>
+<td style="text-align:right;">
+<p>93.71</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<p>0.19</p>
+</td>
+<td style="text-align:right;">
+<p>96.47</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<p>0.15</p>
+</td>
+<td style="text-align:right;">
+<p>98.56</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<p>0.07</p>
+</td>
+<td style="text-align:right;">
+<p>99.50</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<p>0.03</p>
+</td>
+<td style="text-align:right;">
+<p>100.00</p>
+</td>
+</tr>
+</tbody>
+</table>
 <p>Using variance-covariance matrix of <strong>unstandardized</strong> data to calculate eigenvalues -</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#000">eigcov</span> <span style="color:#ce5c00;font-weight:bold">&lt;-</span> <span style="color:#000">eigen</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">cov</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">df_unstd</span><span style="color:#000;font-weight:bold">))</span>    <span style="color:#8f5902;font-style:italic"># using variance-covariance matrix on unstandardized data</span>
 </span></span><span style="display:flex;"><span><span style="color:#000">output</span> <span style="color:#ce5c00;font-weight:bold">&lt;-</span> <span style="color:#000">cbind</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">eigenvalue</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">round</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">eigcov</span><span style="color:#ce5c00;font-weight:bold">$</span><span style="color:#000">values</span><span style="color:#000;font-weight:bold">,</span><span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">),</span>
 </span></span><span style="display:flex;"><span>                <span style="color:#000">cumul_percentage</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">round</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">cumsum</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">eigcov</span><span style="color:#ce5c00;font-weight:bold">$</span><span style="color:#000">values</span><span style="color:#ce5c00;font-weight:bold">/</span><span style="color:#000">sum</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">eigcov</span><span style="color:#ce5c00;font-weight:bold">$</span><span style="color:#000">values</span><span style="color:#000;font-weight:bold">))</span><span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#0000cf;font-weight:bold">100</span><span style="color:#000;font-weight:bold">,</span><span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">))</span>
-</span></span></code></pre></div><!-- raw HTML omitted -->
+</span></span></code></pre></div><table class="table table-striped table-hover" style="font-size: 12px; width: auto !important; ">
+<thead>
+<tr>
+<th style="text-align:right;">
+<p>Eigen Values</p>
+</th>
+<th style="text-align:right;">
+<p>Cumulative Percentage</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+<p>5.48</p>
+</td>
+<td style="text-align:right;">
+<p>76.39</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<p>1.08</p>
+</td>
+<td style="text-align:right;">
+<p>91.40</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<p>0.29</p>
+</td>
+<td style="text-align:right;">
+<p>95.46</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<p>0.16</p>
+</td>
+<td style="text-align:right;">
+<p>97.75</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<p>0.09</p>
+</td>
+<td style="text-align:right;">
+<p>98.93</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<p>0.04</p>
+</td>
+<td style="text-align:right;">
+<p>99.56</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<p>0.03</p>
+</td>
+<td style="text-align:right;">
+<p>100.00</p>
+</td>
+</tr>
+</tbody>
+</table>
 <p>So the principal components are influenced by the scales. Hence, it is recommended to standardize the data before calculating the principal components.</p>
 <h3 id="using-prcomp">Using prcomp()</h3>
 <p>To make things easier in R, there are two built-in functions to perform PCA - <code>prcomp()</code> and <code>princomp()</code>. The function <code>princomp()</code> uses the spectral decomposition approach while the functions <code>prcomp()</code> and <code>PCA()</code>[from package FactoMineR] use the singular value decomposition (SVD).</p>
@@ -590,9 +1746,868 @@ $$</p>
 </code></pre>
 <p><code>x</code> denotes the transformed dataset/principal components -</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#000">pc_prcomp</span><span style="color:#ce5c00;font-weight:bold">$</span><span style="color:#000">x</span>
-</span></span></code></pre></div><!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+</span></span></code></pre></div><div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:300px; ">
+<table class="table table-striped table-hover" style="font-size: 12px; ">
+<caption style="font-size: initial !important;">
+<p>(#tab:unnamed-chunk-22)Principal Components</p>
+</caption>
+<thead>
+<tr>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+<p>PC1</p>
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+<p>PC2</p>
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+<p>PC3</p>
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+<p>PC4</p>
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+<p>PC5</p>
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+<p>PC6</p>
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+<p>PC7</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+<p>-1.66</p>
+</td>
+<td style="text-align:right;">
+<p>1.61</p>
+</td>
+<td style="text-align:right;">
+<p>-0.45</p>
+</td>
+<td style="text-align:right;">
+<p>0.40</p>
+</td>
+<td style="text-align:right;">
+<p>-0.32</p>
+</td>
+<td style="text-align:right;">
+<p>0.34</p>
+</td>
+<td style="text-align:right;">
+<p>-0.13</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<p>-0.56</p>
+</td>
+<td style="text-align:right;">
+<p>1.88</p>
+</td>
+<td style="text-align:right;">
+<p>-0.55</p>
+</td>
+<td style="text-align:right;">
+<p>0.30</p>
+</td>
+<td style="text-align:right;">
+<p>-0.09</p>
+</td>
+<td style="text-align:right;">
+<p>0.35</p>
+</td>
+<td style="text-align:right;">
+<p>-0.19</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<p>-2.67</p>
+</td>
+<td style="text-align:right;">
+<p>1.31</p>
+</td>
+<td style="text-align:right;">
+<p>0.05</p>
+</td>
+<td style="text-align:right;">
+<p>0.68</p>
+</td>
+<td style="text-align:right;">
+<p>-0.22</p>
+</td>
+<td style="text-align:right;">
+<p>0.31</p>
+</td>
+<td style="text-align:right;">
+<p>0.05</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<p>0.22</p>
+</td>
+<td style="text-align:right;">
+<p>2.57</p>
+</td>
+<td style="text-align:right;">
+<p>-0.97</p>
+</td>
+<td style="text-align:right;">
+<p>-0.02</p>
+</td>
+<td style="text-align:right;">
+<p>-0.14</p>
+</td>
+<td style="text-align:right;">
+<p>0.30</p>
+</td>
+<td style="text-align:right;">
+<p>0.14</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<p>1.80</p>
+</td>
+<td style="text-align:right;">
+<p>2.71</p>
+</td>
+<td style="text-align:right;">
+<p>-0.56</p>
+</td>
+<td style="text-align:right;">
+<p>-0.45</p>
+</td>
+<td style="text-align:right;">
+<p>0.14</p>
+</td>
+<td style="text-align:right;">
+<p>-0.01</p>
+</td>
+<td style="text-align:right;">
+<p>-0.40</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<p>0.53</p>
+</td>
+<td style="text-align:right;">
+<p>1.85</p>
+</td>
+<td style="text-align:right;">
+<p>0.51</p>
+</td>
+<td style="text-align:right;">
+<p>-0.28</p>
+</td>
+<td style="text-align:right;">
+<p>0.18</p>
+</td>
+<td style="text-align:right;">
+<p>0.06</p>
+</td>
+<td style="text-align:right;">
+<p>0.06</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<p>-2.49</p>
+</td>
+<td style="text-align:right;">
+<p>0.64</p>
+</td>
+<td style="text-align:right;">
+<p>0.09</p>
+</td>
+<td style="text-align:right;">
+<p>0.06</p>
+</td>
+<td style="text-align:right;">
+<p>-0.16</p>
+</td>
+<td style="text-align:right;">
+<p>-0.38</p>
+</td>
+<td style="text-align:right;">
+<p>0.28</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<p>-1.24</p>
+</td>
+<td style="text-align:right;">
+<p>1.94</p>
+</td>
+<td style="text-align:right;">
+<p>-0.18</p>
+</td>
+<td style="text-align:right;">
+<p>-0.14</p>
+</td>
+<td style="text-align:right;">
+<p>0.40</p>
+</td>
+<td style="text-align:right;">
+<p>-0.54</p>
+</td>
+<td style="text-align:right;">
+<p>0.00</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<p>-0.36</p>
+</td>
+<td style="text-align:right;">
+<p>1.49</p>
+</td>
+<td style="text-align:right;">
+<p>0.42</p>
+</td>
+<td style="text-align:right;">
+<p>0.27</p>
+</td>
+<td style="text-align:right;">
+<p>-0.27</p>
+</td>
+<td style="text-align:right;">
+<p>-0.28</p>
+</td>
+<td style="text-align:right;">
+<p>-0.12</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<p>-1.32</p>
+</td>
+<td style="text-align:right;">
+<p>1.82</p>
+</td>
+<td style="text-align:right;">
+<p>1.18</p>
+</td>
+<td style="text-align:right;">
+<p>-0.24</p>
+</td>
+<td style="text-align:right;">
+<p>0.29</p>
+</td>
+<td style="text-align:right;">
+<p>-0.08</p>
+</td>
+<td style="text-align:right;">
+<p>0.10</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<p>-1.21</p>
+</td>
+<td style="text-align:right;">
+<p>1.38</p>
+</td>
+<td style="text-align:right;">
+<p>0.26</p>
+</td>
+<td style="text-align:right;">
+<p>-0.14</p>
+</td>
+<td style="text-align:right;">
+<p>0.03</p>
+</td>
+<td style="text-align:right;">
+<p>-0.21</p>
+</td>
+<td style="text-align:right;">
+<p>0.31</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<p>-2.88</p>
+</td>
+<td style="text-align:right;">
+<p>0.99</p>
+</td>
+<td style="text-align:right;">
+<p>0.90</p>
+</td>
+<td style="text-align:right;">
+<p>0.20</p>
+</td>
+<td style="text-align:right;">
+<p>-0.20</p>
+</td>
+<td style="text-align:right;">
+<p>-0.10</p>
+</td>
+<td style="text-align:right;">
+<p>-0.02</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<p>-2.28</p>
+</td>
+<td style="text-align:right;">
+<p>-1.26</p>
+</td>
+<td style="text-align:right;">
+<p>0.51</p>
+</td>
+<td style="text-align:right;">
+<p>0.07</p>
+</td>
+<td style="text-align:right;">
+<p>-0.09</p>
+</td>
+<td style="text-align:right;">
+<p>0.48</p>
+</td>
+<td style="text-align:right;">
+<p>-0.17</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<p>-2.16</p>
+</td>
+<td style="text-align:right;">
+<p>-1.30</p>
+</td>
+<td style="text-align:right;">
+<p>0.45</p>
+</td>
+<td style="text-align:right;">
+<p>0.68</p>
+</td>
+<td style="text-align:right;">
+<p>0.51</p>
+</td>
+<td style="text-align:right;">
+<p>0.27</p>
+</td>
+<td style="text-align:right;">
+<p>-0.01</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<p>-1.41</p>
+</td>
+<td style="text-align:right;">
+<p>-1.23</p>
+</td>
+<td style="text-align:right;">
+<p>0.50</p>
+</td>
+<td style="text-align:right;">
+<p>0.09</p>
+</td>
+<td style="text-align:right;">
+<p>0.60</p>
+</td>
+<td style="text-align:right;">
+<p>0.02</p>
+</td>
+<td style="text-align:right;">
+<p>-0.33</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<p>-0.87</p>
+</td>
+<td style="text-align:right;">
+<p>-0.73</p>
+</td>
+<td style="text-align:right;">
+<p>-0.53</p>
+</td>
+<td style="text-align:right;">
+<p>0.00</p>
+</td>
+<td style="text-align:right;">
+<p>0.72</p>
+</td>
+<td style="text-align:right;">
+<p>0.43</p>
+</td>
+<td style="text-align:right;">
+<p>0.48</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<p>-1.30</p>
+</td>
+<td style="text-align:right;">
+<p>-0.90</p>
+</td>
+<td style="text-align:right;">
+<p>0.11</p>
+</td>
+<td style="text-align:right;">
+<p>-0.44</p>
+</td>
+<td style="text-align:right;">
+<p>-0.63</p>
+</td>
+<td style="text-align:right;">
+<p>-0.11</p>
+</td>
+<td style="text-align:right;">
+<p>0.01</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<p>-0.97</p>
+</td>
+<td style="text-align:right;">
+<p>-0.68</p>
+</td>
+<td style="text-align:right;">
+<p>-0.61</p>
+</td>
+<td style="text-align:right;">
+<p>0.11</p>
+</td>
+<td style="text-align:right;">
+<p>0.05</p>
+</td>
+<td style="text-align:right;">
+<p>-0.44</p>
+</td>
+<td style="text-align:right;">
+<p>-0.29</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<p>-0.09</p>
+</td>
+<td style="text-align:right;">
+<p>-0.30</p>
+</td>
+<td style="text-align:right;">
+<p>-0.67</p>
+</td>
+<td style="text-align:right;">
+<p>-1.31</p>
+</td>
+<td style="text-align:right;">
+<p>0.02</p>
+</td>
+<td style="text-align:right;">
+<p>0.15</p>
+</td>
+<td style="text-align:right;">
+<p>0.20</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<p>-1.84</p>
+</td>
+<td style="text-align:right;">
+<p>-1.42</p>
+</td>
+<td style="text-align:right;">
+<p>-1.31</p>
+</td>
+<td style="text-align:right;">
+<p>0.96</p>
+</td>
+<td style="text-align:right;">
+<p>0.37</p>
+</td>
+<td style="text-align:right;">
+<p>-0.46</p>
+</td>
+<td style="text-align:right;">
+<p>0.17</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<p>-2.75</p>
+</td>
+<td style="text-align:right;">
+<p>-1.89</p>
+</td>
+<td style="text-align:right;">
+<p>-0.45</p>
+</td>
+<td style="text-align:right;">
+<p>-0.30</p>
+</td>
+<td style="text-align:right;">
+<p>0.31</p>
+</td>
+<td style="text-align:right;">
+<p>0.23</p>
+</td>
+<td style="text-align:right;">
+<p>-0.20</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<p>0.87</p>
+</td>
+<td style="text-align:right;">
+<p>-0.70</p>
+</td>
+<td style="text-align:right;">
+<p>-0.38</p>
+</td>
+<td style="text-align:right;">
+<p>-0.93</p>
+</td>
+<td style="text-align:right;">
+<p>0.02</p>
+</td>
+<td style="text-align:right;">
+<p>0.20</p>
+</td>
+<td style="text-align:right;">
+<p>-0.03</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<p>-3.44</p>
+</td>
+<td style="text-align:right;">
+<p>-2.32</p>
+</td>
+<td style="text-align:right;">
+<p>-0.09</p>
+</td>
+<td style="text-align:right;">
+<p>-0.19</p>
+</td>
+<td style="text-align:right;">
+<p>-0.74</p>
+</td>
+<td style="text-align:right;">
+<p>-0.19</p>
+</td>
+<td style="text-align:right;">
+<p>-0.09</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<p>-1.87</p>
+</td>
+<td style="text-align:right;">
+<p>-0.71</p>
+</td>
+<td style="text-align:right;">
+<p>-0.09</p>
+</td>
+<td style="text-align:right;">
+<p>-0.80</p>
+</td>
+<td style="text-align:right;">
+<p>-0.14</p>
+</td>
+<td style="text-align:right;">
+<p>-0.18</p>
+</td>
+<td style="text-align:right;">
+<p>-0.02</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<p>2.97</p>
+</td>
+<td style="text-align:right;">
+<p>-0.26</p>
+</td>
+<td style="text-align:right;">
+<p>-0.22</p>
+</td>
+<td style="text-align:right;">
+<p>0.06</p>
+</td>
+<td style="text-align:right;">
+<p>0.11</p>
+</td>
+<td style="text-align:right;">
+<p>0.03</p>
+</td>
+<td style="text-align:right;">
+<p>-0.08</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<p>2.77</p>
+</td>
+<td style="text-align:right;">
+<p>-0.70</p>
+</td>
+<td style="text-align:right;">
+<p>0.18</p>
+</td>
+<td style="text-align:right;">
+<p>0.09</p>
+</td>
+<td style="text-align:right;">
+<p>0.60</p>
+</td>
+<td style="text-align:right;">
+<p>0.02</p>
+</td>
+<td style="text-align:right;">
+<p>-0.02</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<p>2.23</p>
+</td>
+<td style="text-align:right;">
+<p>-0.77</p>
+</td>
+<td style="text-align:right;">
+<p>0.06</p>
+</td>
+<td style="text-align:right;">
+<p>0.15</p>
+</td>
+<td style="text-align:right;">
+<p>0.37</p>
+</td>
+<td style="text-align:right;">
+<p>-0.18</p>
+</td>
+<td style="text-align:right;">
+<p>0.10</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<p>1.64</p>
+</td>
+<td style="text-align:right;">
+<p>-0.27</p>
+</td>
+<td style="text-align:right;">
+<p>0.89</p>
+</td>
+<td style="text-align:right;">
+<p>-0.25</p>
+</td>
+<td style="text-align:right;">
+<p>0.56</p>
+</td>
+<td style="text-align:right;">
+<p>-0.02</p>
+</td>
+<td style="text-align:right;">
+<p>-0.08</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<p>1.12</p>
+</td>
+<td style="text-align:right;">
+<p>-1.05</p>
+</td>
+<td style="text-align:right;">
+<p>0.38</p>
+</td>
+<td style="text-align:right;">
+<p>-0.01</p>
+</td>
+<td style="text-align:right;">
+<p>-0.82</p>
+</td>
+<td style="text-align:right;">
+<p>0.07</p>
+</td>
+<td style="text-align:right;">
+<p>0.21</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<p>3.97</p>
+</td>
+<td style="text-align:right;">
+<p>0.13</p>
+</td>
+<td style="text-align:right;">
+<p>-0.30</p>
+</td>
+<td style="text-align:right;">
+<p>0.37</p>
+</td>
+<td style="text-align:right;">
+<p>-0.31</p>
+</td>
+<td style="text-align:right;">
+<p>-0.10</p>
+</td>
+<td style="text-align:right;">
+<p>-0.24</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<p>3.21</p>
+</td>
+<td style="text-align:right;">
+<p>-0.67</p>
+</td>
+<td style="text-align:right;">
+<p>0.17</p>
+</td>
+<td style="text-align:right;">
+<p>-0.03</p>
+</td>
+<td style="text-align:right;">
+<p>0.06</p>
+</td>
+<td style="text-align:right;">
+<p>-0.25</p>
+</td>
+<td style="text-align:right;">
+<p>0.06</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<p>1.69</p>
+</td>
+<td style="text-align:right;">
+<p>-0.86</p>
+</td>
+<td style="text-align:right;">
+<p>0.42</p>
+</td>
+<td style="text-align:right;">
+<p>-0.10</p>
+</td>
+<td style="text-align:right;">
+<p>0.17</p>
+</td>
+<td style="text-align:right;">
+<p>0.05</p>
+</td>
+<td style="text-align:right;">
+<p>-0.05</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<p>2.21</p>
+</td>
+<td style="text-align:right;">
+<p>-0.85</p>
+</td>
+<td style="text-align:right;">
+<p>0.35</p>
+</td>
+<td style="text-align:right;">
+<p>0.24</p>
+</td>
+<td style="text-align:right;">
+<p>-0.56</p>
+</td>
+<td style="text-align:right;">
+<p>0.22</p>
+</td>
+<td style="text-align:right;">
+<p>0.01</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<p>2.03</p>
+</td>
+<td style="text-align:right;">
+<p>-1.03</p>
+</td>
+<td style="text-align:right;">
+<p>-0.21</p>
+</td>
+<td style="text-align:right;">
+<p>0.09</p>
+</td>
+<td style="text-align:right;">
+<p>-0.32</p>
+</td>
+<td style="text-align:right;">
+<p>-0.17</p>
+</td>
+<td style="text-align:right;">
+<p>-0.02</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<p>3.39</p>
+</td>
+<td style="text-align:right;">
+<p>0.18</p>
+</td>
+<td style="text-align:right;">
+<p>0.16</p>
+</td>
+<td style="text-align:right;">
+<p>0.31</p>
+</td>
+<td style="text-align:right;">
+<p>-0.34</p>
+</td>
+<td style="text-align:right;">
+<p>0.04</p>
+</td>
+<td style="text-align:right;">
+<p>0.26</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<p>2.71</p>
+</td>
+<td style="text-align:right;">
+<p>-0.61</p>
+</td>
+<td style="text-align:right;">
+<p>-0.03</p>
+</td>
+<td style="text-align:right;">
+<p>0.47</p>
+</td>
+<td style="text-align:right;">
+<p>-0.15</p>
+</td>
+<td style="text-align:right;">
+<p>0.14</p>
+</td>
+<td style="text-align:right;">
+<p>0.07</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
 <p><code>sdev</code> denotes to the standard deviations of the principal components -</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#000">pc_prcomp</span><span style="color:#ce5c00;font-weight:bold">$</span><span style="color:#000">sdev^2</span>   <span style="color:#8f5902;font-style:italic"># eigenvalues (variances)</span>
 </span></span></code></pre></div><pre><code># [1] 4.50218058 1.77420306 0.28306214 0.19330296 0.14637109 0.06596874 0.03491141
@@ -629,7 +2644,7 @@ $$</p>
 </span></span><span style="display:flex;"><span>  <span style="color:#000">labs</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">title</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;First 2 prinipal components&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>       <span style="color:#000">x</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;Principal Component 1&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">y</span> <span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;Principal Component 2&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>       <span style="color:#000">col</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;Family&#34;</span><span style="color:#000;font-weight:bold">)</span> 
-</span></span></code></pre></div><!-- raw HTML omitted -->
+</span></span></code></pre></div><img src="https://mdahsanul.netlify.app/post/2025-09-29-pca/index_files/figure-html/unnamed-chunk-25-1.png" alt="" width="576" />
 <h4 id="3d-plot">3D Plot</h4>
 <p>The following 3D plot shows the points for the first 3 principal components -</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#000">library</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">plotly</span><span style="color:#000;font-weight:bold">)</span>
@@ -650,7 +2665,8 @@ $$</p>
 </span></span><span style="display:flex;"><span>                  <span style="color:#000">orientation</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;h&#34;</span><span style="color:#000;font-weight:bold">,</span>   <span style="color:#8f5902;font-style:italic"># show entries horizontally</span>
 </span></span><span style="display:flex;"><span>                  <span style="color:#000">xanchor</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;center&#34;</span><span style="color:#000;font-weight:bold">,</span>  <span style="color:#8f5902;font-style:italic"># use center of legend as anchor</span>
 </span></span><span style="display:flex;"><span>                  <span style="color:#000">x</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">0.5</span><span style="color:#000;font-weight:bold">))</span>            <span style="color:#8f5902;font-style:italic"># put legend in center of x-axis </span>
-</span></span></code></pre></div><!-- raw HTML omitted -->
+</span></span></code></pre></div><div class="plotly html-widget html-fill-item" id="htmlwidget-1" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-1">{"x":{"visdat":{"5aa823d05c9b":["function () ","plotlyVisDat"]},"cur_data":"5aa823d05c9b","attrs":{"5aa823d05c9b":{"x":{},"y":{},"z":{},"color":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter3d","mode":"markers","hovertemplate":"<br><b>PC1<\/b>: %{x:.2f} <br><b>PC2<\/b>: %{y:.2f} <br><b>PC3<\/b>: %{z:.2f}<\/b>","inherit":true}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"scene":{"xaxis":{"title":"PC1"},"yaxis":{"title":"PC2"},"zaxis":{"title":"PC3"}},"legend":{"title":{"text":"<b> Family <\/b>"},"orientation":"h","xanchor":"center","x":0.5},"hovermode":"closest","showlegend":true},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"x":[-2.2802702975603144,-2.1615227531803693,-1.4125620780344752,-0.87177434894667916,-1.304861154269382,-0.96811158761574734,-0.08945127825056215,-1.8377496632166608,-2.7463785783756087,0.86821198759582008,-3.4362050926021981,-1.8694189670897168],"y":[-1.2648063377865522,-1.3004274662256716,-1.2288573617005047,-0.72997127170459797,-0.89717624585803857,-0.68438110704077104,-0.29683798481067891,-1.4154315054701201,-1.8857101470007023,-0.69549132978668582,-2.3217116961767936,-0.70698008919419397],"z":[0.50966104280224811,0.44700173968459056,0.50143375858851957,-0.5290447996462454,0.1108432551964007,-0.6096212788187112,-0.6654774419327113,-1.3072174328870729,-0.45320085816421812,-0.3776481557753058,-0.085358178056660794,-0.088791245099659577],"type":"scatter3d","mode":"markers","hovertemplate":["<br><b>PC1<\/b>: %{x:.2f} <br><b>PC2<\/b>: %{y:.2f} <br><b>PC3<\/b>: %{z:.2f}<\/b>","<br><b>PC1<\/b>: %{x:.2f} <br><b>PC2<\/b>: %{y:.2f} <br><b>PC3<\/b>: %{z:.2f}<\/b>","<br><b>PC1<\/b>: %{x:.2f} <br><b>PC2<\/b>: %{y:.2f} <br><b>PC3<\/b>: %{z:.2f}<\/b>","<br><b>PC1<\/b>: %{x:.2f} <br><b>PC2<\/b>: %{y:.2f} <br><b>PC3<\/b>: %{z:.2f}<\/b>","<br><b>PC1<\/b>: %{x:.2f} <br><b>PC2<\/b>: %{y:.2f} <br><b>PC3<\/b>: %{z:.2f}<\/b>","<br><b>PC1<\/b>: %{x:.2f} <br><b>PC2<\/b>: %{y:.2f} <br><b>PC3<\/b>: %{z:.2f}<\/b>","<br><b>PC1<\/b>: %{x:.2f} <br><b>PC2<\/b>: %{y:.2f} <br><b>PC3<\/b>: %{z:.2f}<\/b>","<br><b>PC1<\/b>: %{x:.2f} <br><b>PC2<\/b>: %{y:.2f} <br><b>PC3<\/b>: %{z:.2f}<\/b>","<br><b>PC1<\/b>: %{x:.2f} <br><b>PC2<\/b>: %{y:.2f} <br><b>PC3<\/b>: %{z:.2f}<\/b>","<br><b>PC1<\/b>: %{x:.2f} <br><b>PC2<\/b>: %{y:.2f} <br><b>PC3<\/b>: %{z:.2f}<\/b>","<br><b>PC1<\/b>: %{x:.2f} <br><b>PC2<\/b>: %{y:.2f} <br><b>PC3<\/b>: %{z:.2f}<\/b>","<br><b>PC1<\/b>: %{x:.2f} <br><b>PC2<\/b>: %{y:.2f} <br><b>PC3<\/b>: %{z:.2f}<\/b>"],"name":"Carangidae","marker":{"color":"rgba(102,194,165,1)","line":{"color":"rgba(102,194,165,1)"}},"textfont":{"color":"rgba(102,194,165,1)"},"error_y":{"color":"rgba(102,194,165,1)"},"error_x":{"color":"rgba(102,194,165,1)"},"line":{"color":"rgba(102,194,165,1)"},"frame":null},{"x":[-1.65690101356603,-0.56363292060768555,-2.6668018056877889,0.21787330279182376,1.8034137580172425,0.52874735955463104,-2.4896450631570688,-1.2421704414184143,-0.36108705173156708,-1.3160129845576223,-1.2079852897438741,-2.8834211783209458],"y":[1.608205678663071,1.8752849131694702,1.3053666548432519,2.5651998661898405,2.7084425646731214,1.851201915846284,0.63972326546520542,1.9383257600536514,1.4943363356522548,1.8184580691504215,1.3848009405612614,0.99329965787023911],"z":[-0.45302146662031606,-0.55254485744050008,0.050895413733015579,-0.96803025810178367,-0.55802934446006169,0.51248654043470454,0.086810420138869554,-0.1804348540077364,0.42110265567671518,1.1832995127848756,0.26214561985883039,0.90188472316753254],"type":"scatter3d","mode":"markers","hovertemplate":["<br><b>PC1<\/b>: %{x:.2f} <br><b>PC2<\/b>: %{y:.2f} <br><b>PC3<\/b>: %{z:.2f}<\/b>","<br><b>PC1<\/b>: %{x:.2f} <br><b>PC2<\/b>: %{y:.2f} <br><b>PC3<\/b>: %{z:.2f}<\/b>","<br><b>PC1<\/b>: %{x:.2f} <br><b>PC2<\/b>: %{y:.2f} <br><b>PC3<\/b>: %{z:.2f}<\/b>","<br><b>PC1<\/b>: %{x:.2f} <br><b>PC2<\/b>: %{y:.2f} <br><b>PC3<\/b>: %{z:.2f}<\/b>","<br><b>PC1<\/b>: %{x:.2f} <br><b>PC2<\/b>: %{y:.2f} <br><b>PC3<\/b>: %{z:.2f}<\/b>","<br><b>PC1<\/b>: %{x:.2f} <br><b>PC2<\/b>: %{y:.2f} <br><b>PC3<\/b>: %{z:.2f}<\/b>","<br><b>PC1<\/b>: %{x:.2f} <br><b>PC2<\/b>: %{y:.2f} <br><b>PC3<\/b>: %{z:.2f}<\/b>","<br><b>PC1<\/b>: %{x:.2f} <br><b>PC2<\/b>: %{y:.2f} <br><b>PC3<\/b>: %{z:.2f}<\/b>","<br><b>PC1<\/b>: %{x:.2f} <br><b>PC2<\/b>: %{y:.2f} <br><b>PC3<\/b>: %{z:.2f}<\/b>","<br><b>PC1<\/b>: %{x:.2f} <br><b>PC2<\/b>: %{y:.2f} <br><b>PC3<\/b>: %{z:.2f}<\/b>","<br><b>PC1<\/b>: %{x:.2f} <br><b>PC2<\/b>: %{y:.2f} <br><b>PC3<\/b>: %{z:.2f}<\/b>","<br><b>PC1<\/b>: %{x:.2f} <br><b>PC2<\/b>: %{y:.2f} <br><b>PC3<\/b>: %{z:.2f}<\/b>"],"name":"Serranidae","marker":{"color":"rgba(252,141,98,1)","line":{"color":"rgba(252,141,98,1)"}},"textfont":{"color":"rgba(252,141,98,1)"},"error_y":{"color":"rgba(252,141,98,1)"},"error_x":{"color":"rgba(252,141,98,1)"},"line":{"color":"rgba(252,141,98,1)"},"frame":null},{"x":[2.9682778860916268,2.7731021617101419,2.2311957778006901,1.6445945019069932,1.1233814924972814,3.9696398158123225,3.2099193441360314,1.691058043906186,2.2054025247583553,2.0290268838439971,3.3891131896070883,2.7130055179024835],"y":[-0.25658574783074817,-0.70434617191298332,-0.7657423176680167,-0.26890600187526459,-1.0486718885954984,0.12501579455609829,-0.66820148511094435,-0.85516760896371624,-0.85059751250282545,-1.0298309102170426,0.18236070820124339,-0.61418993746306771],"z":[-0.21813790765343327,0.17566061091293841,0.061230501542883065,0.88539368014760533,0.3809392143941277,-0.29767542047715212,0.17164143257085898,0.41623177395788097,0.34642808166730255,-0.20912414560073006,0.16161607948503534,-0.033348412002640521],"type":"scatter3d","mode":"markers","hovertemplate":["<br><b>PC1<\/b>: %{x:.2f} <br><b>PC2<\/b>: %{y:.2f} <br><b>PC3<\/b>: %{z:.2f}<\/b>","<br><b>PC1<\/b>: %{x:.2f} <br><b>PC2<\/b>: %{y:.2f} <br><b>PC3<\/b>: %{z:.2f}<\/b>","<br><b>PC1<\/b>: %{x:.2f} <br><b>PC2<\/b>: %{y:.2f} <br><b>PC3<\/b>: %{z:.2f}<\/b>","<br><b>PC1<\/b>: %{x:.2f} <br><b>PC2<\/b>: %{y:.2f} <br><b>PC3<\/b>: %{z:.2f}<\/b>","<br><b>PC1<\/b>: %{x:.2f} <br><b>PC2<\/b>: %{y:.2f} <br><b>PC3<\/b>: %{z:.2f}<\/b>","<br><b>PC1<\/b>: %{x:.2f} <br><b>PC2<\/b>: %{y:.2f} <br><b>PC3<\/b>: %{z:.2f}<\/b>","<br><b>PC1<\/b>: %{x:.2f} <br><b>PC2<\/b>: %{y:.2f} <br><b>PC3<\/b>: %{z:.2f}<\/b>","<br><b>PC1<\/b>: %{x:.2f} <br><b>PC2<\/b>: %{y:.2f} <br><b>PC3<\/b>: %{z:.2f}<\/b>","<br><b>PC1<\/b>: %{x:.2f} <br><b>PC2<\/b>: %{y:.2f} <br><b>PC3<\/b>: %{z:.2f}<\/b>","<br><b>PC1<\/b>: %{x:.2f} <br><b>PC2<\/b>: %{y:.2f} <br><b>PC3<\/b>: %{z:.2f}<\/b>","<br><b>PC1<\/b>: %{x:.2f} <br><b>PC2<\/b>: %{y:.2f} <br><b>PC3<\/b>: %{z:.2f}<\/b>","<br><b>PC1<\/b>: %{x:.2f} <br><b>PC2<\/b>: %{y:.2f} <br><b>PC3<\/b>: %{z:.2f}<\/b>"],"name":"Sparidae","marker":{"color":"rgba(141,160,203,1)","line":{"color":"rgba(141,160,203,1)"}},"textfont":{"color":"rgba(141,160,203,1)"},"error_y":{"color":"rgba(141,160,203,1)"},"error_x":{"color":"rgba(141,160,203,1)"},"line":{"color":"rgba(141,160,203,1)"},"frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
 <h3 id="scree-plot">Scree plot</h3>
 <p><a href="https://en.wikipedia.org/wiki/Scree_plot">Scree plot</a> is useful in determining the number of principal components to retain in a principal component analysis or the number of factors to keep in an exploratory factor analysis-</p>
 <p>Using the manual calculation’s output <code>eigcorr$values</code> to draw a scree plot -</p>
@@ -660,9 +2676,9 @@ $$</p>
 </span></span><span style="display:flex;"><span>     <span style="color:#000">xaxt</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;n&#34;</span>  <span style="color:#8f5902;font-style:italic"># to hide x-axis labels</span>
 </span></span><span style="display:flex;"><span>     <span style="color:#000;font-weight:bold">)</span>
 </span></span><span style="display:flex;"><span><span style="color:#000">axis</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">side</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">at</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#ce5c00;font-weight:bold">:</span><span style="color:#0000cf;font-weight:bold">7</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">labels</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">paste0</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;PC&#34;</span><span style="color:#000;font-weight:bold">,</span><span style="color:#0000cf;font-weight:bold">1</span><span style="color:#ce5c00;font-weight:bold">:</span><span style="color:#0000cf;font-weight:bold">7</span><span style="color:#000;font-weight:bold">))</span>
-</span></span></code></pre></div><!-- raw HTML omitted -->
+</span></span></code></pre></div><img src="https://mdahsanul.netlify.app/post/2025-09-29-pca/index_files/figure-html/unnamed-chunk-27-1.png" alt="" width="672" />
 <p>In 1966, <a href="https://doi.org/10.1207%2Fs15327906mbr0102_10">Raymond B. Cattell</a> invented the scree plot. Scree plot is used to identify statistically significant components. The process is also known as scree test.</p>
-<p>According to the scree test, the components that are at the left side of the elbow are to be retained as significant.<!-- raw HTML omitted --><sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup><!-- raw HTML omitted --></p>
+<p>According to the scree test, the components that are at the left side of the elbow are to be retained as significant.<cite><sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup></cite></p>
 <p>Another way to select the components to retain is inspecting the variance of the principal components. If the variance is greater than the average of all the variances then the component will be retained, which in the case of standardized data is -</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#000">mean</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">eigcorr</span><span style="color:#ce5c00;font-weight:bold">$</span><span style="color:#000">values</span><span style="color:#000;font-weight:bold">)</span>
 </span></span></code></pre></div><pre><code># [1] 1
@@ -676,7 +2692,7 @@ $$</p>
 </span></span><span style="display:flex;"><span>     <span style="color:#000;font-weight:bold">)</span>
 </span></span><span style="display:flex;"><span><span style="color:#000">axis</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">side</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">at</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#ce5c00;font-weight:bold">:</span><span style="color:#0000cf;font-weight:bold">7</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">labels</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">paste0</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;PC&#34;</span><span style="color:#000;font-weight:bold">,</span><span style="color:#0000cf;font-weight:bold">1</span><span style="color:#ce5c00;font-weight:bold">:</span><span style="color:#0000cf;font-weight:bold">7</span><span style="color:#000;font-weight:bold">))</span>
 </span></span><span style="display:flex;"><span><span style="color:#000">abline</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">h</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">col</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;#2E7BF9&#34;</span><span style="color:#000;font-weight:bold">)</span>
-</span></span></code></pre></div><!-- raw HTML omitted -->
+</span></span></code></pre></div><img src="https://mdahsanul.netlify.app/post/2025-09-29-pca/index_files/figure-html/unnamed-chunk-29-1.png" alt="" width="672" />
 <p>So the first two principal components will be kept.</p>
 <p><strong>Extra:</strong></p>
 <p>To make a pretty scree plot using ggplot2 with secondary y-axis that shows the percentage of variance explained -</p>
@@ -702,14 +2718,14 @@ $$</p>
 </span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">+</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#000">geom_line</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">y</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">color</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;#2E7BF9&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">linetype</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;dashed&#34;</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">+</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#000">labs</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">title</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;Scree plot&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">x</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;Principal Components&#34;</span><span style="color:#000;font-weight:bold">)</span>
-</span></span></code></pre></div><!-- raw HTML omitted -->
+</span></span></code></pre></div><img src="https://mdahsanul.netlify.app/post/2025-09-29-pca/index_files/figure-html/unnamed-chunk-30-1.png" alt="" width="672" />
 <p>Constructing a scree plot using the function <code>fviz_eig()</code> from the <code>factoextra</code> <a href="http://www.sthda.com/english/articles/31-principal-component-methods-in-r-practical-guide/118-principal-component-analysis-in-r-prcomp-vs-princomp/#:~:text=The%20function%20princomp()%20uses,preferred%20compared%20to%20princomp().">package</a>.</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#000">library</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">factoextra</span><span style="color:#000;font-weight:bold">)</span>
 </span></span><span style="display:flex;"><span><span style="color:#000">fviz_screeplot</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">pc_prcomp</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">addlabels</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#3465a4">T</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">linecolor</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;red&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>               <span style="color:#000">choice</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;eigenvalue&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">geom</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;line&#34;</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">+</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#000">geom_line</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">y</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">color</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;#2E7BF9&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">linetype</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;dashed&#34;</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">+</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#000">xlab</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;Principal Components&#34;</span><span style="color:#000;font-weight:bold">)</span>
-</span></span></code></pre></div><!-- raw HTML omitted -->
+</span></span></code></pre></div><img src="https://mdahsanul.netlify.app/post/2025-09-29-pca/index_files/figure-html/unnamed-chunk-31-1.png" alt="" width="672" />
 <hr>
 <h3 id="factominers-pca">FactoMineR’s PCA()</h3>
 <p>Aside from using <code>prcomp()</code>, the function <code>PCA()</code> from FactoMineR package can be used which extracts principal components from the correlation matrix -</p>
@@ -728,7 +2744,7 @@ $$</p>
 </code></pre>
 <p>Plotting the individual points of the first two principal components in a scatterplot -</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#000">plot.PCA</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">pc_fmr</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">axes</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">c</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span><span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">))</span>
-</span></span></code></pre></div><!-- raw HTML omitted -->
+</span></span></code></pre></div><img src="https://mdahsanul.netlify.app/post/2025-09-29-pca/index_files/figure-html/unnamed-chunk-34-1.png" alt="" width="672" />
 <h3 id="biplot">Biplot</h3>
 <p>We have already constructed PCs using different functions in R. The signs of the components’ are not same in all the cases.
 If we construct the biplots for the two functions used to calculate PCs (Base R’s prcomp() and FactorMineR’s PCA()) using the function <code>fviz_pca_biplot()</code> from the <code>factoextra</code> we will get -</p>
@@ -747,15 +2763,15 @@ If we construct the biplots for the two functions used to calculate PCs (Base R�
 </span></span><span style="display:flex;"><span>                <span style="color:#000">col.ind</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;#696969&#34;</span><span style="color:#000;font-weight:bold">,</span>  <span style="color:#8f5902;font-style:italic"># Individuals color</span>
 </span></span><span style="display:flex;"><span>                <span style="color:#000">title</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;PCA - Using base R&#39;s prcomp()&#34;</span><span style="color:#000;font-weight:bold">),</span>
 </span></span><span style="display:flex;"><span><span style="color:#000">ncol</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">nrow</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">)</span>
-</span></span></code></pre></div><!-- raw HTML omitted -->
-<p><em>Here, if a positive or negative PC is found depending on the function used it just means that the eigenvector is projected pointing in one direction or 180 degree away in the other direction. The interpretation remains same regardless of the sign, because the variance that is explained is unchanged.<!-- raw HTML omitted --><sup id="fnref:7"><a href="#fn:7" class="footnote-ref" role="doc-noteref">7</a></sup><!-- raw HTML omitted --></em></p>
+</span></span></code></pre></div><img src="https://mdahsanul.netlify.app/post/2025-09-29-pca/index_files/figure-html/unnamed-chunk-35-1.png" alt="" width="672" />
+<p><em>Here, if a positive or negative PC is found depending on the function used it just means that the eigenvector is projected pointing in one direction or 180 degree away in the other direction. The interpretation remains same regardless of the sign, because the variance that is explained is unchanged.<cite><sup id="fnref:7"><a href="#fn:7" class="footnote-ref" role="doc-noteref">7</a></sup></cite></em></p>
 <p>Another visualization using the <code>ggbiplot()</code> function from <code>ggbiplot</code> package -</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># remotes::install_github(&#34;vqv/ggbiplot&#34;)</span>
 </span></span><span style="display:flex;"><span><span style="color:#000">library</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">ggbiplot</span><span style="color:#000;font-weight:bold">)</span>
 </span></span><span style="display:flex;"><span><span style="color:#000">ggbiplot</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">pc_fmr</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">groups</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000">as.factor</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">data</span><span style="color:#ce5c00;font-weight:bold">$</span><span style="color:#000">Family</span><span style="color:#000;font-weight:bold">),</span> <span style="color:#000">ellipse</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#204a87;font-weight:bold">TRUE</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">+</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#000">labs</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">title</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;Biplot: Using the first two PCs&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>       <span style="color:#000">col</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;Family&#34;</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#000">theme_bw</span><span style="color:#000;font-weight:bold">()</span>
-</span></span></code></pre></div><!-- raw HTML omitted -->
+</span></span></code></pre></div><img src="https://mdahsanul.netlify.app/post/2025-09-29-pca/index_files/figure-html/unnamed-chunk-36-1.png" alt="" width="672" />
 <hr>
 <h2 id="references">References</h2>
 <ul>
@@ -834,42 +2850,42 @@ If we construct the biplots for the two functions used to calculate PCs (Base R�
             <ul class="tags-ul list-unstyled list-inline">
               
               <li class="list-inline-item">
-                <a href="https://ahsan.netlify.app/tags/r"
+                <a href="https://mdahsanul.netlify.app/tags/r"
                    target="_blank">
                   R
                 </a>
               </li>
               
               <li class="list-inline-item">
-                <a href="https://ahsan.netlify.app/tags/pca"
+                <a href="https://mdahsanul.netlify.app/tags/pca"
                    target="_blank">
                   PCA
                 </a>
               </li>
               
               <li class="list-inline-item">
-                <a href="https://ahsan.netlify.app/tags/scree-plot"
+                <a href="https://mdahsanul.netlify.app/tags/scree-plot"
                    target="_blank">
                   scree plot
                 </a>
               </li>
               
               <li class="list-inline-item">
-                <a href="https://ahsan.netlify.app/tags/multivariate-analysis"
+                <a href="https://mdahsanul.netlify.app/tags/multivariate-analysis"
                    target="_blank">
                   Multivariate Analysis
                 </a>
               </li>
               
               <li class="list-inline-item">
-                <a href="https://ahsan.netlify.app/tags/eigen-decomposition"
+                <a href="https://mdahsanul.netlify.app/tags/eigen-decomposition"
                    target="_blank">
                   Eigen Decomposition
                 </a>
               </li>
               
               <li class="list-inline-item">
-                <a href="https://ahsan.netlify.app/tags/biplot"
+                <a href="https://mdahsanul.netlify.app/tags/biplot"
                    target="_blank">
                   biplot
                 </a>
@@ -1058,7 +3074,7 @@ If we construct the biplots for the two functions used to calculate PCs (Base R�
         <div class="col-md-4 text-center">
             
                 <div class="pb-2">
-                    <a href="https://ahsan.netlify.app/" title="Ahsan">
+                    <a href="https://mdahsanul.netlify.app/" title="Ahsan">
                         <img alt="Footer logo" src="/fav.png"
                             height="40px" width="40px">
                     </a>
@@ -1113,23 +3129,104 @@ If we construct the biplots for the two functions used to calculate PCs (Base R�
 
 
 
-<!-- MathJax -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js" integrity="sha384-M5jmNxKC9EVnuqeMwRHvFuYUE8Hhp0TgBruj/GZRkYtiMrCRgH7yvv5KY+Owi7TW" crossorigin="anonymous"></script>
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath:  [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$']],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      ignoreHtmlClass: 'no-mathjax',
+      processHtmlClass: 'mathjax-process'
+    },
+    startup: {
+      pageReady: function () {
 
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-      tex2jax: {
-        inlineMath: [['\\(','\\)']],
-        displayMath: [['$$','$$'], ['\[','\]']],
-        processEscapes: true,
-        processEnvironments: true,
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-        TeX: { equationNumbers: { autoNumber: "AMS" },
-             extensions: ["AMSmath.js", "AMSsymbols.js"] }
+        
+        
+        document.querySelectorAll('code').forEach(function (code) {
+          if (code.parentNode && code.parentNode.tagName === 'PRE') return;
+          var t = code.textContent.trim();
+          var math =
+            (t.startsWith('$')   && t.endsWith('$')   && t.length > 1) ||
+            (t.startsWith('\\(') && t.endsWith('\\)')) ||
+            (t.startsWith('\\[') && t.endsWith('\\]'));
+          if (!math) return;
+          
+          if (t.startsWith('\\[') && t.endsWith('\\]')) {
+            t = '$$' + t.slice(2, -2) + '$$';
+          }
+          var span = document.createElement('span');
+          span.textContent = t;
+          code.parentNode.replaceChild(span, code);
+        });
+
+        
+        
+        
+        
+        
+        
+        var isDollarPara = function (el) {
+          return el && el.tagName === 'P' && el.textContent.trim() === '$$';
+        };
+        Array.prototype.slice.call(document.querySelectorAll('pre')).forEach(function (pre) {
+          var prev = pre.previousElementSibling;
+          var next = pre.nextElementSibling;
+          if (!isDollarPara(prev) || !isDollarPara(next)) return;
+          var inner = pre.querySelector('code');
+          if (inner && inner.className && /\blanguage-/.test(inner.className)) return;
+          var div = document.createElement('div');
+          div.className = 'math-display';
+          div.textContent = '$$\n' + pre.textContent.trim() + '\n$$';
+          pre.parentNode.replaceChild(div, pre);
+          prev.parentNode.removeChild(prev);
+          next.parentNode.removeChild(next);
+        });
+
+        
+        
+        
+        
+        
+        
+        
+        document.querySelectorAll('pre > code').forEach(function (code) {
+          if (code.className && /\blanguage-/.test(code.className)) return;
+          var t = code.textContent.trim();
+          var delimited = t.startsWith('$$') && t.endsWith('$$') && t.length > 4;
+          var environment = /\\begin\{[a-zA-Z*]+\}/.test(t) &&
+                            /\\end\{[a-zA-Z*]+\}/.test(t);
+          if (!delimited && !environment) return;
+          if (!delimited) t = '$$\n' + t + '\n$$';   
+          var div = document.createElement('div');
+          div.className = 'math-display';
+          div.textContent = t;
+          code.parentNode.parentNode.replaceChild(div, code.parentNode);
+        });
+
+        return window.MathJax.startup.defaultPageReady();
       }
-    });
+    }
+  };
 </script>
+<script id="MathJax-script" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js"
+        integrity="sha384-M5jmNxKC9EVnuqeMwRHvFuYUE8Hhp0TgBruj/GZRkYtiMrCRgH7yvv5KY+Owi7TW"
+        crossorigin="anonymous"></script>
 
+<style>
+   
+  mjx-container[jax="CHTML"][display="true"] {
+    overflow-x: auto;
+    overflow-y: hidden;
+    max-width: 100%;
+    padding: .25rem 0;
+  }
+</style>
 
 
 

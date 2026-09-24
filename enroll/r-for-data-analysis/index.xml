@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Enroll – R for Data Analysis on Ahsan</title>
-    <link>https://ahsan.netlify.app/enroll/r-for-data-analysis/</link>
-    <description>Recent content in Enroll – R for Data Analysis on Ahsan</description>
+    <title>Enroll on Ahsan</title>
+    <link>https://mdahsanulhimel.github.io/enroll/r-for-data-analysis/</link>
+    <description>Recent content in Enroll on Ahsan</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <atom:link href="https://ahsan.netlify.app/enroll/r-for-data-analysis/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://mdahsanulhimel.github.io/enroll/r-for-data-analysis/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

@@ -1,0 +1,162 @@
+/* ==========================================================================
+   Antigravity Premium Theme Customizations for Hugo Profile
+   ========================================================================== */
+
+/* Typography & Subpixel Rendering */
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+}
+
+/* Header & Navbar Styling */
+header {
+    background-color: rgba(255, 255, 255, 0.85) !important;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.dark header {
+    background-color: rgba(15, 23, 42, 0.85) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.navbar-nav .nav-link {
+    position: relative;
+    transition: color 0.25s ease;
+    padding-bottom: 4px;
+    font-weight: 500;
+}
+
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: var(--primary-color);
+    transition: width 0.25s cubic-bezier(0.4, 0, 0.2, 1), left 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navbar-nav .nav-link:hover::after {
+    width: 80%;
+    left: 10%;
+}
+
+/* Hero Section Profile Image */
+#hero img {
+    border: 4px solid var(--secondary-color) !important;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.08) !important;
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s ease !important;
+}
+
+#hero img:hover {
+    transform: scale(1.04) rotate(1deg);
+    box-shadow: 0 20px 35px -5px rgba(0, 0, 0, 0.12), 0 10px 15px -5px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* General & Action Buttons */
+.btn, .btn-primary, #hero .btn {
+    border-radius: 0.5rem !important;
+    font-weight: 500 !important;
+    padding: 0.55rem 1.35rem !important;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.btn-primary:hover, #hero .btn:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 18px -3px rgba(37, 99, 235, 0.25), 0 4px 6px -4px rgba(37, 99, 235, 0.2) !important;
+}
+
+/* Cards & Shells Redesign (Courses, Education, Experience, Publications) */
+#courses .course-card, 
+.card,
+#publications .card {
+    border: 1px solid rgba(0, 0, 0, 0.06) !important;
+    border-radius: 1rem !important;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.03), 0 2px 4px -2px rgba(0, 0, 0, 0.03) !important;
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.25s ease !important;
+    background-color: var(--secondary-color) !important;
+}
+
+.dark #courses .course-card, 
+.dark .card,
+.dark #publications .card {
+    border: 1px solid rgba(255, 255, 255, 0.07) !important;
+    box-shadow: 0 4px 10px -1px rgba(0, 0, 0, 0.25), 0 2px 5px -2px rgba(0, 0, 0, 0.2) !important;
+}
+
+#courses .course-card:hover, 
+.card:hover,
+#publications .card:hover {
+    transform: translateY(-4px) !important;
+    box-shadow: 0 12px 20px -3px rgba(0, 0, 0, 0.06), 0 4px 8px -4px rgba(0, 0, 0, 0.04) !important;
+    border-color: var(--primary-color) !important;
+}
+
+.dark #courses .course-card:hover, 
+.dark .card:hover,
+.dark #publications .card:hover {
+    box-shadow: 0 12px 20px -3px rgba(0, 0, 0, 0.4), 0 4px 8px -4px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Course Mode Ribbons */
+#courses .course-mode {
+    font-weight: 600 !important;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    font-size: 0.65rem !important;
+}
+
+#courses .course-mode.live {
+    background-color: #dcfce7 !important; /* Soft Emerald */
+    color: #15803d !important;
+    border: 1px solid #bbf7d0 !important;
+}
+
+#courses .course-mode.self {
+    background-color: #f3e8ff !important; /* Soft Purple */
+    color: #7e22ce !important;
+    border: 1px solid #e9d5ff !important;
+}
+
+#courses .course-cohort, 
+#courses .course-price {
+    font-weight: 500 !important;
+    background-color: var(--secondary-color) !important;
+    border: 1px solid rgba(0, 0, 0, 0.08) !important;
+    color: var(--text-color) !important;
+}
+
+.dark #courses .course-cohort, 
+.dark #courses .course-price {
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+}
+
+/* Chips & Tags Styling */
+#courses .chip {
+    background-color: rgba(0, 0, 0, 0.02) !important;
+    border: 1px solid rgba(0, 0, 0, 0.06) !important;
+    color: var(--text-secondary-color) !important;
+    font-weight: 500;
+}
+
+.dark #courses .chip {
+    background-color: rgba(255, 255, 255, 0.02) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+#courses .tag {
+    background-color: rgba(37, 99, 235, 0.04) !important;
+    border: 1px solid rgba(37, 99, 235, 0.15) !important;
+    color: var(--primary-color) !important;
+    font-weight: 500;
+}
+
+.dark #courses .tag {
+    background-color: rgba(59, 130, 246, 0.08) !important;
+    border: 1px solid rgba(59, 130, 246, 0.25) !important;
+}

@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Use R in Jupyter Notebook on Ahsan</title>
-    <link>https://ahsan.netlify.app/post/r-in-jupyter-notebook/</link>
+    <link>https://mdahsanulhimel.github.io/post/r-in-jupyter-notebook/</link>
     <description>Recent content in Use R in Jupyter Notebook on Ahsan</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate></lastBuildDate>
-    <atom:link href="https://ahsan.netlify.app/post/r-in-jupyter-notebook/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://mdahsanulhimel.github.io/post/r-in-jupyter-notebook/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

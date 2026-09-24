@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Cluster Analysis on Ahsan</title>
-    <link>https://ahsan.netlify.app/post/cluster-analysis/</link>
+    <link>https://mdahsanulhimel.github.io/post/cluster-analysis/</link>
     <description>Recent content in Cluster Analysis on Ahsan</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate></lastBuildDate>
-    <atom:link href="https://ahsan.netlify.app/post/cluster-analysis/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://mdahsanulhimel.github.io/post/cluster-analysis/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

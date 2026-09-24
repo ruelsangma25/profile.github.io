@@ -12,7 +12,7 @@ keywords: []
 description: 'Markov Chain is a special type of stochastic process. It is a popular and straightforward way to statistically model a discrete-time, discrete space stochastic processes.'
 summary: 'Markov Chain is a special type of stochastic process. It is a popular and straightforward way to statistically model a discrete-time, discrete space stochastic processes. In this post I will show a practical example of markov chain. Let’s try to map the movement of freelancer drivers in Dhaka. We can divide the area of Dhaka into three zones – North Dhaka, Middle Dhaka... '
 images:
-- https://MdAhsanulHimel.github.io.github.io/2021/05/23/markov-chain/TPMDiagramPreview.jpg
+- TPMDiagramPreview.jpg
 comment: yes
 toc: yes
 autoCollapseToc: yes

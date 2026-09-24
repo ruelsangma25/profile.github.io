@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Survey Analytics in R on Ahsan</title>
+    <link>https://mdahsanulhimel.github.io/courses/survey-analytics/</link>
+    <description>Recent content in Survey Analytics in R on Ahsan</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="https://mdahsanulhimel.github.io/courses/survey-analytics/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

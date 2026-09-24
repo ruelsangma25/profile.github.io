@@ -29,7 +29,7 @@
 
 
 
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-XHMN5CZBNV"></script>
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-DNBSPWH7TR"></script>
       <script>
         var doNotTrack = false;
         if ( false ) {
@@ -40,10 +40,10 @@
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
-          gtag('config', 'G-XHMN5CZBNV');
+          gtag('config', 'G-DNBSPWH7TR');
         }
       </script>
-<meta property="og:url" content="https://ahsan.netlify.app/post/kaplan-meier-estimatior-in-r/">
+<meta property="og:url" content="https://mdahsanul.netlify.app/post/kaplan-meier-estimatior-in-r/">
   <meta property="og:site_name" content="Ahsan">
   <meta property="og:title" content="The Kaplan-Meier Estimatior in R">
   <meta property="og:description" content="In this post, we will see how to estimate the survival function in this method using R. Note that, the Kaplan–Meier estimator, often known as the product limit estimator, is a non-parametric statistic used to estimate the survival function using lifetime...">
@@ -75,22 +75,22 @@
 
 <style>
     :root {
-        --text-color: #343a40;
-        --text-secondary-color: #6c757d;
-        --text-link-color: #007bff;
-        --background-color: #fff;
-        --secondary-background-color: #64ffda1a;
-        --primary-color: #007bff;
-        --secondary-color: #f8f9fa;
+        --text-color: #1e293b;
+        --text-secondary-color: #475569;
+        --text-link-color: #2563eb;
+        --background-color: #ffffff;
+        --secondary-background-color: #f1f5f9;
+        --primary-color: #2563eb;
+        --secondary-color: #f8fafc;
 
          
-        --text-color-dark: #e4e6eb;
-        --text-secondary-color-dark: #b0b3b8;
-        --text-link-color-dark: #ffffff;
-        --background-color-dark: #18191a;
-        --secondary-background-color-dark: #212529;
-        --primary-color-dark: #ffffff;
-        --secondary-color-dark: #212529;
+        --text-color-dark: #f8fafc;
+        --text-secondary-color-dark: #94a3b8;
+        --text-link-color-dark: #3b82f6;
+        --background-color-dark: #0f172a;
+        --secondary-background-color-dark: #1e293b;
+        --primary-color-dark: #3b82f6;
+        --secondary-color-dark: #1e293b;
     }
     body {
         font-size: 1rem;
@@ -157,6 +157,8 @@
 
 
   
+  
+    <link rel="stylesheet" href="/style.css">
   
 
   <title>
@@ -250,6 +252,15 @@ The Kaplan-Meier Estimatior in R | Ahsan
                                     <i class="fas fa-address-card"></i>  
                                 
                                 Contact
+                            </a>
+                        </li>
+                    
+                        <li class="nav-item navbar-text">
+                            <a class="nav-link" href="/#courses" title="Courses">
+                                
+                                    <i class="fas fa-chalkboard-teacher"></i>  
+                                
+                                Courses
                             </a>
                         </li>
                     
@@ -568,7 +579,7 @@ The Kaplan-Meier Estimatior in R | Ahsan
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#000">plot</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">kmfit1</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">frame.plot</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#204a87;font-weight:bold">FALSE</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>     <span style="color:#000">xlab</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;Survival Time in Days&#34;</span><span style="color:#000;font-weight:bold">,</span> 
 </span></span><span style="display:flex;"><span>     <span style="color:#000">ylab</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;Survival Probabilities&#34;</span><span style="color:#000;font-weight:bold">)</span>
-</span></span></code></pre></div><!-- raw HTML omitted -->
+</span></span></code></pre></div><img src="https://mdahsanul.netlify.app/post/kaplan-meier-estimatior-in-r/index.en_files/figure-html/unnamed-chunk-11-1.png" width="672" />
 <h2 id="stratify-by-other-variable">Stratify by Other Variable</h2>
 <p>To stratify the survival experience by CLINIC variable we need to fit a different model including the variable CLINIC instead of 1 -</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#000">kmfit2</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">survfit</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">Y</span> <span style="color:#ce5c00;font-weight:bold">~</span> <span style="color:#000">clinic</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">data</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">addicts</span><span style="color:#000;font-weight:bold">)</span>
@@ -617,7 +628,7 @@ The Kaplan-Meier Estimatior in R | Ahsan
 </span></span><span style="display:flex;"><span>     <span style="color:#000">ylab</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;Survival Probabilities&#34;</span><span style="color:#000;font-weight:bold">)</span>
 </span></span><span style="display:flex;"><span><span style="color:#000">legend</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;topright&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">c</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;Clinic 1&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;Clinic 2&#34;</span><span style="color:#000;font-weight:bold">),</span> 
 </span></span><span style="display:flex;"><span>       <span style="color:#000">lty</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">c</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;solid&#34;</span><span style="color:#000;font-weight:bold">,</span><span style="color:#4e9a06">&#34;dashed&#34;</span><span style="color:#000;font-weight:bold">),</span> <span style="color:#000">col</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000">c</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;#DC7633&#34;</span><span style="color:#000;font-weight:bold">,</span><span style="color:#4e9a06">&#34;#2471A3&#34;</span><span style="color:#000;font-weight:bold">))</span>
-</span></span></code></pre></div><!-- raw HTML omitted -->
+</span></span></code></pre></div><img src="https://mdahsanul.netlify.app/post/kaplan-meier-estimatior-in-r/index.en_files/figure-html/unnamed-chunk-14-1.png" width="672" />
 <p>The plot indicates that subjects from CLINIC=2 have a higher rate of survival than subjects from CLINIC=1.</p>
 <p>Reference:</p>
 <ol>
@@ -649,14 +660,14 @@ The Kaplan-Meier Estimatior in R | Ahsan
             <ul class="tags-ul list-unstyled list-inline">
               
               <li class="list-inline-item">
-                <a href="https://ahsan.netlify.app/tags/r"
+                <a href="https://mdahsanul.netlify.app/tags/r"
                    target="_blank">
                   R
                 </a>
               </li>
               
               <li class="list-inline-item">
-                <a href="https://ahsan.netlify.app/tags/biostatisics"
+                <a href="https://mdahsanul.netlify.app/tags/biostatisics"
                    target="_blank">
                   Biostatisics
                 </a>
@@ -845,7 +856,7 @@ The Kaplan-Meier Estimatior in R | Ahsan
         <div class="col-md-4 text-center">
             
                 <div class="pb-2">
-                    <a href="https://ahsan.netlify.app/" title="Ahsan">
+                    <a href="https://mdahsanul.netlify.app/" title="Ahsan">
                         <img alt="Footer logo" src="/fav.png"
                             height="40px" width="40px">
                     </a>
@@ -895,6 +906,7 @@ The Kaplan-Meier Estimatior in R | Ahsan
 
 
     <script src="/js/search.js"></script>
+
 
 
 

@@ -40,7 +40,7 @@ Principal component analysis (PCA) is a technique to transform the original set 
 
 An eigen vector is a direction of the transformation of the original dataset for which no information in the data is lost and an eigenvalue shows the amount of variance that is explained in the data in that direction. So the eigen vector corresponding to the highest eigenvalue is the first principal component.
 
-Geometrically to say, PCA is a type of linear transformation of a given dataset \\(X\\) that contains values for a given number of variables (or say coordinates) for a given number of spaces. This linear transformation fits this dataset to a new coordinate system in such a way that the first coordinate (component) has the most variation, and each subsequent coordinate is orthogonal to the first and has less variance.<cite>[^2]</cite>,<cite>[^3]<\cite>
+Geometrically to say, PCA is a type of linear transformation of a given dataset $X$ that contains values for a given number of variables (or say coordinates) for a given number of spaces. This linear transformation fits this dataset to a new coordinate system in such a way that the first coordinate (component) has the most variation, and each subsequent coordinate is orthogonal to the first and has less variance.<cite>[^2]</cite>,<cite>[^3]<\cite>
 
 [^2]:  [https://www.datacamp.com/community/tutorials/pca-analysis-r](https://www.datacamp.com/community/tutorials/pca-analysis-r).
 [^3]: [https://stats.stackexchange.com/questions/2691/making-sense-of-principal-component-analysis-eigenvectors-eigenvalues/140579#140579](https://stats.stackexchange.com/questions/2691/making-sense-of-principal-component-analysis-eigenvectors-eigenvalues/140579#140579)
@@ -69,11 +69,12 @@ Before diving into the PCA, there are a few things one should be aware of -
 
 ### Theory
 
-Let, p be the number of variables, n be the number of observations, \\( X \\) be a \\(p \times n\\) matrix of a dataset, mean vector \\(\bar{X}\\) be a zero vector and the variance-covariance matrix \\(\Sigma\\) be a real [positive definite matrix](https://nhigham.com/2020/07/21/what-is-a-symmetric-positive-definite-matrix/) or at least [positive semi-definite](https://www.cse.iitk.ac.in/users/rmittal/prev_course/s14/notes/lec11.pdf) of rank \\(r \le p\\).
+Let, p be the number of variables, n be the number of observations, $ X $ be a $p \times n$ matrix of a dataset, mean vector $\bar{X}$ be a zero vector and the variance-covariance matrix $\Sigma$ be a real [positive definite matrix](https://nhigham.com/2020/07/21/what-is-a-symmetric-positive-definite-matrix/) or at least [positive semi-definite](https://www.cse.iitk.ac.in/users/rmittal/prev_course/s14/notes/lec11.pdf) of rank $r \le p$.
 
-Let,\\( \lambda_i\ \forall\ i=1,2,...,p \\) be the eigen values of \\(\Sigma\\) where, \\(\lambda_1 > \lambda_2 > \lambda_3 > ... > \lambda_p\\) and their corresponding eigenvectors are \\(\gamma_1, \gamma_2, \gamma_3, ..., \gamma_p\\).
+Let,$ \lambda_i\ \forall\ i=1,2,...,p $ be the eigen values of $\Sigma$ where, $\lambda_1 > \lambda_2 > \lambda_3 > ... > \lambda_p$ and their corresponding eigenvectors are $\gamma_1, \gamma_2, \gamma_3, ..., \gamma_p$.
 
-where, \\(D\\) is a diagonal matrix where the diagonal elements are the eigenvalues -
+where, $D$ is a diagonal matrix where the diagonal elements are the eigenvalues -
+
 $$
 D =\begin{bmatrix} 
 \lambda_1 & 0 & ... & 0\newline 
@@ -88,25 +89,25 @@ $$
 \Gamma =\begin{bmatrix} \gamma_1,\ \gamma_2,\ ...\ ,\gamma_p\\ \end{bmatrix}_{p\ \times\ p}
 $$
 
-The matrix \\(\Gamma\\) diagonalizes \\(\Sigma\\) such that, \\(D = \Gamma' \Sigma \Gamma\\) or, \\(\Sigma=\Gamma D\Gamma'\\)   
+The matrix $\Gamma$ diagonalizes $\Sigma$ such that, $D = \Gamma' \Sigma \Gamma$ or, $\Sigma=\Gamma D\Gamma'$   
 
-*Since \\(\Gamma\\) is an orthogonal matrix, then \\(\Gamma\Gamma'=\Gamma'\Gamma =  I\\).<cite>[^4]</cite>* 
+*Since $\Gamma$ is an orthogonal matrix, then $\Gamma\Gamma'=\Gamma'\Gamma =  I$.<cite>[^4]</cite>* 
 
 [^4]: [https://math.stackexchange.com/questions/142645/are-all-eigenvectors-of-any-matrix-always-orthogonal](https://math.stackexchange.com/questions/142645/are-all-eigenvectors-of-any-matrix-always-orthogonal)
 
-We consider an orthogonal transformation (that will preserve all the information) of \\(X\\) into \\(Y\\) by -  
-\\(Y=\Gamma'X\\)  
+We consider an orthogonal transformation (that will preserve all the information) of $X$ into $Y$ by -  
+$Y=\Gamma'X$  
 
 or,  
-\\( \begin{bmatrix}Y_1 \newline Y_2 \newline...\newline Y_p\end{bmatrix}=\Gamma'\begin{bmatrix}X_1 \newline X_2 \newline ... \newline X_p\end{bmatrix} \\)
+$ \begin{bmatrix}Y_1 \newline Y_2 \newline...\newline Y_p\end{bmatrix}=\Gamma'\begin{bmatrix}X_1 \newline X_2 \newline ... \newline X_p\end{bmatrix} $
 
-Here, \\(Y_1\\), \\(Y_2\\), ..., \\(Y_p\\) are the p components of \\(Y\\) and are called the Principal Components.  
+Here, $Y_1$, $Y_2$, ..., $Y_p$ are the p components of $Y$ and are called the Principal Components.  
 
-For example if \\(X=[x_1\ \ \ x_2]\\) is a two variable data set and the first eigen vactor is \\([a\ \ \  b]'\\).  
+For example if $X=[x_1\ \ \ x_2]$ is a two variable data set and the first eigen vactor is $[a\ \ \  b]'$.  
 
-Then the first principal component will be - \\(P_1=x_1\times a+x_2 \times b\\)  
+Then the first principal component will be - $P_1=x_1\times a+x_2 \times b$  
 
-Similarly if the second eigen vector is \\([c\ \ \ d]'\\) then the second principal component will be - \\(P_2=x_1\times c+x_2 \times d\\)  
+Similarly if the second eigen vector is $[c\ \ \ d]'$ then the second principal component will be - $P_2=x_1\times c+x_2 \times d$  
 
 ---
 
@@ -114,34 +115,34 @@ Similarly if the second eigen vector is \\([c\ \ \ d]'\\) then the second princi
 
 **How does the technique preserve the total variation after the transformation?**
 
-Since \\(\Sigma\\) is the variance-covariance matrix of \\(X\\), we can measure the following things:  
+Since $\Sigma$ is the variance-covariance matrix of $X$, we can measure the following things:  
 
-1. Overall measure of the variability of \\(X\\) as \\(trace(\Sigma)\\) or,   
-2. Generalized variance of \\(X\\) as \\(|\Sigma|\\)
+1. Overall measure of the variability of $X$ as $trace(\Sigma)$ or,   
+2. Generalized variance of $X$ as $|\Sigma|$
 
-Now, \\(trace(\Sigma)\\)   
-\\(=trace(\Gamma D\Gamma')\\)   
-\\(=trace(\Gamma'\Gamma D)\\)   [ [Cyclic property] ](https://en.wikipedia.org/wiki/Trace_(linear_algebra)#Cyclic_property)   
-\\(=trace(D)\\)   [Since, \\(\Gamma\\) is an orthogonal matrix]   
-\\(=\sum_{i=1}^{p}\lambda_i\\)
-
-
-Again, \\(|\Sigma|\\)   
-\\(=|\Sigma D\Sigma'|\\)  
-\\(=|\Sigma|\times| D|\times|\Sigma'|\\)  
-\\(=|D|\\) 
-\\(=\prod_{i=1}^{p}\lambda_i\\) 
+Now, $trace(\Sigma)$   
+$=trace(\Gamma D\Gamma')$   
+$=trace(\Gamma'\Gamma D)$   [ [Cyclic property] ](https://en.wikipedia.org/wiki/Trace_(linear_algebra)#Cyclic_property)   
+$=trace(D)$   [Since, $\Gamma$ is an orthogonal matrix]   
+$=\sum_{i=1}^{p}\lambda_i$
 
 
-Now we have the transformation, \\(Y=\Gamma'X\\)    
+Again, $|\Sigma|$   
+$=|\Sigma D\Sigma'|$  
+$=|\Sigma|\times| D|\times|\Sigma'|$  
+$=|D|$ 
+$=\prod_{i=1}^{p}\lambda_i$ 
 
-Here, \\(E[Y] = E[\Gamma'X]=\Gamma'E[X]=0\\)    
-and \\(V(Y)=E[YY']=E[\Gamma'XX'\Gamma]=\Gamma'E[XX']\Gamma=\Gamma' \Sigma \Gamma=D\\)     
 
-Thus, for \\(Y\\), overall measure of variability is \\(trace(D)=\sum_{i=1}^{p}\lambda_i\\)      
-or, generalized variance is \\(|D|=\prod_{i=1}^{p}\lambda_i\\)    
+Now we have the transformation, $Y=\Gamma'X$    
 
-Which shows that the total variation of \\(X\\) remains unchanged in \\(Y\\).
+Here, $E[Y] = E[\Gamma'X]=\Gamma'E[X]=0$    
+and $V(Y)=E[YY']=E[\Gamma'XX'\Gamma]=\Gamma'E[XX']\Gamma=\Gamma' \Sigma \Gamma=D$     
+
+Thus, for $Y$, overall measure of variability is $trace(D)=\sum_{i=1}^{p}\lambda_i$      
+or, generalized variance is $|D|=\prod_{i=1}^{p}\lambda_i$    
+
+Which shows that the total variation of $X$ remains unchanged in $Y$.
 
 ---
 
@@ -149,13 +150,13 @@ Which shows that the total variation of \\(X\\) remains unchanged in \\(Y\\).
 
 **How to know the percentage of variation that is explained by a principal component?**
 
-Since \\(\Sigma\\) is a positive definite matrix, the strict positivity of \\(\lambda_i\\) is guaranteed.   
+Since $\Sigma$ is a positive definite matrix, the strict positivity of $\lambda_i$ is guaranteed.   
 
-Now, \\(Y_1\\) is the first principal component corresponding to first eigenvalue \\(\lambda_1\\), and similarly \\(Y_i\\) is the i-th principal component corresponding to i-th eigenvalue \\(\lambda_i\\).   
+Now, $Y_1$ is the first principal component corresponding to first eigenvalue $\lambda_1$, and similarly $Y_i$ is the i-th principal component corresponding to i-th eigenvalue $\lambda_i$.   
 
-The percentage of variation of the original data \\(X\\) explained by the i-th principal component is calculated using \\(\frac{\lambda_i}{\sum_{i=1}^{p}\lambda_i}\times 100\\)
+The percentage of variation of the original data $X$ explained by the i-th principal component is calculated using $\frac{\lambda_i}{\sum_{i=1}^{p}\lambda_i}\times 100$
 
-At the beginning of the theory development since \\(\lambda_i\\)s were taken such as \\(\lambda_1 > \lambda_2 > \lambda_3 > \dots > \lambda_p\\), the first principal component explains the largest amount of variation.  
+At the beginning of the theory development since $\lambda_i$s were taken such as $\lambda_1 > \lambda_2 > \lambda_3 > \dots > \lambda_p$, the first principal component explains the largest amount of variation.  
 
 
 ---

@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Recommended Books For Multivariate Analysis on Ahsan</title>
-    <link>https://ahsan.netlify.app/post/books-multivariate-analysis/</link>
+    <link>https://mdahsanulhimel.github.io/post/books-multivariate-analysis/</link>
     <description>Recent content in Recommended Books For Multivariate Analysis on Ahsan</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate></lastBuildDate>
-    <atom:link href="https://ahsan.netlify.app/post/books-multivariate-analysis/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://mdahsanulhimel.github.io/post/books-multivariate-analysis/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

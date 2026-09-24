@@ -12,7 +12,7 @@ tags:
 description: "R is great for data visualization. One of the amazing packages in visualization in R is the ggplot2. Hadley Wickham created ggplot2 in 2005 as an implementation of Leland Wilkinson's Grammar of Graphics. It divides graphs into semantic components like scales ..."
 summary: "R is great for data visualization. One of the amazing packages in visualization in R is the ggplot2. Hadley Wickham created ggplot2 in 2005 as an implementation of Leland Wilkinson's Grammar of Graphics. It divides graphs into semantic components like scales and layers."
 images:
-- https://MdAhsanulHimel.github.io/2021/05/23/ggplot2-scatter-plot/ggplot2-scatter-plot.png
+- ggplot2-scatter-plot.png
 toc: yes
 autoCollapseToc: yes
 contentCopyright: yes

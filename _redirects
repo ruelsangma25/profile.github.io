@@ -1,0 +1,8 @@
+# Old post URLs kept alive after slugs were normalised (2026-09-10).
+# Netlify serves these as real 301s. Never delete a line from this file:
+# every one of them is a URL someone may still have.
+/post/2025-09-29-pca/                                       /post/pca/                                  301
+/post/2025-12-03-the-statistical-civil-war-of-estimation/   /post/statistical-civil-war-of-estimation/  301
+/post/2026-04-27-50-journals-used-in-the-ft-research-rank/  /post/ft-research-rank-journals/            301
+/post/2026-05-26-design-your-environment-design-your-life/  /post/design-your-environment/              301
+/post/kaplan-meier-estimatior-in-r/                         /post/kaplan-meier-estimator-in-r/          301

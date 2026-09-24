@@ -43,7 +43,7 @@
           gtag('config', 'G-XHMN5CZBNV');
         }
       </script>
-<meta property="og:url" content="https://ahsan.netlify.app/post/shapiro-wilk-test/">
+<meta property="og:url" content="https://mdahsanulhimel.github.io/post/shapiro-wilk-test/">
   <meta property="og:site_name" content="Ahsan">
   <meta property="og:title" content="Shapiro Wilk Test using R">
   <meta property="og:description" content="Samuel Sanford Shapiro and Martin Wilk developed a non-parametric test in 1965 to check the normality of the data, which was later named after them as Shapiro-Wilk test.">
@@ -56,11 +56,11 @@
     <meta property="article:tag" content="Normality Test">
     <meta property="article:tag" content="Hypothesis Test">
     <meta property="article:tag" content="R">
-    <meta property="og:image" content="https://ahsanhimel.github.io/2022/03/31/shapiro-wilk-test/shapiro-wilk-test-cover.png">
+    <meta property="og:image" content="https://mdahsanulhimel.github.io/post/shapiro-wilk-test/shapiro-wilk-test-cover.png">
 
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://ahsanhimel.github.io/2022/03/31/shapiro-wilk-test/shapiro-wilk-test-cover.png">
+  <meta name="twitter:image" content="https://mdahsanulhimel.github.io/post/shapiro-wilk-test/shapiro-wilk-test-cover.png">
   <meta name="twitter:title" content="Shapiro Wilk Test using R">
   <meta name="twitter:description" content="Samuel Sanford Shapiro and Martin Wilk developed a non-parametric test in 1965 to check the normality of the data, which was later named after them as Shapiro-Wilk test.">
 
@@ -77,22 +77,22 @@
 
 <style>
     :root {
-        --text-color: #343a40;
-        --text-secondary-color: #6c757d;
-        --text-link-color: #007bff;
-        --background-color: #fff;
-        --secondary-background-color: #64ffda1a;
-        --primary-color: #007bff;
-        --secondary-color: #f8f9fa;
+        --text-color: #1e293b;
+        --text-secondary-color: #475569;
+        --text-link-color: #2563eb;
+        --background-color: #ffffff;
+        --secondary-background-color: #f1f5f9;
+        --primary-color: #2563eb;
+        --secondary-color: #f8fafc;
 
          
-        --text-color-dark: #e4e6eb;
-        --text-secondary-color-dark: #b0b3b8;
-        --text-link-color-dark: #ffffff;
-        --background-color-dark: #18191a;
-        --secondary-background-color-dark: #212529;
-        --primary-color-dark: #ffffff;
-        --secondary-color-dark: #212529;
+        --text-color-dark: #f8fafc;
+        --text-secondary-color-dark: #94a3b8;
+        --text-link-color-dark: #60a5fa;
+        --background-color-dark: #0f172a;
+        --secondary-background-color-dark: #1e293b;
+        --primary-color-dark: #3b82f6;
+        --secondary-color-dark: #1e293b;
     }
     body {
         font-size: 1rem;
@@ -129,6 +129,9 @@
 </style>
 
 
+<link rel="stylesheet" href="/css/syntax.css" media="all">
+
+
 
 
 <style>
@@ -160,6 +163,8 @@
 
   
   
+    <link rel="stylesheet" href="/style.css">
+  
 
   <title>
 Shapiro Wilk Test using R | Ahsan
@@ -169,6 +174,27 @@ Shapiro Wilk Test using R | Ahsan
 
 <body class="light">
   
+<script>
+(function () {
+  
+  var def = "light";
+  var saved = null;
+  try { saved = localStorage.getItem('pref-theme'); } catch (e) {}
+
+  var dark;
+  if (saved === 'dark')        { dark = true;  }
+  else if (saved === 'light')  { dark = false; }
+  else if (def === 'dark')     { dark = true;  }
+  else if (def === 'light')    { dark = false; }
+  else {
+    dark = !!(window.matchMedia &&
+              window.matchMedia('(prefers-color-scheme: dark)').matches);
+  }
+
+  document.body.classList.toggle('dark', dark);
+})();
+</script>
+
   
 <header id="profileHeader">
     <nav class="pt-3 navbar navbar-expand-lg animate">
@@ -256,6 +282,15 @@ Shapiro Wilk Test using R | Ahsan
                         </li>
                     
                         <li class="nav-item navbar-text">
+                            <a class="nav-link" href="/#courses" title="Courses">
+                                
+                                    <i class="fas fa-chalkboard-teacher"></i>  
+                                
+                                Courses
+                            </a>
+                        </li>
+                    
+                        <li class="nav-item navbar-text">
                             <a class="nav-link" href="/#youtube" title="Youtube">
                                 
                                     <i class="fas fa-chalkboard-teacher"></i>  
@@ -318,9 +353,11 @@ Shapiro Wilk Test using R | Ahsan
           
           
           
-            
-          
 
+          
+          <div class="featured-image">
+            <img class="img-fluid mx-auto d-block" src="/post/shapiro-wilk-test/shapiro-wilk-test-cover.png" alt="Shapiro Wilk Test using R">
+          </div>
           
 
           <article class="page-content p-2">
@@ -330,19 +367,19 @@ Shapiro Wilk Test using R | Ahsan
 <h1 id="shapiro-wilk-test-using-r">Shapiro-Wilk Test using R</h1>
 <p>Suppose we have the data on age of 18 randomly selected students in a primary school. We need to test whether the data follows a normal distribution or not.</p>
 <p>Data -</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#000">age</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">c</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">9</span><span style="color:#000;font-weight:bold">,</span><span style="color:#0000cf;font-weight:bold">12</span><span style="color:#000;font-weight:bold">,</span><span style="color:#0000cf;font-weight:bold">11</span><span style="color:#000;font-weight:bold">,</span><span style="color:#0000cf;font-weight:bold">10</span><span style="color:#000;font-weight:bold">,</span><span style="color:#0000cf;font-weight:bold">12</span><span style="color:#000;font-weight:bold">,</span><span style="color:#0000cf;font-weight:bold">9</span><span style="color:#000;font-weight:bold">,</span><span style="color:#0000cf;font-weight:bold">7</span><span style="color:#000;font-weight:bold">,</span><span style="color:#0000cf;font-weight:bold">8</span><span style="color:#000;font-weight:bold">,</span><span style="color:#0000cf;font-weight:bold">8</span><span style="color:#000;font-weight:bold">,</span><span style="color:#0000cf;font-weight:bold">7</span><span style="color:#000;font-weight:bold">,</span><span style="color:#0000cf;font-weight:bold">10</span><span style="color:#000;font-weight:bold">,</span><span style="color:#0000cf;font-weight:bold">10</span><span style="color:#000;font-weight:bold">,</span><span style="color:#0000cf;font-weight:bold">8</span><span style="color:#000;font-weight:bold">,</span><span style="color:#0000cf;font-weight:bold">7</span><span style="color:#000;font-weight:bold">,</span><span style="color:#0000cf;font-weight:bold">9</span><span style="color:#000;font-weight:bold">,</span><span style="color:#0000cf;font-weight:bold">10</span><span style="color:#000;font-weight:bold">,</span><span style="color:#0000cf;font-weight:bold">11</span><span style="color:#000;font-weight:bold">,</span><span style="color:#0000cf;font-weight:bold">12</span><span style="color:#000;font-weight:bold">)</span>
-</span></span><span style="display:flex;"><span><span style="color:#000">age</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">age</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">9</span><span class="p">,</span><span class="m">12</span><span class="p">,</span><span class="m">11</span><span class="p">,</span><span class="m">10</span><span class="p">,</span><span class="m">12</span><span class="p">,</span><span class="m">9</span><span class="p">,</span><span class="m">7</span><span class="p">,</span><span class="m">8</span><span class="p">,</span><span class="m">8</span><span class="p">,</span><span class="m">7</span><span class="p">,</span><span class="m">10</span><span class="p">,</span><span class="m">10</span><span class="p">,</span><span class="m">8</span><span class="p">,</span><span class="m">7</span><span class="p">,</span><span class="m">9</span><span class="p">,</span><span class="m">10</span><span class="p">,</span><span class="m">11</span><span class="p">,</span><span class="m">12</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">age</span>
 </span></span></code></pre></div><pre tabindex="0"><code>#  [1]  9 12 11 10 12  9  7  8  8  7 10 10  8  7  9 10 11 12
 </code></pre><p>Graphically representing the data in a histogram -</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#000">hist</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">age</span><span style="color:#000;font-weight:bold">)</span>
-</span></span></code></pre></div><!-- raw HTML omitted -->
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">hist</span><span class="p">(</span><span class="n">age</span><span class="p">)</span>
+</span></span></code></pre></div><img src="https://mdahsanulhimel.github.io/post/shapiro-wilk-test/index.en_files/figure-html/unnamed-chunk-3-1.png" width="672" />
 <p>From the visualization, it is not clear whether the data follows a normal distribution or not because the sample size is small.</p>
 <p>Hypothesis formulation - <br>
-$H_0$: The data follows a normal distribution with unknown mean and variance.<br>
-$H_1$: The data does not follow a normal distribution. <br>
+$H_0$: The data follows a normal distribution with unknown mean and variance.   
+\$H_1$: The data does not follow a normal distribution. <br>
 We want to test the hypothesis at 5% significance level.</p>
 <p>Hypothesis testing -</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#000">shapiro.test</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">x</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">age</span><span style="color:#000;font-weight:bold">)</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">shapiro.test</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">age</span><span class="p">)</span>
 </span></span></code></pre></div><pre tabindex="0"><code># 
 # 	Shapiro-Wilk normality test
 # 
@@ -365,28 +402,28 @@ We want to test the hypothesis at 5% significance level.</p>
             <ul class="tags-ul list-unstyled list-inline">
               
               <li class="list-inline-item">
-                <a href="https://ahsan.netlify.app/tags/shapiro-wilk-test"
+                <a href="https://mdahsanulhimel.github.io/tags/shapiro-wilk-test"
                    target="_blank">
                   shapiro wilk test
                 </a>
               </li>
               
               <li class="list-inline-item">
-                <a href="https://ahsan.netlify.app/tags/normality-test"
+                <a href="https://mdahsanulhimel.github.io/tags/normality-test"
                    target="_blank">
                   normality test
                 </a>
               </li>
               
               <li class="list-inline-item">
-                <a href="https://ahsan.netlify.app/tags/hypothesis-test"
+                <a href="https://mdahsanulhimel.github.io/tags/hypothesis-test"
                    target="_blank">
                   hypothesis test
                 </a>
               </li>
               
               <li class="list-inline-item">
-                <a href="https://ahsan.netlify.app/tags/r"
+                <a href="https://mdahsanulhimel.github.io/tags/r"
                    target="_blank">
                   R
                 </a>
@@ -462,8 +499,9 @@ We want to test the hypothesis at 5% significance level.</p>
           <div class="col-lg-4 col-md-6 pt-2">
               <div class="card h-100 shadow-sm border-0">
                   
+                  
                   <div class="card-body bg-transparent p-3">
-                      <a href="/post/2026-05-26-design-your-environment-design-your-life/" class="primary-font text-decoration-none">
+                      <a href="/post/design-your-environment/" class="primary-font text-decoration-none">
                           <h5 class="card-title" title="Design Your Environment, Design Your Life">Design Your Environment, Design Your Life</h5>
                       </a>
                       <div class="card-text secondary-font">
@@ -472,7 +510,7 @@ We want to test the hypothesis at 5% significance level.</p>
                   </div>
                   <div class="mt-auto card-footer bg-white border-0 d-flex justify-content-between align-items-center">
                       <span class="text-muted small">May 26, 2026</span>
-                      <a href="/post/2026-05-26-design-your-environment-design-your-life/" class="btn btn-outline-info btn-sm">Read</a>
+                      <a href="/post/design-your-environment/" class="btn btn-outline-info btn-sm">Read</a>
                   </div>
               </div>
           </div>
@@ -480,8 +518,9 @@ We want to test the hypothesis at 5% significance level.</p>
           <div class="col-lg-4 col-md-6 pt-2">
               <div class="card h-100 shadow-sm border-0">
                   
+                  
                   <div class="card-body bg-transparent p-3">
-                      <a href="/post/2026-04-27-50-journals-used-in-the-ft-research-rank/" class="primary-font text-decoration-none">
+                      <a href="/post/ft-research-rank-journals/" class="primary-font text-decoration-none">
                           <h5 class="card-title" title="50 Journals used in the FT Research Rank">50 Journals used in the FT Research Rank</h5>
                       </a>
                       <div class="card-text secondary-font">
@@ -490,7 +529,7 @@ We want to test the hypothesis at 5% significance level.</p>
                   </div>
                   <div class="mt-auto card-footer bg-white border-0 d-flex justify-content-between align-items-center">
                       <span class="text-muted small">Apr 27, 2026</span>
-                      <a href="/post/2026-04-27-50-journals-used-in-the-ft-research-rank/" class="btn btn-outline-info btn-sm">Read</a>
+                      <a href="/post/ft-research-rank-journals/" class="btn btn-outline-info btn-sm">Read</a>
                   </div>
               </div>
           </div>
@@ -498,8 +537,9 @@ We want to test the hypothesis at 5% significance level.</p>
           <div class="col-lg-4 col-md-6 pt-2">
               <div class="card h-100 shadow-sm border-0">
                   
+                  
                   <div class="card-body bg-transparent p-3">
-                      <a href="/post/2025-12-03-the-statistical-civil-war-of-estimation/" class="primary-font text-decoration-none">
+                      <a href="/post/statistical-civil-war-of-estimation/" class="primary-font text-decoration-none">
                           <h5 class="card-title" title="The Statistical Civil War of Estimation: Frequentists, Bayesians, and the Quest for Truth">The Statistical Civil War of Estimation: Frequentists, Bayesians, and the Quest for Truth</h5>
                       </a>
                       <div class="card-text secondary-font">
@@ -508,7 +548,7 @@ We want to test the hypothesis at 5% significance level.</p>
                   </div>
                   <div class="mt-auto card-footer bg-white border-0 d-flex justify-content-between align-items-center">
                       <span class="text-muted small">Dec 3, 2025</span>
-                      <a href="/post/2025-12-03-the-statistical-civil-war-of-estimation/" class="btn btn-outline-info btn-sm">Read</a>
+                      <a href="/post/statistical-civil-war-of-estimation/" class="btn btn-outline-info btn-sm">Read</a>
                   </div>
               </div>
           </div>
@@ -575,7 +615,7 @@ We want to test the hypothesis at 5% significance level.</p>
         <div class="col-md-4 text-center">
             
                 <div class="pb-2">
-                    <a href="https://ahsan.netlify.app/" title="Ahsan">
+                    <a href="https://mdahsanulhimel.github.io/" title="Ahsan">
                         <img alt="Footer logo" src="/fav.png"
                             height="40px" width="40px">
                     </a>
@@ -598,23 +638,16 @@ We want to test the hypothesis at 5% significance level.</p>
 </div>
 </footer><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
 <script>
-    if (document.body.className.includes("dark")) {
-        document.body.classList.remove('dark');
-        localStorage.setItem("pref-theme", 'light');
+    var themeToggle = document.getElementById("theme-toggle");
+    if (themeToggle) {
+        themeToggle.addEventListener("click", () => {
+            var dark = !document.body.classList.contains('dark');
+            document.body.classList.toggle('dark', dark);
+            try {
+                localStorage.setItem("pref-theme", dark ? 'dark' : 'light');
+            } catch (e) {   }
+        });
     }
-</script>
-
-
-<script>
-    document.getElementById("theme-toggle").addEventListener("click", () => {
-        if (document.body.className.includes("dark")) {
-            document.body.classList.remove('dark');
-            localStorage.setItem("pref-theme", 'light');
-        } else {
-            document.body.classList.add('dark');
-            localStorage.setItem("pref-theme", 'dark');
-        }
-    })
 
     var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
     var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
@@ -630,23 +663,104 @@ We want to test the hypothesis at 5% significance level.</p>
 
 
 
-<!-- MathJax -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js" integrity="sha384-M5jmNxKC9EVnuqeMwRHvFuYUE8Hhp0TgBruj/GZRkYtiMrCRgH7yvv5KY+Owi7TW" crossorigin="anonymous"></script>
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath:  [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$']],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      ignoreHtmlClass: 'no-mathjax',
+      processHtmlClass: 'mathjax-process'
+    },
+    startup: {
+      pageReady: function () {
 
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-      tex2jax: {
-        inlineMath: [['\\(','\\)']],
-        displayMath: [['$$','$$'], ['\[','\]']],
-        processEscapes: true,
-        processEnvironments: true,
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-        TeX: { equationNumbers: { autoNumber: "AMS" },
-             extensions: ["AMSmath.js", "AMSsymbols.js"] }
+        
+        
+        document.querySelectorAll('code').forEach(function (code) {
+          if (code.parentNode && code.parentNode.tagName === 'PRE') return;
+          var t = code.textContent.trim();
+          var math =
+            (t.startsWith('$')   && t.endsWith('$')   && t.length > 1) ||
+            (t.startsWith('\\(') && t.endsWith('\\)')) ||
+            (t.startsWith('\\[') && t.endsWith('\\]'));
+          if (!math) return;
+          
+          if (t.startsWith('\\[') && t.endsWith('\\]')) {
+            t = '$$' + t.slice(2, -2) + '$$';
+          }
+          var span = document.createElement('span');
+          span.textContent = t;
+          code.parentNode.replaceChild(span, code);
+        });
+
+        
+        
+        
+        
+        
+        
+        var isDollarPara = function (el) {
+          return el && el.tagName === 'P' && el.textContent.trim() === '$$';
+        };
+        Array.prototype.slice.call(document.querySelectorAll('pre')).forEach(function (pre) {
+          var prev = pre.previousElementSibling;
+          var next = pre.nextElementSibling;
+          if (!isDollarPara(prev) || !isDollarPara(next)) return;
+          var inner = pre.querySelector('code');
+          if (inner && inner.className && /\blanguage-/.test(inner.className)) return;
+          var div = document.createElement('div');
+          div.className = 'math-display';
+          div.textContent = '$$\n' + pre.textContent.trim() + '\n$$';
+          pre.parentNode.replaceChild(div, pre);
+          prev.parentNode.removeChild(prev);
+          next.parentNode.removeChild(next);
+        });
+
+        
+        
+        
+        
+        
+        
+        
+        document.querySelectorAll('pre > code').forEach(function (code) {
+          if (code.className && /\blanguage-/.test(code.className)) return;
+          var t = code.textContent.trim();
+          var delimited = t.startsWith('$$') && t.endsWith('$$') && t.length > 4;
+          var environment = /\\begin\{[a-zA-Z*]+\}/.test(t) &&
+                            /\\end\{[a-zA-Z*]+\}/.test(t);
+          if (!delimited && !environment) return;
+          if (!delimited) t = '$$\n' + t + '\n$$';   
+          var div = document.createElement('div');
+          div.className = 'math-display';
+          div.textContent = t;
+          code.parentNode.parentNode.replaceChild(div, code.parentNode);
+        });
+
+        return window.MathJax.startup.defaultPageReady();
       }
-    });
+    }
+  };
 </script>
+<script id="MathJax-script" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js"
+        integrity="sha384-M5jmNxKC9EVnuqeMwRHvFuYUE8Hhp0TgBruj/GZRkYtiMrCRgH7yvv5KY+Owi7TW"
+        crossorigin="anonymous"></script>
 
+<style>
+   
+  mjx-container[jax="CHTML"][display="true"] {
+    overflow-x: auto;
+    overflow-y: hidden;
+    max-width: 100%;
+    padding: .25rem 0;
+  }
+</style>
 
 
 

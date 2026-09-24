@@ -43,7 +43,7 @@
           gtag('config', 'G-XHMN5CZBNV');
         }
       </script>
-<meta property="og:url" content="https://ahsan.netlify.app/post/cluster-analysis/">
+<meta property="og:url" content="https://mdahsanulhimel.github.io/post/cluster-analysis/">
   <meta property="og:site_name" content="Ahsan">
   <meta property="og:title" content="Cluster Analysis">
   <meta property="og:description" content="Explore the fascinating world of cluster analysis using R. Discover various clustering techniques, such as hierarchical clustering, k-means clustering, and more, as you delve into the process of grouping similar observations together to uncover patterns and structures in your data.">
@@ -54,9 +54,11 @@
     <meta property="article:modified_time" content="2023-07-02T00:00:00+00:00">
     <meta property="article:tag" content="R">
     <meta property="article:tag" content="Cluster Analysis">
+    <meta property="og:image" content="https://mdahsanulhimel.github.io/post/cluster-analysis/cluster_analysis_preview.png">
 
 
-  <meta name="twitter:card" content="summary">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://mdahsanulhimel.github.io/post/cluster-analysis/cluster_analysis_preview.png">
   <meta name="twitter:title" content="Cluster Analysis">
   <meta name="twitter:description" content="Explore the fascinating world of cluster analysis using R. Discover various clustering techniques, such as hierarchical clustering, k-means clustering, and more, as you delve into the process of grouping similar observations together to uncover patterns and structures in your data.">
 
@@ -73,22 +75,22 @@
 
 <style>
     :root {
-        --text-color: #343a40;
-        --text-secondary-color: #6c757d;
-        --text-link-color: #007bff;
-        --background-color: #fff;
-        --secondary-background-color: #64ffda1a;
-        --primary-color: #007bff;
-        --secondary-color: #f8f9fa;
+        --text-color: #1e293b;
+        --text-secondary-color: #475569;
+        --text-link-color: #2563eb;
+        --background-color: #ffffff;
+        --secondary-background-color: #f1f5f9;
+        --primary-color: #2563eb;
+        --secondary-color: #f8fafc;
 
          
-        --text-color-dark: #e4e6eb;
-        --text-secondary-color-dark: #b0b3b8;
-        --text-link-color-dark: #ffffff;
-        --background-color-dark: #18191a;
-        --secondary-background-color-dark: #212529;
-        --primary-color-dark: #ffffff;
-        --secondary-color-dark: #212529;
+        --text-color-dark: #f8fafc;
+        --text-secondary-color-dark: #94a3b8;
+        --text-link-color-dark: #60a5fa;
+        --background-color-dark: #0f172a;
+        --secondary-background-color-dark: #1e293b;
+        --primary-color-dark: #3b82f6;
+        --secondary-color-dark: #1e293b;
     }
     body {
         font-size: 1rem;
@@ -125,6 +127,9 @@
 </style>
 
 
+<link rel="stylesheet" href="/css/syntax.css" media="all">
+
+
 
 
 <style>
@@ -156,6 +161,8 @@
 
   
   
+    <link rel="stylesheet" href="/style.css">
+  
 
   <title>
 Cluster Analysis | Ahsan
@@ -165,6 +172,27 @@ Cluster Analysis | Ahsan
 
 <body class="light">
   
+<script>
+(function () {
+  
+  var def = "light";
+  var saved = null;
+  try { saved = localStorage.getItem('pref-theme'); } catch (e) {}
+
+  var dark;
+  if (saved === 'dark')        { dark = true;  }
+  else if (saved === 'light')  { dark = false; }
+  else if (def === 'dark')     { dark = true;  }
+  else if (def === 'light')    { dark = false; }
+  else {
+    dark = !!(window.matchMedia &&
+              window.matchMedia('(prefers-color-scheme: dark)').matches);
+  }
+
+  document.body.classList.toggle('dark', dark);
+})();
+</script>
+
   
 <header id="profileHeader">
     <nav class="pt-3 navbar navbar-expand-lg animate">
@@ -248,6 +276,15 @@ Cluster Analysis | Ahsan
                                     <i class="fas fa-address-card"></i>  
                                 
                                 Contact
+                            </a>
+                        </li>
+                    
+                        <li class="nav-item navbar-text">
+                            <a class="nav-link" href="/#courses" title="Courses">
+                                
+                                    <i class="fas fa-chalkboard-teacher"></i>  
+                                
+                                Courses
                             </a>
                         </li>
                     
@@ -348,9 +385,11 @@ Cluster Analysis | Ahsan
           
           
           
-            
-          
 
+          
+          <div class="featured-image">
+            <img class="img-fluid mx-auto d-block" src="/post/cluster-analysis/cluster_analysis_preview.png" alt="Cluster Analysis">
+          </div>
           
 
           <article class="page-content p-2">
@@ -379,15 +418,15 @@ Cluster Analysis | Ahsan
 <hr>
 <h1 id="r-code">R Code</h1>
 <h2 id="step-1-load-data">Step 1: Load Data</h2>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#000">df</span> <span style="color:#ce5c00;font-weight:bold">&lt;-</span> <span style="color:#000">read.csv</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;df_coffee.csv&#34;</span><span style="color:#000;font-weight:bold">)</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">df</span> <span class="o">&lt;-</span> <span class="nf">read.csv</span><span class="p">(</span><span class="s">&#34;df_coffee.csv&#34;</span><span class="p">)</span>
 </span></span></code></pre></div><p>Taking a sample of 20 observations for the demonstration purpose:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#000">set.seed</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">100</span><span style="color:#000;font-weight:bold">)</span>
-</span></span><span style="display:flex;"><span><span style="color:#000">df</span> <span style="color:#ce5c00;font-weight:bold">&lt;-</span> <span style="color:#000">df</span><span style="color:#000">[sample</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1</span><span style="color:#ce5c00;font-weight:bold">:</span><span style="color:#000">nrow</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">df</span><span style="color:#000;font-weight:bold">),</span> <span style="color:#000">size</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">20</span><span style="color:#000;font-weight:bold">),</span><span style="color:#000">]</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">set.seed</span><span class="p">(</span><span class="m">100</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">df</span> <span class="o">&lt;-</span> <span class="n">df</span><span class="nf">[sample</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="nf">nrow</span><span class="p">(</span><span class="n">df</span><span class="p">),</span> <span class="n">size</span> <span class="o">=</span> <span class="m">20</span><span class="p">),</span><span class="n">]</span>
 </span></span></code></pre></div><p>Always check descriptive statistics:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#000">library</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">skimr</span><span style="color:#000;font-weight:bold">)</span>
-</span></span><span style="display:flex;"><span><span style="color:#000">library</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">rlang</span><span style="color:#000;font-weight:bold">)</span>
-</span></span><span style="display:flex;"><span><span style="color:#000">skim</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">df</span><span style="color:#000;font-weight:bold">)</span>
-</span></span></code></pre></div><p>Table: <!-- raw HTML omitted --><!-- raw HTML omitted -->Table 1: Data summary</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">skimr</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">rlang</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">skim</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</span></span></code></pre></div><p>Table: <span id="tab:unnamed-chunk-4"></span>Table 1: Data summary</p>
 <table>
   <thead>
       <tr>
@@ -677,88 +716,89 @@ Cluster Analysis | Ahsan
   </tbody>
 </table>
 <p>Three of the variables have no variability (standard deviation of zero). So they should be removed:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#000">df</span> <span style="color:#ce5c00;font-weight:bold">&lt;-</span> <span style="color:#000">dplyr</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#000">select</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">df</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#ce5c00;font-weight:bold">-</span><span style="color:#000">c</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;Uniformity&#34;</span><span style="color:#000;font-weight:bold">,</span><span style="color:#4e9a06">&#34;Clean.Cup&#34;</span><span style="color:#000;font-weight:bold">,</span><span style="color:#4e9a06">&#34;Sweetness&#34;</span><span style="color:#000;font-weight:bold">,</span><span style="color:#4e9a06">&#34;Defects&#34;</span><span style="color:#000;font-weight:bold">))</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">df</span> <span class="o">&lt;-</span> <span class="n">dplyr</span><span class="o">::</span><span class="nf">select</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="o">-</span><span class="nf">c</span><span class="p">(</span><span class="s">&#34;Uniformity&#34;</span><span class="p">,</span><span class="s">&#34;Clean.Cup&#34;</span><span class="p">,</span><span class="s">&#34;Sweetness&#34;</span><span class="p">,</span><span class="s">&#34;Defects&#34;</span><span class="p">))</span>
 </span></span></code></pre></div><p>We can only use numeric variables in cluster analysis functions in R for now. (There are some advanced techniques that discuss methods related to cluster analysis in mixed data types).</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#000">df_num</span> <span style="color:#ce5c00;font-weight:bold">&lt;-</span> <span style="color:#000">df[</span><span style="color:#000;font-weight:bold">,</span><span style="color:#ce5c00;font-weight:bold">-</span><span style="color:#000">ncol</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">df</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000">]</span>  <span style="color:#8f5902;font-style:italic"># removing the last variable in the dataset which is character type</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">df_num</span> <span class="o">&lt;-</span> <span class="n">df[</span><span class="p">,</span><span class="o">-</span><span class="nf">ncol</span><span class="p">(</span><span class="n">df</span><span class="p">)</span><span class="n">]</span>  <span class="c1"># removing the last variable in the dataset which is character type</span>
 </span></span></code></pre></div><h2 id="step-2-complete-cases">Step 2: Complete Cases</h2>
 <p>Take only complete cases:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#000">df_com</span> <span style="color:#ce5c00;font-weight:bold">&lt;-</span> <span style="color:#000">na.omit</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">df_num</span><span style="color:#000;font-weight:bold">)</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">df_com</span> <span class="o">&lt;-</span> <span class="nf">na.omit</span><span class="p">(</span><span class="n">df_num</span><span class="p">)</span>
 </span></span></code></pre></div><h2 id="step-3-scaling">Step 3: Scaling</h2>
 <p>Scaling the dataset is important because different features may have different scales, and if they are not scaled, then the features with larger scales will have a greater influence on the clustering results.</p>
 <p>Common scaling techniques used in clustering include standardization (subtracting the mean and dividing by the standard deviation), normalization (scaling the values to a specific range).</p>
-<p>$$ X_{stand} = \frac{X - \mu_x}{\sigma_x} $$<br>
-$$ X_{norm} = \frac{X - X_{min}}{X_{max}-X_{min}} $$<br>
-$$ $E[Y] = E[\Gamma&rsquo;X]=\Gamma&rsquo;E[X]=0$$</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># standardization</span>
-</span></span><span style="display:flex;"><span><span style="color:#000">df_scaled</span> <span style="color:#ce5c00;font-weight:bold">&lt;-</span> <span style="color:#000">data.frame</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">scale</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">df_com</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">center</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#204a87;font-weight:bold">TRUE</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">scale</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#204a87;font-weight:bold">TRUE</span><span style="color:#000;font-weight:bold">))</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># normalization</span>
-</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># df_scaled &lt;- scale(df_com, </span>
-</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic">#                    center = apply(df_com, 2, min), </span>
-</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic">#                    scale = apply(df_com, 2, function(x) {max(x) - min(x)}))  </span>
+$$ X_{stand} = \frac{X - \mu_x}{\sigma_x} $$<p><br>
+</p>
+$$ X_{norm} = \frac{X - X_{min}}{X_{max}-X_{min}} $$<p><br>
+</p>
+$$ E[Y] = E[\Gamma'X]=\Gamma'E[X]=0 $$<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># standardization</span>
+</span></span><span class="line"><span class="cl"><span class="n">df_scaled</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="nf">scale</span><span class="p">(</span><span class="n">df_com</span><span class="p">,</span> <span class="n">center</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">,</span> <span class="n">scale</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># normalization</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># df_scaled &lt;- scale(df_com, </span>
+</span></span><span class="line"><span class="cl"><span class="c1">#                    center = apply(df_com, 2, min), </span>
+</span></span><span class="line"><span class="cl"><span class="c1">#                    scale = apply(df_com, 2, function(x) {max(x) - min(x)}))  </span>
 </span></span></code></pre></div><h2 id="step-4-optimal-number-of-clusters">Step 4: Optimal Number of Clusters</h2>
 <p>The optimal number of clusters depends on the specific dataset and the application. However, there are a few methods that can be used to help determine the optimal number of clusters in centroid-based clustering.</p>
 <h3 id="elbow-method">Elbow Method</h3>
 <p>This method involves plotting the within-cluster sum of squares (WSS) as a function of the number of clusters. The WSS is a measure of how well the data points are clustered together. The elbow method works by looking for the point in the WSS curve where the rate of decrease starts to slow down. This point is often considered to be the optimal number of clusters.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#000">library</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">factoextra</span><span style="color:#000;font-weight:bold">)</span>
-</span></span><span style="display:flex;"><span><span style="color:#000">fviz_nbclust</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">df_scaled</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">kmeans</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">method</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;wss&#34;</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">+</span>  
-</span></span><span style="display:flex;"><span>  <span style="color:#000">geom_vline</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">xintercept</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">linetype</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#8f5902;font-style:italic"># add line for better viz</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#000">labs</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">subtitle</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;Elbow method&#34;</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#8f5902;font-style:italic"># add subtitle</span>
-</span></span></code></pre></div><!-- raw HTML omitted -->
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">factoextra</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">fviz_nbclust</span><span class="p">(</span><span class="n">df_scaled</span><span class="p">,</span> <span class="n">kmeans</span><span class="p">,</span> <span class="n">method</span> <span class="o">=</span> <span class="s">&#34;wss&#34;</span><span class="p">)</span> <span class="o">+</span>  
+</span></span><span class="line"><span class="cl">  <span class="nf">geom_vline</span><span class="p">(</span><span class="n">xintercept</span> <span class="o">=</span> <span class="m">2</span><span class="p">,</span> <span class="n">linetype</span> <span class="o">=</span> <span class="m">2</span><span class="p">)</span> <span class="o">+</span> <span class="c1"># add line for better viz</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">labs</span><span class="p">(</span><span class="n">subtitle</span> <span class="o">=</span> <span class="s">&#34;Elbow method&#34;</span><span class="p">)</span> <span class="c1"># add subtitle</span>
+</span></span></code></pre></div><img src="https://mdahsanulhimel.github.io/post/cluster-analysis/index.en_files/figure-html/unnamed-chunk-9-1.png" width="672" />
 <h3 id="silhouette-scorewidth">Silhouette Score/Width</h3>
 <p>The silhouette score is a measure of how well each data point is clustered with its own cluster compared to other clusters. It ranges from -1 to 1, with a value of 1 indicating that the data point is perfectly clustered with its own cluster, 0 indicating the data point is on the border between the two clusters and a value of -1 indicating that the data point is equally well-clustered with two or more clusters. The optimal number of clusters is often the number that maximizes the average silhouette score.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#000">fviz_nbclust</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">df_scaled</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">kmeans</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">method</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;silhouette&#34;</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">+</span>  
-</span></span><span style="display:flex;"><span>  <span style="color:#000">labs</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">subtitle</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;Silhouette method&#34;</span><span style="color:#000;font-weight:bold">)</span>
-</span></span></code></pre></div><!-- raw HTML omitted -->
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">fviz_nbclust</span><span class="p">(</span><span class="n">df_scaled</span><span class="p">,</span> <span class="n">kmeans</span><span class="p">,</span> <span class="n">method</span> <span class="o">=</span> <span class="s">&#34;silhouette&#34;</span><span class="p">)</span> <span class="o">+</span>  
+</span></span><span class="line"><span class="cl">  <span class="nf">labs</span><span class="p">(</span><span class="n">subtitle</span> <span class="o">=</span> <span class="s">&#34;Silhouette method&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><img src="https://mdahsanulhimel.github.io/post/cluster-analysis/index.en_files/figure-html/unnamed-chunk-10-1.png" width="672" />
 <p>To compute Silhouette information for a cluster:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#000">library</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">cluster</span><span style="color:#000;font-weight:bold">)</span>
-</span></span><span style="display:flex;"><span><span style="color:#000">km_res</span> <span style="color:#ce5c00;font-weight:bold">&lt;-</span> <span style="color:#000">kmeans</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">df_scaled</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">centers</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">)</span>  <span style="color:#8f5902;font-style:italic"># defining cluster</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#000">sil</span> <span style="color:#ce5c00;font-weight:bold">&lt;-</span> <span style="color:#000">silhouette</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">km_res</span><span style="color:#ce5c00;font-weight:bold">$</span><span style="color:#000">cluster</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">dist</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">df_scaled</span><span style="color:#000;font-weight:bold">))</span>
-</span></span><span style="display:flex;"><span><span style="color:#000">plot</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">sil</span><span style="color:#000;font-weight:bold">)</span>
-</span></span></code></pre></div><!-- raw HTML omitted -->
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#000">fviz_silhouette</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">sil</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#000">theme_minimal</span><span style="color:#000;font-weight:bold">()</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">cluster</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">km_res</span> <span class="o">&lt;-</span> <span class="nf">kmeans</span><span class="p">(</span><span class="n">df_scaled</span><span class="p">,</span> <span class="n">centers</span> <span class="o">=</span> <span class="m">2</span><span class="p">)</span>  <span class="c1"># defining cluster</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">sil</span> <span class="o">&lt;-</span> <span class="nf">silhouette</span><span class="p">(</span><span class="n">km_res</span><span class="o">$</span><span class="n">cluster</span><span class="p">,</span> <span class="nf">dist</span><span class="p">(</span><span class="n">df_scaled</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="nf">plot</span><span class="p">(</span><span class="n">sil</span><span class="p">)</span>
+</span></span></code></pre></div><img src="https://mdahsanulhimel.github.io/post/cluster-analysis/index.en_files/figure-html/unnamed-chunk-11-1.png" width="672" />
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">fviz_silhouette</span><span class="p">(</span><span class="n">sil</span><span class="p">)</span> <span class="o">+</span> <span class="nf">theme_minimal</span><span class="p">()</span>
 </span></span></code></pre></div><pre tabindex="0"><code>#   cluster size ave.sil.width
 # 1       1    8          0.48
 # 2       2   12          0.26
-</code></pre><!-- raw HTML omitted -->
+</code></pre><img src="https://mdahsanulhimel.github.io/post/cluster-analysis/index.en_files/figure-html/unnamed-chunk-11-2.png" width="672" />
 <p>A positive silhouette coefficient indicates that an observation is well-matched to its own cluster.</p>
 <h3 id="gap-statistic-method">Gap Statistic Method</h3>
 <p>The gap statistic helps determine the optimal number of clusters by comparing the observed within-cluster dispersion with a reference distribution. The idea is to select the number of clusters that maximizes the gap statistic. A larger gap indicates a more significant deviation from randomness, suggesting a better-defined clustering structure. By comparing the gaps for different numbers of clusters, we can identify the number of clusters that provides the most distinct and meaningful clustering pattern.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#000">fviz_nbclust</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">df_scaled</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">kmeans</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">method</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;gap_stat&#34;</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">+</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#000">labs</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">subtitle</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;Gap statistic method&#34;</span><span style="color:#000;font-weight:bold">)</span>
-</span></span></code></pre></div><!-- raw HTML omitted -->
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">fviz_nbclust</span><span class="p">(</span><span class="n">df_scaled</span><span class="p">,</span> <span class="n">kmeans</span><span class="p">,</span> <span class="n">method</span> <span class="o">=</span> <span class="s">&#34;gap_stat&#34;</span><span class="p">)</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">labs</span><span class="p">(</span><span class="n">subtitle</span> <span class="o">=</span> <span class="s">&#34;Gap statistic method&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><img src="https://mdahsanulhimel.github.io/post/cluster-analysis/index.en_files/figure-html/unnamed-chunk-12-1.png" width="672" />
 <h3 id="combination-of-all">Combination of All</h3>
 <p>But the clever way is to try out different methods and see what majority returns. See <a href="https://statsandr.com/blog/clustering-analysis-k-means-and-hierarchical-clustering-by-hand-and-in-r/#elbow-method">here</a></p>
 <p>The <code>parameter</code> package comes to help in this case:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#000">library</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">parameters</span><span style="color:#000;font-weight:bold">)</span>
-</span></span><span style="display:flex;"><span><span style="color:#000">n_clust</span> <span style="color:#ce5c00;font-weight:bold">&lt;-</span> <span style="color:#000">n_clusters</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">df_scaled</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>                      <span style="color:#000">package</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">c</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;easystats&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;NbClust&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;mclust&#34;</span><span style="color:#000;font-weight:bold">),</span>
-</span></span><span style="display:flex;"><span>                      <span style="color:#000">standardize</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#204a87;font-weight:bold">TRUE</span>
-</span></span><span style="display:flex;"><span>                      <span style="color:#000;font-weight:bold">)</span>
-</span></span><span style="display:flex;"><span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">n_clust</span><span style="color:#000;font-weight:bold">)</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">parameters</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">n_clust</span> <span class="o">&lt;-</span> <span class="nf">n_clusters</span><span class="p">(</span><span class="n">df_scaled</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                      <span class="n">package</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;easystats&#34;</span><span class="p">,</span> <span class="s">&#34;NbClust&#34;</span><span class="p">,</span> <span class="s">&#34;mclust&#34;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">                      <span class="n">standardize</span> <span class="o">=</span> <span class="kc">TRUE</span>
+</span></span><span class="line"><span class="cl">                      <span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">print</span><span class="p">(</span><span class="n">n_clust</span><span class="p">)</span>
 </span></span></code></pre></div><pre tabindex="0"><code># # Method Agreement Procedure:
 # 
 # The choice of 2 clusters is supported by 7 (31.82%) methods out of 22 (Elbow, Silhouette, kl, Duda, Pseudot2, Ratkowsky, Mcclain).
-</code></pre><div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#000">plot</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">n_clust</span><span style="color:#000;font-weight:bold">)</span>
-</span></span></code></pre></div><!-- raw HTML omitted -->
+</code></pre><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">plot</span><span class="p">(</span><span class="n">n_clust</span><span class="p">)</span>
+</span></span></code></pre></div><img src="https://mdahsanulhimel.github.io/post/cluster-analysis/index.en_files/figure-html/unnamed-chunk-13-1.png" width="672" />
 <h2 id="step-5-hierarchical-clustering">Step 5: Hierarchical Clustering</h2>
 <h3 id="step-51-distance">Step 5.1: Distance</h3>
 <h4 id="numeric-data">Numeric Data</h4>
 <p>Use the function <code>dist()</code>:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#000">df_dist_euc</span> <span style="color:#ce5c00;font-weight:bold">&lt;-</span> <span style="color:#000">dist</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">df_scaled</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">method</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#39;euclidian&#39;</span><span style="color:#000;font-weight:bold">)</span>
-</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># df_dist_max &lt;- dist(df_scaled, method = &#39;maximum&#39;)</span>
-</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># df_dist_man &lt;- dist(df_scaled, method = &#39;manhattan&#39;)</span>
-</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># df_dist_can &lt;- dist(df_scaled, method = &#39;canberra&#39;)</span>
-</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># df_dist_mink &lt;- dist(df_scaled, method = &#39;minkowski&#39;)</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">df_dist_euc</span> <span class="o">&lt;-</span> <span class="nf">dist</span><span class="p">(</span><span class="n">df_scaled</span><span class="p">,</span> <span class="n">method</span> <span class="o">=</span> <span class="s">&#39;euclidian&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># df_dist_max &lt;- dist(df_scaled, method = &#39;maximum&#39;)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># df_dist_man &lt;- dist(df_scaled, method = &#39;manhattan&#39;)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># df_dist_can &lt;- dist(df_scaled, method = &#39;canberra&#39;)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># df_dist_mink &lt;- dist(df_scaled, method = &#39;minkowski&#39;)</span>
 </span></span></code></pre></div><h4 id="categorical-data">Categorical Data</h4>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># dist(dummified_data, method = &#34;binary&#34;)</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># dist(dummified_data, method = &#34;binary&#34;)</span>
 </span></span></code></pre></div><h4 id="gower-distance">Gower Distance</h4>
 <p>Gower distance is a similarity measure commonly used for clustering categorical and numerical mixed data. It takes into account the different types of variables and calculates the dissimilarity between observations based on their attribute values.</p>
 <p>For categorical variables, Gower distance measures dissimilarity as the proportion of attributes where two observations differ. For numerical variables, it calculates the standardized absolute difference between the values. The Gower distance is then calculated as the weighted sum of the dissimilarities for all variables.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#000">df</span> <span style="color:#ce5c00;font-weight:bold">&lt;-</span> <span style="color:#000">dplyr</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#000">mutate_if</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">df</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">is.character</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">as.factor</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#8f5902;font-style:italic"># convert character to factor</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#000">df_dist_gower</span> <span style="color:#ce5c00;font-weight:bold">&lt;-</span> <span style="color:#000">cluster</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#000">daisy</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">df</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">metric</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;gower&#34;</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#8f5902;font-style:italic"># Dissimilarity Matrix Calculation</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">df</span> <span class="o">&lt;-</span> <span class="n">dplyr</span><span class="o">::</span><span class="nf">mutate_if</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">is.character</span><span class="p">,</span> <span class="n">as.factor</span><span class="p">)</span> <span class="c1"># convert character to factor</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">df_dist_gower</span> <span class="o">&lt;-</span> <span class="n">cluster</span><span class="o">::</span><span class="nf">daisy</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">metric</span> <span class="o">=</span> <span class="s">&#34;gower&#34;</span><span class="p">)</span> <span class="c1"># Dissimilarity Matrix Calculation</span>
 </span></span></code></pre></div><h3 id="step-52-linkage-criteria">Step 5.2: Linkage Criteria</h3>
 <p>Linkage refers to the way in which clusters are merged together. There are several different linkage criteria that can be used, and the choice of linkage criterion can have a significant impact on the results of the clustering -</p>
 <ul>
@@ -770,24 +810,24 @@ $$ $E[Y] = E[\Gamma&rsquo;X]=\Gamma&rsquo;E[X]=0$$</p>
 <p><img src="index.en_insertimage_4.png" alt=" "></p>
 <p><img src="index.en_insertimage_5.png" alt=" "></p>
 <p>Using the Euclidean distance on the numeric data the following code finds the hierarchical clusters by different linkage methods:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#000">hclust_single</span> <span style="color:#ce5c00;font-weight:bold">&lt;-</span> <span style="color:#000">hclust</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">df_dist_euc</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">method</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;single&#34;</span><span style="color:#000;font-weight:bold">)</span>
-</span></span><span style="display:flex;"><span><span style="color:#000">hclust_complete</span> <span style="color:#ce5c00;font-weight:bold">&lt;-</span> <span style="color:#000">hclust</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">df_dist_euc</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">method</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;complete&#34;</span><span style="color:#000;font-weight:bold">)</span>
-</span></span><span style="display:flex;"><span><span style="color:#000">hclust_average</span> <span style="color:#ce5c00;font-weight:bold">&lt;-</span> <span style="color:#000">hclust</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">df_dist_euc</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">method</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;average&#34;</span><span style="color:#000;font-weight:bold">)</span>
-</span></span><span style="display:flex;"><span><span style="color:#000">hclust_centroid</span> <span style="color:#ce5c00;font-weight:bold">&lt;-</span> <span style="color:#000">hclust</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">df_dist_euc</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">method</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;centroid&#34;</span><span style="color:#000;font-weight:bold">)</span>
-</span></span><span style="display:flex;"><span><span style="color:#000">hclust_ward</span> <span style="color:#ce5c00;font-weight:bold">&lt;-</span> <span style="color:#000">hclust</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">df_dist_euc</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">method</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;ward.D2&#34;</span><span style="color:#000;font-weight:bold">)</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">hclust_single</span> <span class="o">&lt;-</span> <span class="nf">hclust</span><span class="p">(</span><span class="n">df_dist_euc</span><span class="p">,</span> <span class="n">method</span> <span class="o">=</span> <span class="s">&#34;single&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">hclust_complete</span> <span class="o">&lt;-</span> <span class="nf">hclust</span><span class="p">(</span><span class="n">df_dist_euc</span><span class="p">,</span> <span class="n">method</span> <span class="o">=</span> <span class="s">&#34;complete&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">hclust_average</span> <span class="o">&lt;-</span> <span class="nf">hclust</span><span class="p">(</span><span class="n">df_dist_euc</span><span class="p">,</span> <span class="n">method</span> <span class="o">=</span> <span class="s">&#34;average&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">hclust_centroid</span> <span class="o">&lt;-</span> <span class="nf">hclust</span><span class="p">(</span><span class="n">df_dist_euc</span><span class="p">,</span> <span class="n">method</span> <span class="o">=</span> <span class="s">&#34;centroid&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">hclust_ward</span> <span class="o">&lt;-</span> <span class="nf">hclust</span><span class="p">(</span><span class="n">df_dist_euc</span><span class="p">,</span> <span class="n">method</span> <span class="o">=</span> <span class="s">&#34;ward.D2&#34;</span><span class="p">)</span>
 </span></span></code></pre></div><p>Get the cluster information:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#000">cutree</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">hclust_ward</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">k</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#8f5902;font-style:italic"># specify number of clusters</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">cutree</span><span class="p">(</span><span class="n">hclust_ward</span><span class="p">,</span> <span class="n">k</span> <span class="o">=</span> <span class="m">2</span><span class="p">)</span> <span class="c1"># specify number of clusters</span>
 </span></span></code></pre></div><pre tabindex="0"><code># 202 102 112 151 198   4  55  70  98 135   7 183  43 189 140  51 146  25   2 179 
 #   1   1   1   1   1   2   2   2   2   1   2   1   2   1   1   2   1   2   2   1
-</code></pre><div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#000">cutree</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">hclust_ward</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">h</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">0.7</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#8f5902;font-style:italic"># specify height to cut</span>
+</code></pre><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">cutree</span><span class="p">(</span><span class="n">hclust_ward</span><span class="p">,</span> <span class="n">h</span> <span class="o">=</span> <span class="m">0.7</span><span class="p">)</span> <span class="c1"># specify height to cut</span>
 </span></span></code></pre></div><pre tabindex="0"><code># 202 102 112 151 198   4  55  70  98 135   7 183  43 189 140  51 146  25   2 179 
 #   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19  20
 </code></pre><p>Summary by clusters:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#000">library</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">dplyr</span><span style="color:#000;font-weight:bold">)</span>
-</span></span><span style="display:flex;"><span><span style="color:#000">df_num</span> <span style="color:#ce5c00;font-weight:bold">%&gt;%</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#000">mutate</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">cluster</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">cutree</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">hclust_ward</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">k</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">))</span> <span style="color:#ce5c00;font-weight:bold">%&gt;%</span> 
-</span></span><span style="display:flex;"><span>  <span style="color:#000">group_by</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">cluster</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">%&gt;%</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#000">summarise</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">across</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">everything</span><span style="color:#000;font-weight:bold">(),</span> <span style="color:#000">list</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">Average</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">mean</span><span style="color:#000;font-weight:bold">)))</span> 
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">df_num</span> <span class="o">%&gt;%</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">mutate</span><span class="p">(</span><span class="n">cluster</span> <span class="o">=</span> <span class="nf">cutree</span><span class="p">(</span><span class="n">hclust_ward</span><span class="p">,</span> <span class="n">k</span> <span class="o">=</span> <span class="m">2</span><span class="p">))</span> <span class="o">%&gt;%</span> 
+</span></span><span class="line"><span class="cl">  <span class="nf">group_by</span><span class="p">(</span><span class="n">cluster</span><span class="p">)</span> <span class="o">%&gt;%</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">summarise</span><span class="p">(</span><span class="nf">across</span><span class="p">(</span><span class="nf">everything</span><span class="p">(),</span> <span class="nf">list</span><span class="p">(</span><span class="n">Average</span> <span class="o">=</span> <span class="n">mean</span><span class="p">)))</span> 
 </span></span></code></pre></div><pre tabindex="0"><code># # A tibble: 2 × 12
 #   cluster Aroma_Average Flavor_Average Aftertaste_Average Acidity_Average
 #     &lt;int&gt;         &lt;dbl&gt;          &lt;dbl&gt;              &lt;dbl&gt;           &lt;dbl&gt;
@@ -800,47 +840,47 @@ $$ $E[Y] = E[\Gamma&rsquo;X]=\Gamma&rsquo;E[X]=0$$</p>
 </code></pre><p>Dendrogram will help to visualize as well as to determine the number of clusters to use or the height where to cut.</p>
 <h3 id="step-53-dendrogram">Step 5.3: Dendrogram</h3>
 <p>Pass the hclust object to the plot function:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#000">plot</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">hclust_ward</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">hang</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">-1</span><span style="color:#000;font-weight:bold">)</span>
-</span></span><span style="display:flex;"><span><span style="color:#000">rect.hclust</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">hclust_ward</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">k</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">border</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;blue&#34;</span><span style="color:#000;font-weight:bold">)</span>
-</span></span></code></pre></div><!-- raw HTML omitted -->
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">plot</span><span class="p">(</span><span class="n">hclust_ward</span><span class="p">,</span> <span class="n">hang</span> <span class="o">=</span> <span class="m">-1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">rect.hclust</span><span class="p">(</span><span class="n">hclust_ward</span><span class="p">,</span> <span class="n">k</span> <span class="o">=</span> <span class="m">2</span><span class="p">,</span> <span class="n">border</span> <span class="o">=</span> <span class="s">&#34;blue&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><img src="https://mdahsanulhimel.github.io/post/cluster-analysis/index.en_files/figure-html/unnamed-chunk-20-1.png" width="672" />
 <p>Using dendextend package:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># install.packages(&#34;dendextend&#34;)</span>
-</span></span><span style="display:flex;"><span><span style="color:#000">library</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">dendextend</span><span style="color:#000;font-weight:bold">)</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#000">plot</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">color_branches</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">dend</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">hclust_ward</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">k</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">))</span> <span style="color:#8f5902;font-style:italic"># specify k, can also use h to specify height</span>
-</span></span></code></pre></div><!-- raw HTML omitted -->
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#000">plot</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">color_branches</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">dend</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">hclust_ward</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">k</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">),</span> 
-</span></span><span style="display:flex;"><span>     <span style="color:#8f5902;font-style:italic"># parameters for nodes</span>
-</span></span><span style="display:flex;"><span>     <span style="color:#000">nodePar</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">list</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">col</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">3</span><span style="color:#ce5c00;font-weight:bold">:</span><span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">,</span> 
-</span></span><span style="display:flex;"><span>                    <span style="color:#000">cex</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">c</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1.5</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0.75</span><span style="color:#000;font-weight:bold">),</span> 
-</span></span><span style="display:flex;"><span>                    <span style="color:#000">pch</span> <span style="color:#ce5c00;font-weight:bold">=</span>  <span style="color:#0000cf;font-weight:bold">21</span><span style="color:#ce5c00;font-weight:bold">:</span><span style="color:#0000cf;font-weight:bold">22</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>                    <span style="color:#000">bg</span> <span style="color:#ce5c00;font-weight:bold">=</span>  <span style="color:#000">c</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;light blue&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;pink&#34;</span><span style="color:#000;font-weight:bold">),</span>
-</span></span><span style="display:flex;"><span>                    <span style="color:#000">lab.cex</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">0.75</span><span style="color:#000;font-weight:bold">,</span> 
-</span></span><span style="display:flex;"><span>                    <span style="color:#000">lab.col</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;tomato&#34;</span><span style="color:#000;font-weight:bold">))</span>
-</span></span></code></pre></div><!-- raw HTML omitted -->
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># function to get color labels; Change color and cut based on number of clusters</span>
-</span></span><span style="display:flex;"><span><span style="color:#000">colLab</span> <span style="color:#ce5c00;font-weight:bold">&lt;-</span> <span style="color:#204a87;font-weight:bold">function</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">n</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">labelColors</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">c</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;#036564&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;#EB6841&#34;</span><span style="color:#000;font-weight:bold">),</span> <span style="color:#000">cut</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#000">clusMember</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">cutree</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">hclust_ward</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">cut</span><span style="color:#000;font-weight:bold">)</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">if</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">is.leaf</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">n</span><span style="color:#000;font-weight:bold">))</span> <span style="color:#000;font-weight:bold">{</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#000">a</span> <span style="color:#ce5c00;font-weight:bold">&lt;-</span> <span style="color:#000">attributes</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">n</span><span style="color:#000;font-weight:bold">)</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#000">labCol</span> <span style="color:#ce5c00;font-weight:bold">&lt;-</span> <span style="color:#000">labelColors[clusMember</span><span style="color:#000">[which</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">names</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">clusMember</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">==</span> <span style="color:#000">a</span><span style="color:#ce5c00;font-weight:bold">$</span><span style="color:#000">label</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000">]]</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#000">attr</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">n</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;nodePar&#34;</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">&lt;-</span> <span style="color:#000">c</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">a</span><span style="color:#ce5c00;font-weight:bold">$</span><span style="color:#000">nodePar</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">lab.col</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">labCol</span><span style="color:#000;font-weight:bold">)</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">}</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#000">n</span>
-</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#000">hclust_ward</span> <span style="color:#ce5c00;font-weight:bold">%&gt;%</span> 
-</span></span><span style="display:flex;"><span>  <span style="color:#000">color_branches</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">k</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">col</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">c</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;#036564&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;#EB6841&#34;</span><span style="color:#000;font-weight:bold">))</span> <span style="color:#ce5c00;font-weight:bold">%&gt;%</span> 
-</span></span><span style="display:flex;"><span>  <span style="color:#000">dendrapply</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">colLab</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">%&gt;%</span>  <span style="color:#8f5902;font-style:italic"># applying to all nodes</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#000">plot</span><span style="color:#000;font-weight:bold">()</span>  <span style="color:#8f5902;font-style:italic"># finally plotting</span>
-</span></span></code></pre></div><!-- raw HTML omitted -->
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#000">library</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;ape&#34;</span><span style="color:#000;font-weight:bold">)</span>
-</span></span><span style="display:flex;"><span><span style="color:#000">plot</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">as.phylo</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">hclust_ward</span><span style="color:#000;font-weight:bold">),</span> <span style="color:#000">type</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;unrooted&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">cex</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">0.7</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">no.margin</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#3465a4">T</span><span style="color:#000;font-weight:bold">)</span>
-</span></span></code></pre></div><!-- raw HTML omitted -->
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># install.packages(&#34;dendextend&#34;)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">dendextend</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">plot</span><span class="p">(</span><span class="nf">color_branches</span><span class="p">(</span><span class="n">dend</span> <span class="o">=</span> <span class="n">hclust_ward</span><span class="p">,</span> <span class="n">k</span> <span class="o">=</span> <span class="m">2</span><span class="p">))</span> <span class="c1"># specify k, can also use h to specify height</span>
+</span></span></code></pre></div><img src="https://mdahsanulhimel.github.io/post/cluster-analysis/index.en_files/figure-html/unnamed-chunk-21-1.png" width="672" />
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">plot</span><span class="p">(</span><span class="nf">color_branches</span><span class="p">(</span><span class="n">dend</span> <span class="o">=</span> <span class="n">hclust_ward</span><span class="p">,</span> <span class="n">k</span> <span class="o">=</span> <span class="m">2</span><span class="p">),</span> 
+</span></span><span class="line"><span class="cl">     <span class="c1"># parameters for nodes</span>
+</span></span><span class="line"><span class="cl">     <span class="n">nodePar</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span><span class="n">col</span> <span class="o">=</span> <span class="m">3</span><span class="o">:</span><span class="m">2</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">                    <span class="n">cex</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">1.5</span><span class="p">,</span> <span class="m">0.75</span><span class="p">),</span> 
+</span></span><span class="line"><span class="cl">                    <span class="n">pch</span> <span class="o">=</span>  <span class="m">21</span><span class="o">:</span><span class="m">22</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">bg</span> <span class="o">=</span>  <span class="nf">c</span><span class="p">(</span><span class="s">&#34;light blue&#34;</span><span class="p">,</span> <span class="s">&#34;pink&#34;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">lab.cex</span> <span class="o">=</span> <span class="m">0.75</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">                    <span class="n">lab.col</span> <span class="o">=</span> <span class="s">&#34;tomato&#34;</span><span class="p">))</span>
+</span></span></code></pre></div><img src="https://mdahsanulhimel.github.io/post/cluster-analysis/index.en_files/figure-html/unnamed-chunk-21-2.png" width="672" />
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># function to get color labels; Change color and cut based on number of clusters</span>
+</span></span><span class="line"><span class="cl"><span class="n">colLab</span> <span class="o">&lt;-</span> <span class="kr">function</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">labelColors</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;#036564&#34;</span><span class="p">,</span> <span class="s">&#34;#EB6841&#34;</span><span class="p">),</span> <span class="n">cut</span> <span class="o">=</span> <span class="m">2</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="n">clusMember</span> <span class="o">=</span> <span class="nf">cutree</span><span class="p">(</span><span class="n">hclust_ward</span><span class="p">,</span> <span class="n">cut</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">if</span> <span class="p">(</span><span class="nf">is.leaf</span><span class="p">(</span><span class="n">n</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">a</span> <span class="o">&lt;-</span> <span class="nf">attributes</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">labCol</span> <span class="o">&lt;-</span> <span class="n">labelColors[clusMember</span><span class="nf">[which</span><span class="p">(</span><span class="nf">names</span><span class="p">(</span><span class="n">clusMember</span><span class="p">)</span> <span class="o">==</span> <span class="n">a</span><span class="o">$</span><span class="n">label</span><span class="p">)</span><span class="n">]]</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">attr</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="s">&#34;nodePar&#34;</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="n">a</span><span class="o">$</span><span class="n">nodePar</span><span class="p">,</span> <span class="n">lab.col</span> <span class="o">=</span> <span class="n">labCol</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="n">n</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">hclust_ward</span> <span class="o">%&gt;%</span> 
+</span></span><span class="line"><span class="cl">  <span class="nf">color_branches</span><span class="p">(</span><span class="n">k</span> <span class="o">=</span> <span class="m">2</span><span class="p">,</span> <span class="n">col</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;#036564&#34;</span><span class="p">,</span> <span class="s">&#34;#EB6841&#34;</span><span class="p">))</span> <span class="o">%&gt;%</span> 
+</span></span><span class="line"><span class="cl">  <span class="nf">dendrapply</span><span class="p">(</span><span class="n">colLab</span><span class="p">)</span> <span class="o">%&gt;%</span>  <span class="c1"># applying to all nodes</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">plot</span><span class="p">()</span>  <span class="c1"># finally plotting</span>
+</span></span></code></pre></div><img src="https://mdahsanulhimel.github.io/post/cluster-analysis/index.en_files/figure-html/unnamed-chunk-22-1.png" width="672" />
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="s">&#34;ape&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">plot</span><span class="p">(</span><span class="nf">as.phylo</span><span class="p">(</span><span class="n">hclust_ward</span><span class="p">),</span> <span class="n">type</span> <span class="o">=</span> <span class="s">&#34;unrooted&#34;</span><span class="p">,</span> <span class="n">cex</span> <span class="o">=</span> <span class="m">0.7</span><span class="p">,</span> <span class="n">no.margin</span> <span class="o">=</span> <span class="bp">T</span><span class="p">)</span>
+</span></span></code></pre></div><img src="https://mdahsanulhimel.github.io/post/cluster-analysis/index.en_files/figure-html/unnamed-chunk-23-1.png" width="672" />
 <h2 id="step-5-k-means-clustering">Step 5: K-means Clustering</h2>
 <p>Categorical data cannot be passed to the kmeans() function in R. The kmeans() function uses the Euclidean distance metric to calculate the distance between observations, and this metric is not defined for categorical data.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#000">km</span> <span style="color:#ce5c00;font-weight:bold">&lt;-</span> <span style="color:#000">kmeans</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">df_scaled</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">centers</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#8f5902;font-style:italic"># centers specify number of clusters</span>
-</span></span><span style="display:flex;"><span><span style="color:#000">km</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">km</span> <span class="o">&lt;-</span> <span class="nf">kmeans</span><span class="p">(</span><span class="n">df_scaled</span><span class="p">,</span> <span class="n">centers</span> <span class="o">=</span> <span class="m">2</span><span class="p">)</span> <span class="c1"># centers specify number of clusters</span>
+</span></span><span class="line"><span class="cl"><span class="n">km</span>
 </span></span></code></pre></div><pre tabindex="0"><code># K-means clustering with 2 clusters of sizes 12, 8
 # 
 # Cluster means:
@@ -864,19 +904,19 @@ $$ $E[Y] = E[\Gamma&rsquo;X]=\Gamma&rsquo;E[X]=0$$</p>
 # [1] &#34;cluster&#34;      &#34;centers&#34;      &#34;totss&#34;        &#34;withinss&#34;     &#34;tot.withinss&#34;
 # [6] &#34;betweenss&#34;    &#34;size&#34;         &#34;iter&#34;         &#34;ifault&#34;
 </code></pre><p>Visualizing clusters:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#000">fviz_cluster</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">km</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">df_scaled</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">ggtheme</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">theme_minimal</span><span style="color:#000;font-weight:bold">())</span>
-</span></span></code></pre></div><!-- raw HTML omitted -->
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">fviz_cluster</span><span class="p">(</span><span class="n">km</span><span class="p">,</span> <span class="n">df_scaled</span><span class="p">,</span> <span class="n">ggtheme</span> <span class="o">=</span> <span class="nf">theme_minimal</span><span class="p">())</span>
+</span></span></code></pre></div><img src="https://mdahsanulhimel.github.io/post/cluster-analysis/index.en_files/figure-html/unnamed-chunk-25-1.png" width="672" />
 <p>Visualizing clusters in terms of variables in the dataset:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#000">library</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">ggplot2</span><span style="color:#000;font-weight:bold">)</span>
-</span></span><span style="display:flex;"><span><span style="color:#000">df_km</span> <span style="color:#ce5c00;font-weight:bold">&lt;-</span> <span style="color:#000">mutate</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">df_num</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">cluster</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">km</span><span style="color:#ce5c00;font-weight:bold">$</span><span style="color:#000">cluster</span><span style="color:#000;font-weight:bold">)</span>
-</span></span><span style="display:flex;"><span><span style="color:#000">df_km</span> <span style="color:#ce5c00;font-weight:bold">%&gt;%</span> <span style="color:#000">ggplot</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">aes</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">x</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">Aroma</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">y</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">Aftertaste</span><span style="color:#000;font-weight:bold">))</span> <span style="color:#ce5c00;font-weight:bold">+</span> 
-</span></span><span style="display:flex;"><span>  <span style="color:#000">geom_point</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">aes</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">color</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">as.factor</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">cluster</span><span style="color:#000;font-weight:bold">)))</span> <span style="color:#ce5c00;font-weight:bold">+</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#000">labs</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">color</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;Clusters&#34;</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#000">theme_minimal</span><span style="color:#000;font-weight:bold">()</span>
-</span></span></code></pre></div><!-- raw HTML omitted -->
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">df_km</span> <span class="o">&lt;-</span> <span class="nf">mutate</span><span class="p">(</span><span class="n">df_num</span><span class="p">,</span> <span class="n">cluster</span> <span class="o">=</span> <span class="n">km</span><span class="o">$</span><span class="n">cluster</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">df_km</span> <span class="o">%&gt;%</span> <span class="nf">ggplot</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">Aroma</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">Aftertaste</span><span class="p">))</span> <span class="o">+</span> 
+</span></span><span class="line"><span class="cl">  <span class="nf">geom_point</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">color</span> <span class="o">=</span> <span class="nf">as.factor</span><span class="p">(</span><span class="n">cluster</span><span class="p">)))</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">labs</span><span class="p">(</span><span class="n">color</span> <span class="o">=</span> <span class="s">&#34;Clusters&#34;</span><span class="p">)</span> <span class="o">+</span> <span class="nf">theme_minimal</span><span class="p">()</span>
+</span></span></code></pre></div><img src="https://mdahsanulhimel.github.io/post/cluster-analysis/index.en_files/figure-html/unnamed-chunk-26-1.png" width="672" />
 <p>Summary on clusters:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#000">df_km</span> <span style="color:#ce5c00;font-weight:bold">%&gt;%</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#000">group_by</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">cluster</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">%&gt;%</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#000">summarise</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">across</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">everything</span><span style="color:#000;font-weight:bold">(),</span> <span style="color:#000">list</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">Average</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">mean</span><span style="color:#000;font-weight:bold">)))</span> 
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">df_km</span> <span class="o">%&gt;%</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">group_by</span><span class="p">(</span><span class="n">cluster</span><span class="p">)</span> <span class="o">%&gt;%</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">summarise</span><span class="p">(</span><span class="nf">across</span><span class="p">(</span><span class="nf">everything</span><span class="p">(),</span> <span class="nf">list</span><span class="p">(</span><span class="n">Average</span> <span class="o">=</span> <span class="n">mean</span><span class="p">)))</span> 
 </span></span></code></pre></div><pre tabindex="0"><code># # A tibble: 2 × 12
 #   cluster Aroma_Average Flavor_Average Aftertaste_Average Acidity_Average
 #     &lt;int&gt;         &lt;dbl&gt;          &lt;dbl&gt;              &lt;dbl&gt;           &lt;dbl&gt;
@@ -943,14 +983,14 @@ $$ $E[Y] = E[\Gamma&rsquo;X]=\Gamma&rsquo;E[X]=0$$</p>
             <ul class="tags-ul list-unstyled list-inline">
               
               <li class="list-inline-item">
-                <a href="https://ahsan.netlify.app/tags/r"
+                <a href="https://mdahsanulhimel.github.io/tags/r"
                    target="_blank">
                   R
                 </a>
               </li>
               
               <li class="list-inline-item">
-                <a href="https://ahsan.netlify.app/tags/cluster-analysis"
+                <a href="https://mdahsanulhimel.github.io/tags/cluster-analysis"
                    target="_blank">
                   Cluster Analysis
                 </a>
@@ -1026,8 +1066,9 @@ $$ $E[Y] = E[\Gamma&rsquo;X]=\Gamma&rsquo;E[X]=0$$</p>
           <div class="col-lg-4 col-md-6 pt-2">
               <div class="card h-100 shadow-sm border-0">
                   
+                  
                   <div class="card-body bg-transparent p-3">
-                      <a href="/post/2026-05-26-design-your-environment-design-your-life/" class="primary-font text-decoration-none">
+                      <a href="/post/design-your-environment/" class="primary-font text-decoration-none">
                           <h5 class="card-title" title="Design Your Environment, Design Your Life">Design Your Environment, Design Your Life</h5>
                       </a>
                       <div class="card-text secondary-font">
@@ -1036,7 +1077,7 @@ $$ $E[Y] = E[\Gamma&rsquo;X]=\Gamma&rsquo;E[X]=0$$</p>
                   </div>
                   <div class="mt-auto card-footer bg-white border-0 d-flex justify-content-between align-items-center">
                       <span class="text-muted small">May 26, 2026</span>
-                      <a href="/post/2026-05-26-design-your-environment-design-your-life/" class="btn btn-outline-info btn-sm">Read</a>
+                      <a href="/post/design-your-environment/" class="btn btn-outline-info btn-sm">Read</a>
                   </div>
               </div>
           </div>
@@ -1044,8 +1085,9 @@ $$ $E[Y] = E[\Gamma&rsquo;X]=\Gamma&rsquo;E[X]=0$$</p>
           <div class="col-lg-4 col-md-6 pt-2">
               <div class="card h-100 shadow-sm border-0">
                   
+                  
                   <div class="card-body bg-transparent p-3">
-                      <a href="/post/2026-04-27-50-journals-used-in-the-ft-research-rank/" class="primary-font text-decoration-none">
+                      <a href="/post/ft-research-rank-journals/" class="primary-font text-decoration-none">
                           <h5 class="card-title" title="50 Journals used in the FT Research Rank">50 Journals used in the FT Research Rank</h5>
                       </a>
                       <div class="card-text secondary-font">
@@ -1054,7 +1096,7 @@ $$ $E[Y] = E[\Gamma&rsquo;X]=\Gamma&rsquo;E[X]=0$$</p>
                   </div>
                   <div class="mt-auto card-footer bg-white border-0 d-flex justify-content-between align-items-center">
                       <span class="text-muted small">Apr 27, 2026</span>
-                      <a href="/post/2026-04-27-50-journals-used-in-the-ft-research-rank/" class="btn btn-outline-info btn-sm">Read</a>
+                      <a href="/post/ft-research-rank-journals/" class="btn btn-outline-info btn-sm">Read</a>
                   </div>
               </div>
           </div>
@@ -1062,8 +1104,9 @@ $$ $E[Y] = E[\Gamma&rsquo;X]=\Gamma&rsquo;E[X]=0$$</p>
           <div class="col-lg-4 col-md-6 pt-2">
               <div class="card h-100 shadow-sm border-0">
                   
+                  
                   <div class="card-body bg-transparent p-3">
-                      <a href="/post/2025-12-03-the-statistical-civil-war-of-estimation/" class="primary-font text-decoration-none">
+                      <a href="/post/statistical-civil-war-of-estimation/" class="primary-font text-decoration-none">
                           <h5 class="card-title" title="The Statistical Civil War of Estimation: Frequentists, Bayesians, and the Quest for Truth">The Statistical Civil War of Estimation: Frequentists, Bayesians, and the Quest for Truth</h5>
                       </a>
                       <div class="card-text secondary-font">
@@ -1072,7 +1115,7 @@ $$ $E[Y] = E[\Gamma&rsquo;X]=\Gamma&rsquo;E[X]=0$$</p>
                   </div>
                   <div class="mt-auto card-footer bg-white border-0 d-flex justify-content-between align-items-center">
                       <span class="text-muted small">Dec 3, 2025</span>
-                      <a href="/post/2025-12-03-the-statistical-civil-war-of-estimation/" class="btn btn-outline-info btn-sm">Read</a>
+                      <a href="/post/statistical-civil-war-of-estimation/" class="btn btn-outline-info btn-sm">Read</a>
                   </div>
               </div>
           </div>
@@ -1139,7 +1182,7 @@ $$ $E[Y] = E[\Gamma&rsquo;X]=\Gamma&rsquo;E[X]=0$$</p>
         <div class="col-md-4 text-center">
             
                 <div class="pb-2">
-                    <a href="https://ahsan.netlify.app/" title="Ahsan">
+                    <a href="https://mdahsanulhimel.github.io/" title="Ahsan">
                         <img alt="Footer logo" src="/fav.png"
                             height="40px" width="40px">
                     </a>
@@ -1162,23 +1205,16 @@ $$ $E[Y] = E[\Gamma&rsquo;X]=\Gamma&rsquo;E[X]=0$$</p>
 </div>
 </footer><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
 <script>
-    if (document.body.className.includes("dark")) {
-        document.body.classList.remove('dark');
-        localStorage.setItem("pref-theme", 'light');
+    var themeToggle = document.getElementById("theme-toggle");
+    if (themeToggle) {
+        themeToggle.addEventListener("click", () => {
+            var dark = !document.body.classList.contains('dark');
+            document.body.classList.toggle('dark', dark);
+            try {
+                localStorage.setItem("pref-theme", dark ? 'dark' : 'light');
+            } catch (e) {   }
+        });
     }
-</script>
-
-
-<script>
-    document.getElementById("theme-toggle").addEventListener("click", () => {
-        if (document.body.className.includes("dark")) {
-            document.body.classList.remove('dark');
-            localStorage.setItem("pref-theme", 'light');
-        } else {
-            document.body.classList.add('dark');
-            localStorage.setItem("pref-theme", 'dark');
-        }
-    })
 
     var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
     var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
@@ -1194,23 +1230,104 @@ $$ $E[Y] = E[\Gamma&rsquo;X]=\Gamma&rsquo;E[X]=0$$</p>
 
 
 
-<!-- MathJax -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js" integrity="sha384-M5jmNxKC9EVnuqeMwRHvFuYUE8Hhp0TgBruj/GZRkYtiMrCRgH7yvv5KY+Owi7TW" crossorigin="anonymous"></script>
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath:  [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$']],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      ignoreHtmlClass: 'no-mathjax',
+      processHtmlClass: 'mathjax-process'
+    },
+    startup: {
+      pageReady: function () {
 
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-      tex2jax: {
-        inlineMath: [['\\(','\\)']],
-        displayMath: [['$$','$$'], ['\[','\]']],
-        processEscapes: true,
-        processEnvironments: true,
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-        TeX: { equationNumbers: { autoNumber: "AMS" },
-             extensions: ["AMSmath.js", "AMSsymbols.js"] }
+        
+        
+        document.querySelectorAll('code').forEach(function (code) {
+          if (code.parentNode && code.parentNode.tagName === 'PRE') return;
+          var t = code.textContent.trim();
+          var math =
+            (t.startsWith('$')   && t.endsWith('$')   && t.length > 1) ||
+            (t.startsWith('\\(') && t.endsWith('\\)')) ||
+            (t.startsWith('\\[') && t.endsWith('\\]'));
+          if (!math) return;
+          
+          if (t.startsWith('\\[') && t.endsWith('\\]')) {
+            t = '$$' + t.slice(2, -2) + '$$';
+          }
+          var span = document.createElement('span');
+          span.textContent = t;
+          code.parentNode.replaceChild(span, code);
+        });
+
+        
+        
+        
+        
+        
+        
+        var isDollarPara = function (el) {
+          return el && el.tagName === 'P' && el.textContent.trim() === '$$';
+        };
+        Array.prototype.slice.call(document.querySelectorAll('pre')).forEach(function (pre) {
+          var prev = pre.previousElementSibling;
+          var next = pre.nextElementSibling;
+          if (!isDollarPara(prev) || !isDollarPara(next)) return;
+          var inner = pre.querySelector('code');
+          if (inner && inner.className && /\blanguage-/.test(inner.className)) return;
+          var div = document.createElement('div');
+          div.className = 'math-display';
+          div.textContent = '$$\n' + pre.textContent.trim() + '\n$$';
+          pre.parentNode.replaceChild(div, pre);
+          prev.parentNode.removeChild(prev);
+          next.parentNode.removeChild(next);
+        });
+
+        
+        
+        
+        
+        
+        
+        
+        document.querySelectorAll('pre > code').forEach(function (code) {
+          if (code.className && /\blanguage-/.test(code.className)) return;
+          var t = code.textContent.trim();
+          var delimited = t.startsWith('$$') && t.endsWith('$$') && t.length > 4;
+          var environment = /\\begin\{[a-zA-Z*]+\}/.test(t) &&
+                            /\\end\{[a-zA-Z*]+\}/.test(t);
+          if (!delimited && !environment) return;
+          if (!delimited) t = '$$\n' + t + '\n$$';   
+          var div = document.createElement('div');
+          div.className = 'math-display';
+          div.textContent = t;
+          code.parentNode.parentNode.replaceChild(div, code.parentNode);
+        });
+
+        return window.MathJax.startup.defaultPageReady();
       }
-    });
+    }
+  };
 </script>
+<script id="MathJax-script" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js"
+        integrity="sha384-M5jmNxKC9EVnuqeMwRHvFuYUE8Hhp0TgBruj/GZRkYtiMrCRgH7yvv5KY+Owi7TW"
+        crossorigin="anonymous"></script>
 
+<style>
+   
+  mjx-container[jax="CHTML"][display="true"] {
+    overflow-x: auto;
+    overflow-y: hidden;
+    max-width: 100%;
+    padding: .25rem 0;
+  }
+</style>
 
 
 

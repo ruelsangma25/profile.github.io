@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Courses on Ahsan</title>
+    <link>https://mdahsanulhimel.github.io/courses/</link>
+    <description>Recent content in Courses on Ahsan</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="https://mdahsanulhimel.github.io/courses/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>R for Data Analysis: From Zero to Intermediate</title>
+      <link>https://mdahsanulhimel.github.io/courses/r-for-data-analysis/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mdahsanulhimel.github.io/courses/r-for-data-analysis/</guid>
+      <description>&lt;h2 id=&#34;how-the-cohort-runs&#34;&gt;How the cohort runs&lt;/h2&gt;&#xA;&lt;p&gt;Sessions are live, with recordings available afterwards. Each week pairs a&#xA;working session with a short practice task, and every task gets individual&#xA;written feedback before the next session.&lt;/p&gt;&#xA;&lt;h2 id=&#34;questions&#34;&gt;Questions&lt;/h2&gt;&#xA;&lt;p&gt;If you are unsure whether the level is right for you, get in touch before&#xA;enrolling and describe what you have done in R so far.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Survey Analytics in R</title>
+      <link>https://mdahsanulhimel.github.io/courses/survey-analytics/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mdahsanulhimel.github.io/courses/survey-analytics/</guid>
+      <description>&lt;h2 id=&#34;how-the-self-paced-course-works&#34;&gt;How the self-paced course works&lt;/h2&gt;&#xA;&lt;p&gt;All materials, datasets and worked solutions are available from the start.&#xA;Work through the modules in order at whatever pace suits you; the exercises&#xA;build on each other.&lt;/p&gt;&#xA;&lt;h2 id=&#34;questions&#34;&gt;Questions&lt;/h2&gt;&#xA;&lt;p&gt;Email before enrolling if you want to check whether your current R level is&#xA;enough for this course.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -43,7 +43,7 @@
           gtag('config', 'G-XHMN5CZBNV');
         }
       </script>
-<meta property="og:url" content="https://ahsan.netlify.app/post/markov-chain/">
+<meta property="og:url" content="https://mdahsanulhimel.github.io/post/markov-chain/">
   <meta property="og:site_name" content="Ahsan">
   <meta property="og:title" content="Markov Chain - A Practical Example">
   <meta property="og:description" content="Markov Chain is a special type of stochastic process. It is a popular and straightforward way to statistically model a discrete-time, discrete space stochastic processes.">
@@ -54,11 +54,11 @@
     <meta property="article:modified_time" content="2021-05-23T00:00:00+00:00">
     <meta property="article:tag" content="Markov Chain">
     <meta property="article:tag" content="R">
-    <meta property="og:image" content="https://ahsanhimel.github.io/2022/03/21/markov-chain/TPMDiagramPreview.jpg">
+    <meta property="og:image" content="https://mdahsanulhimel.github.io/post/markov-chain/TPMDiagramPreview.jpg">
 
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://ahsanhimel.github.io/2022/03/21/markov-chain/TPMDiagramPreview.jpg">
+  <meta name="twitter:image" content="https://mdahsanulhimel.github.io/post/markov-chain/TPMDiagramPreview.jpg">
   <meta name="twitter:title" content="Markov Chain - A Practical Example">
   <meta name="twitter:description" content="Markov Chain is a special type of stochastic process. It is a popular and straightforward way to statistically model a discrete-time, discrete space stochastic processes.">
 
@@ -75,22 +75,22 @@
 
 <style>
     :root {
-        --text-color: #343a40;
-        --text-secondary-color: #6c757d;
-        --text-link-color: #007bff;
-        --background-color: #fff;
-        --secondary-background-color: #64ffda1a;
-        --primary-color: #007bff;
-        --secondary-color: #f8f9fa;
+        --text-color: #1e293b;
+        --text-secondary-color: #475569;
+        --text-link-color: #2563eb;
+        --background-color: #ffffff;
+        --secondary-background-color: #f1f5f9;
+        --primary-color: #2563eb;
+        --secondary-color: #f8fafc;
 
          
-        --text-color-dark: #e4e6eb;
-        --text-secondary-color-dark: #b0b3b8;
-        --text-link-color-dark: #ffffff;
-        --background-color-dark: #18191a;
-        --secondary-background-color-dark: #212529;
-        --primary-color-dark: #ffffff;
-        --secondary-color-dark: #212529;
+        --text-color-dark: #f8fafc;
+        --text-secondary-color-dark: #94a3b8;
+        --text-link-color-dark: #60a5fa;
+        --background-color-dark: #0f172a;
+        --secondary-background-color-dark: #1e293b;
+        --primary-color-dark: #3b82f6;
+        --secondary-color-dark: #1e293b;
     }
     body {
         font-size: 1rem;
@@ -127,6 +127,9 @@
 </style>
 
 
+<link rel="stylesheet" href="/css/syntax.css" media="all">
+
+
 
 
 <style>
@@ -158,6 +161,8 @@
 
   
   
+    <link rel="stylesheet" href="/style.css">
+  
 
   <title>
 Markov Chain - A Practical Example | Ahsan
@@ -167,6 +172,27 @@ Markov Chain - A Practical Example | Ahsan
 
 <body class="light">
   
+<script>
+(function () {
+  
+  var def = "light";
+  var saved = null;
+  try { saved = localStorage.getItem('pref-theme'); } catch (e) {}
+
+  var dark;
+  if (saved === 'dark')        { dark = true;  }
+  else if (saved === 'light')  { dark = false; }
+  else if (def === 'dark')     { dark = true;  }
+  else if (def === 'light')    { dark = false; }
+  else {
+    dark = !!(window.matchMedia &&
+              window.matchMedia('(prefers-color-scheme: dark)').matches);
+  }
+
+  document.body.classList.toggle('dark', dark);
+})();
+</script>
+
   
 <header id="profileHeader">
     <nav class="pt-3 navbar navbar-expand-lg animate">
@@ -254,6 +280,15 @@ Markov Chain - A Practical Example | Ahsan
                         </li>
                     
                         <li class="nav-item navbar-text">
+                            <a class="nav-link" href="/#courses" title="Courses">
+                                
+                                    <i class="fas fa-chalkboard-teacher"></i>  
+                                
+                                Courses
+                            </a>
+                        </li>
+                    
+                        <li class="nav-item navbar-text">
                             <a class="nav-link" href="/#youtube" title="Youtube">
                                 
                                     <i class="fas fa-chalkboard-teacher"></i>  
@@ -332,9 +367,11 @@ Markov Chain - A Practical Example | Ahsan
           
           
           
-            
-          
 
+          
+          <div class="featured-image">
+            <img class="img-fluid mx-auto d-block" src="/post/markov-chain/TPMDiagramPreview.jpg" alt="Markov Chain - A Practical Example">
+          </div>
           
 
           <article class="page-content p-2">
@@ -352,27 +389,27 @@ So we can find the following probabilities for the movement of a driver:</p>
 <p>The <strong>state space</strong> in this example includes North Dhaka, Middle Dhaka and South Dhaka. It follows all the properties of Markov Chains because the current state has the power to predict the next stage.</p>
 <h2 id="transition-probability-matrix">Transition Probability Matrix</h2>
 <p>Let&rsquo;s construct the transition probability matrix -</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#000">zone</span> <span style="color:#ce5c00;font-weight:bold">&lt;-</span> <span style="color:#000">c</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;North&#34;</span><span style="color:#000;font-weight:bold">,</span><span style="color:#4e9a06">&#34;Middle&#34;</span><span style="color:#000;font-weight:bold">,</span><span style="color:#4e9a06">&#34;South&#34;</span><span style="color:#000;font-weight:bold">)</span>
-</span></span><span style="display:flex;"><span><span style="color:#000">zoneTPM</span> <span style="color:#ce5c00;font-weight:bold">&lt;-</span> <span style="color:#000">matrix</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">c</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">0.3</span><span style="color:#000;font-weight:bold">,</span><span style="color:#0000cf;font-weight:bold">0.3</span><span style="color:#000;font-weight:bold">,</span><span style="color:#0000cf;font-weight:bold">0.4</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>                    <span style="color:#0000cf;font-weight:bold">0.5</span><span style="color:#000;font-weight:bold">,</span><span style="color:#0000cf;font-weight:bold">0.2</span><span style="color:#000;font-weight:bold">,</span><span style="color:#0000cf;font-weight:bold">0.3</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>                    <span style="color:#0000cf;font-weight:bold">0.4</span><span style="color:#000;font-weight:bold">,</span><span style="color:#0000cf;font-weight:bold">0.2</span><span style="color:#000;font-weight:bold">,</span><span style="color:#0000cf;font-weight:bold">0.4</span><span style="color:#000;font-weight:bold">),</span> 
-</span></span><span style="display:flex;"><span>                  <span style="color:#000">nrow</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#0000cf;font-weight:bold">3</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">byrow</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#3465a4">T</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">dimnames</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">list</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">zone</span><span style="color:#000;font-weight:bold">,</span><span style="color:#000">zone</span><span style="color:#000;font-weight:bold">))</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">zone</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;North&#34;</span><span class="p">,</span><span class="s">&#34;Middle&#34;</span><span class="p">,</span><span class="s">&#34;South&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">zoneTPM</span> <span class="o">&lt;-</span> <span class="nf">matrix</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">0.3</span><span class="p">,</span><span class="m">0.3</span><span class="p">,</span><span class="m">0.4</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                    <span class="m">0.5</span><span class="p">,</span><span class="m">0.2</span><span class="p">,</span><span class="m">0.3</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                    <span class="m">0.4</span><span class="p">,</span><span class="m">0.2</span><span class="p">,</span><span class="m">0.4</span><span class="p">),</span> 
+</span></span><span class="line"><span class="cl">                  <span class="n">nrow</span><span class="o">=</span><span class="m">3</span><span class="p">,</span> <span class="n">byrow</span><span class="o">=</span><span class="bp">T</span><span class="p">,</span> <span class="n">dimnames</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span><span class="n">zone</span><span class="p">,</span><span class="n">zone</span><span class="p">))</span>
 </span></span></code></pre></div><p>Hence, the TPM is -</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#000">zoneTPM</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">zoneTPM</span>
 </span></span></code></pre></div><pre tabindex="0"><code>#        North Middle South
 # North    0.3    0.3   0.4
 # Middle   0.5    0.2   0.3
 # South    0.4    0.2   0.4
 </code></pre><p>The package named <code>markovchain</code> can help us in implementing Markov Chains in R.</p>
 <p>Install and load the package -</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># install.packages(&#34;markovchain&#34;)</span>
-</span></span><span style="display:flex;"><span><span style="color:#000">library</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">markovchain</span><span style="color:#000;font-weight:bold">)</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># install.packages(&#34;markovchain&#34;)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">markovchain</span><span class="p">)</span>
 </span></span></code></pre></div><p>Now using the function <code>new()</code> create a Markov Chain object -</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#000">driverzone</span> <span style="color:#ce5c00;font-weight:bold">&lt;-</span> <span style="color:#000">new</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;markovchain&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>                  <span style="color:#000">states</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">zone</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>                  <span style="color:#000">transitionMatrix</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">zoneTPM</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>                  <span style="color:#000">name</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;Driver Movement&#34;</span><span style="color:#000;font-weight:bold">)</span>
-</span></span><span style="display:flex;"><span><span style="color:#000">driverzone</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">driverzone</span> <span class="o">&lt;-</span> <span class="nf">new</span><span class="p">(</span><span class="s">&#34;markovchain&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                  <span class="n">states</span> <span class="o">=</span> <span class="n">zone</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                  <span class="n">transitionMatrix</span> <span class="o">=</span> <span class="n">zoneTPM</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                  <span class="n">name</span> <span class="o">=</span> <span class="s">&#34;Driver Movement&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">driverzone</span>
 </span></span></code></pre></div><pre tabindex="0"><code># Driver Movement 
 #  A  3 - dimensional discrete Markov Chain defined by the following states: 
 #  North, Middle, South 
@@ -384,27 +421,27 @@ So we can find the following probabilities for the movement of a driver:</p>
 </code></pre><h2 id="transition-diagram">Transition Diagram</h2>
 <p>To plot the above transition matrix we can use R package, <code>diagram</code>. The package has a function called <code>plotmat()</code> that can help us in plotting a state space diagram of the transition matrix in an easy-to-understand manner.</p>
 <p>Install and load the package -</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># install.packages(&#34;diagram&#34;)</span>
-</span></span><span style="display:flex;"><span><span style="color:#000">library</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">diagram</span><span style="color:#000;font-weight:bold">)</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># install.packages(&#34;diagram&#34;)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">diagram</span><span class="p">)</span>
 </span></span></code></pre></div><p>Code for plotting the transition probability diagram -</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#000">plotmat</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">A</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">zoneTPM</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#000">box.type</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;circle&#34;</span><span style="color:#000;font-weight:bold">,</span>          <span style="color:#8f5902;font-style:italic"># shape of box</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#000">box.lwd</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span>                  <span style="color:#8f5902;font-style:italic"># border density of box</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#000">relsize</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">0.9</span><span style="color:#000;font-weight:bold">,</span>                <span style="color:#8f5902;font-style:italic"># scaling factor for size of graph</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#000">cex.txt</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">0.7</span><span style="color:#000;font-weight:bold">,</span>                <span style="color:#8f5902;font-style:italic"># size of probabilities</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#000">lwd</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span>                      <span style="color:#8f5902;font-style:italic"># border density of state to state arrows</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#000">lcol</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;black&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#000">box.col</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;cornsilk1&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#000">box.size</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">0.1</span><span style="color:#000;font-weight:bold">,</span>               <span style="color:#8f5902;font-style:italic"># size of box</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#000">box.prop</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">0.6</span><span style="color:#000;font-weight:bold">,</span>               <span style="color:#8f5902;font-style:italic"># height to width ratio of box</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#000">arr.length</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">0.5</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">arr.width</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">0.2</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#000">self.cex</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">0.5</span><span style="color:#000;font-weight:bold">,</span>                          <span style="color:#8f5902;font-style:italic"># size of self probability box</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#000">self.shifty</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">-0.03</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">self.shiftx</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">0.13</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#8f5902;font-style:italic"># location of self prob. box</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#000">name</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">c</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;North Dhaka&#34;</span><span style="color:#000;font-weight:bold">,</span><span style="color:#4e9a06">&#34;Middle Dhaka&#34;</span><span style="color:#000;font-weight:bold">,</span><span style="color:#4e9a06">&#34;South Dhaka&#34;</span><span style="color:#000;font-weight:bold">),</span>  <span style="color:#8f5902;font-style:italic"># Optional</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#000">main</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;Transition Diagram&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#000">cex.main</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">1.3</span>                <span style="color:#8f5902;font-style:italic"># relative size of main title</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">)</span>
-</span></span></code></pre></div><!-- raw HTML omitted -->
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">plotmat</span><span class="p">(</span><span class="n">A</span> <span class="o">=</span> <span class="n">zoneTPM</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">box.type</span> <span class="o">=</span> <span class="s">&#34;circle&#34;</span><span class="p">,</span>          <span class="c1"># shape of box</span>
+</span></span><span class="line"><span class="cl">        <span class="n">box.lwd</span> <span class="o">=</span> <span class="m">1</span><span class="p">,</span>                  <span class="c1"># border density of box</span>
+</span></span><span class="line"><span class="cl">        <span class="n">relsize</span> <span class="o">=</span> <span class="m">0.9</span><span class="p">,</span>                <span class="c1"># scaling factor for size of graph</span>
+</span></span><span class="line"><span class="cl">        <span class="n">cex.txt</span> <span class="o">=</span> <span class="m">0.7</span><span class="p">,</span>                <span class="c1"># size of probabilities</span>
+</span></span><span class="line"><span class="cl">        <span class="n">lwd</span> <span class="o">=</span> <span class="m">1</span><span class="p">,</span>                      <span class="c1"># border density of state to state arrows</span>
+</span></span><span class="line"><span class="cl">        <span class="n">lcol</span> <span class="o">=</span> <span class="s">&#34;black&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">box.col</span> <span class="o">=</span> <span class="s">&#34;cornsilk1&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">box.size</span> <span class="o">=</span> <span class="m">0.1</span><span class="p">,</span>               <span class="c1"># size of box</span>
+</span></span><span class="line"><span class="cl">        <span class="n">box.prop</span> <span class="o">=</span> <span class="m">0.6</span><span class="p">,</span>               <span class="c1"># height to width ratio of box</span>
+</span></span><span class="line"><span class="cl">        <span class="n">arr.length</span> <span class="o">=</span> <span class="m">0.5</span><span class="p">,</span> <span class="n">arr.width</span> <span class="o">=</span> <span class="m">0.2</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">self.cex</span> <span class="o">=</span> <span class="m">0.5</span><span class="p">,</span>                          <span class="c1"># size of self probability box</span>
+</span></span><span class="line"><span class="cl">        <span class="n">self.shifty</span> <span class="o">=</span> <span class="m">-0.03</span><span class="p">,</span> <span class="n">self.shiftx</span> <span class="o">=</span> <span class="m">0.13</span><span class="p">,</span> <span class="c1"># location of self prob. box</span>
+</span></span><span class="line"><span class="cl">        <span class="n">name</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;North Dhaka&#34;</span><span class="p">,</span><span class="s">&#34;Middle Dhaka&#34;</span><span class="p">,</span><span class="s">&#34;South Dhaka&#34;</span><span class="p">),</span>  <span class="c1"># Optional</span>
+</span></span><span class="line"><span class="cl">        <span class="n">main</span> <span class="o">=</span> <span class="s">&#34;Transition Diagram&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">cex.main</span> <span class="o">=</span> <span class="m">1.3</span>                <span class="c1"># relative size of main title</span>
+</span></span><span class="line"><span class="cl">        <span class="p">)</span>
+</span></span></code></pre></div><img src="https://mdahsanulhimel.github.io/post/markov-chain/index.en_files/figure-html/unnamed-chunk-7-1.png" width="672" />
 <p>The above Markov Chain can be used to answer some of the future state questions.</p>
 <h2 id="questions">Questions</h2>
 <p><strong>Assuming that a driver is currently in the North Zone, what is the probability that the driver will again be in the North Zone after two trips?</strong></p>
@@ -422,7 +459,7 @@ Probability: P(S-N) = 0.5*0.4 = 0.2</li>
 <p>Therefore, probability of second trip to North = 0.09 + 0.12 + 0.20 = 0.41 (0.40 approximately)</p>
 <p>Using code:</p>
 <p>Using the markov chain object created earlier using the function <code>new()</code> -</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#000">driverzone^2</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">driverzone^2</span>
 </span></span></code></pre></div><pre tabindex="0"><code># Driver Movement^2 
 #  A  3 - dimensional discrete Markov Chain defined by the following states: 
 #  North, Middle, South 
@@ -433,7 +470,7 @@ Probability: P(S-N) = 0.5*0.4 = 0.2</li>
 # South   0.38   0.24  0.38
 </code></pre><p>This gives us the direct probability of a driver coming back to the North Zone after two trips.</p>
 <p>The calculation can be done for subsequent trips as well. For example, the probability of coming back to North Zone in 4th trip :</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#000">driverzone^3</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">driverzone^3</span>
 </span></span></code></pre></div><pre tabindex="0"><code># Driver Movement^3 
 #  A  3 - dimensional discrete Markov Chain defined by the following states: 
 #  North, Middle, South 
@@ -444,7 +481,7 @@ Probability: P(S-N) = 0.5*0.4 = 0.2</li>
 # South  0.386  0.238 0.376
 </code></pre><p>However if we increase n (No. of trips) the predictive power tends to go down, where the Markov Chain reaches an equilibrium called <code>stationary state</code>.
 In the above case, after 9 trips the state becomes stationary -</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#000">driverzone^9</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">driverzone^9</span>
 </span></span></code></pre></div><pre tabindex="0"><code># Driver Movement^9 
 #  A  3 - dimensional discrete Markov Chain defined by the following states: 
 #  North, Middle, South 
@@ -455,12 +492,12 @@ In the above case, after 9 trips the state becomes stationary -</p>
 # South  0.3853211 0.2385321 0.3761468
 </code></pre><h2 id="steady-state">Steady State</h2>
 <p>The stationary state can be calculated using some linear algebra methods; however, the <code>driverzone</code> package has a function called <code>steadyStates()</code> that can do the work -</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#000">steadyStates</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">driverzone</span><span style="color:#000;font-weight:bold">)</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">steadyStates</span><span class="p">(</span><span class="n">driverzone</span><span class="p">)</span>
 </span></span></code></pre></div><pre tabindex="0"><code>#          North    Middle     South
 # [1,] 0.3853211 0.2385321 0.3761468
 </code></pre><p>So we can say that, in the stationary state, a driver has a probability of 0.385 of ending up in the North Dhaka.</p>
 <p><strong>If there were 100 drivers in all and each completes 9 trips in a day, how many of them will end up in the Middle Dhaka?</strong></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#000">steadyStates</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">driverzone</span><span style="color:#000;font-weight:bold">)</span><span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#0000cf;font-weight:bold">100</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">steadyStates</span><span class="p">(</span><span class="n">driverzone</span><span class="p">)</span><span class="o">*</span><span class="m">100</span>
 </span></span></code></pre></div><pre tabindex="0"><code>#         North   Middle    South
 # [1,] 38.53211 23.85321 37.61468
 </code></pre><p>So, around 38 drivers will end up in North Dhaka, 24 in the Middle Dhaka and 37 in the South Dhaka.</p>
@@ -500,14 +537,14 @@ In the above case, after 9 trips the state becomes stationary -</p>
             <ul class="tags-ul list-unstyled list-inline">
               
               <li class="list-inline-item">
-                <a href="https://ahsan.netlify.app/tags/markov-chain"
+                <a href="https://mdahsanulhimel.github.io/tags/markov-chain"
                    target="_blank">
                   markov chain
                 </a>
               </li>
               
               <li class="list-inline-item">
-                <a href="https://ahsan.netlify.app/tags/r"
+                <a href="https://mdahsanulhimel.github.io/tags/r"
                    target="_blank">
                   R
                 </a>
@@ -583,8 +620,9 @@ In the above case, after 9 trips the state becomes stationary -</p>
           <div class="col-lg-4 col-md-6 pt-2">
               <div class="card h-100 shadow-sm border-0">
                   
+                  
                   <div class="card-body bg-transparent p-3">
-                      <a href="/post/2026-05-26-design-your-environment-design-your-life/" class="primary-font text-decoration-none">
+                      <a href="/post/design-your-environment/" class="primary-font text-decoration-none">
                           <h5 class="card-title" title="Design Your Environment, Design Your Life">Design Your Environment, Design Your Life</h5>
                       </a>
                       <div class="card-text secondary-font">
@@ -593,7 +631,7 @@ In the above case, after 9 trips the state becomes stationary -</p>
                   </div>
                   <div class="mt-auto card-footer bg-white border-0 d-flex justify-content-between align-items-center">
                       <span class="text-muted small">May 26, 2026</span>
-                      <a href="/post/2026-05-26-design-your-environment-design-your-life/" class="btn btn-outline-info btn-sm">Read</a>
+                      <a href="/post/design-your-environment/" class="btn btn-outline-info btn-sm">Read</a>
                   </div>
               </div>
           </div>
@@ -601,8 +639,9 @@ In the above case, after 9 trips the state becomes stationary -</p>
           <div class="col-lg-4 col-md-6 pt-2">
               <div class="card h-100 shadow-sm border-0">
                   
+                  
                   <div class="card-body bg-transparent p-3">
-                      <a href="/post/2026-04-27-50-journals-used-in-the-ft-research-rank/" class="primary-font text-decoration-none">
+                      <a href="/post/ft-research-rank-journals/" class="primary-font text-decoration-none">
                           <h5 class="card-title" title="50 Journals used in the FT Research Rank">50 Journals used in the FT Research Rank</h5>
                       </a>
                       <div class="card-text secondary-font">
@@ -611,7 +650,7 @@ In the above case, after 9 trips the state becomes stationary -</p>
                   </div>
                   <div class="mt-auto card-footer bg-white border-0 d-flex justify-content-between align-items-center">
                       <span class="text-muted small">Apr 27, 2026</span>
-                      <a href="/post/2026-04-27-50-journals-used-in-the-ft-research-rank/" class="btn btn-outline-info btn-sm">Read</a>
+                      <a href="/post/ft-research-rank-journals/" class="btn btn-outline-info btn-sm">Read</a>
                   </div>
               </div>
           </div>
@@ -619,8 +658,9 @@ In the above case, after 9 trips the state becomes stationary -</p>
           <div class="col-lg-4 col-md-6 pt-2">
               <div class="card h-100 shadow-sm border-0">
                   
+                  
                   <div class="card-body bg-transparent p-3">
-                      <a href="/post/2025-12-03-the-statistical-civil-war-of-estimation/" class="primary-font text-decoration-none">
+                      <a href="/post/statistical-civil-war-of-estimation/" class="primary-font text-decoration-none">
                           <h5 class="card-title" title="The Statistical Civil War of Estimation: Frequentists, Bayesians, and the Quest for Truth">The Statistical Civil War of Estimation: Frequentists, Bayesians, and the Quest for Truth</h5>
                       </a>
                       <div class="card-text secondary-font">
@@ -629,7 +669,7 @@ In the above case, after 9 trips the state becomes stationary -</p>
                   </div>
                   <div class="mt-auto card-footer bg-white border-0 d-flex justify-content-between align-items-center">
                       <span class="text-muted small">Dec 3, 2025</span>
-                      <a href="/post/2025-12-03-the-statistical-civil-war-of-estimation/" class="btn btn-outline-info btn-sm">Read</a>
+                      <a href="/post/statistical-civil-war-of-estimation/" class="btn btn-outline-info btn-sm">Read</a>
                   </div>
               </div>
           </div>
@@ -696,7 +736,7 @@ In the above case, after 9 trips the state becomes stationary -</p>
         <div class="col-md-4 text-center">
             
                 <div class="pb-2">
-                    <a href="https://ahsan.netlify.app/" title="Ahsan">
+                    <a href="https://mdahsanulhimel.github.io/" title="Ahsan">
                         <img alt="Footer logo" src="/fav.png"
                             height="40px" width="40px">
                     </a>
@@ -719,23 +759,16 @@ In the above case, after 9 trips the state becomes stationary -</p>
 </div>
 </footer><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
 <script>
-    if (document.body.className.includes("dark")) {
-        document.body.classList.remove('dark');
-        localStorage.setItem("pref-theme", 'light');
+    var themeToggle = document.getElementById("theme-toggle");
+    if (themeToggle) {
+        themeToggle.addEventListener("click", () => {
+            var dark = !document.body.classList.contains('dark');
+            document.body.classList.toggle('dark', dark);
+            try {
+                localStorage.setItem("pref-theme", dark ? 'dark' : 'light');
+            } catch (e) {   }
+        });
     }
-</script>
-
-
-<script>
-    document.getElementById("theme-toggle").addEventListener("click", () => {
-        if (document.body.className.includes("dark")) {
-            document.body.classList.remove('dark');
-            localStorage.setItem("pref-theme", 'light');
-        } else {
-            document.body.classList.add('dark');
-            localStorage.setItem("pref-theme", 'dark');
-        }
-    })
 
     var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
     var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
@@ -746,6 +779,7 @@ In the above case, after 9 trips the state becomes stationary -</p>
 
 
     <script src="/js/search.js"></script>
+
 
 
 

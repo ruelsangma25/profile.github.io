@@ -22,7 +22,7 @@ output:
 description: 'Learn about the fundamental concepts of MANOVA in R and Python.'
 summary: 'MANOVA (Multivariate analysis of variance) is an extension of ANOVA (Analysis of Variance) technique, which is used to compare means across different groups for a single dependent variable. In MANOVA, the dependent variables are correlated, and the analysis takes into account their...'
 images:
-- https://MdAhsanulHimel.github.io/2023/05/29/manova/preview.png
+- preview.png
 ---
 
 ```{r, include=FALSE}
